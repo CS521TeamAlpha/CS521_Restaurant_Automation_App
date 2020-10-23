@@ -36,5 +36,5 @@ public class Restaurant_Automatation_App {
         "Time to get schwifty in here!\n" +
         "HEY TAKE YOUR PANTS OFF ITS SCHWIFTY TIME TODAY!!!");
     }////vvvvvv
-    
+
 }
