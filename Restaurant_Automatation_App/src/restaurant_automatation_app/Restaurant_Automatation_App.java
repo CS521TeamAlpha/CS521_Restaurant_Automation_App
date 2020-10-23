@@ -7,7 +7,7 @@ package restaurant_automatation_app;
 
 /**
  *
- * @author Frums
+ * @author Johnny Lin, Joshua Graves, Keith Foster, Vaibhav Tammadwar
  */
 public class Restaurant_Automatation_App {
 
