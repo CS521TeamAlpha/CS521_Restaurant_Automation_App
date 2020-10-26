@@ -59,7 +59,7 @@ public class MainImage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(370, 330, 260, 170);
+        jButton1.setBounds(310, 330, 260, 170);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
@@ -67,7 +67,7 @@ public class MainImage extends javax.swing.JFrame {
         jButton2.setText("Hostess");
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         getContentPane().add(jButton2);
-        jButton2.setBounds(710, 330, 260, 170);
+        jButton2.setBounds(680, 330, 260, 170);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
@@ -83,7 +83,7 @@ public class MainImage extends javax.swing.JFrame {
         jButton4.setText("Kitchen");
         jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         getContentPane().add(jButton4);
-        jButton4.setBounds(1390, 330, 260, 170);
+        jButton4.setBounds(1410, 330, 260, 170);
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
@@ -91,7 +91,7 @@ public class MainImage extends javax.swing.JFrame {
         jButton5.setText("Busser");
         jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         getContentPane().add(jButton5);
-        jButton5.setBounds(710, 560, 260, 170);
+        jButton5.setBounds(680, 590, 260, 170);
 
         jButton6.setBackground(new java.awt.Color(0, 0, 0));
         jButton6.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
@@ -99,7 +99,7 @@ public class MainImage extends javax.swing.JFrame {
         jButton6.setText("Clock In");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         getContentPane().add(jButton6);
-        jButton6.setBounds(1050, 560, 260, 170);
+        jButton6.setBounds(1050, 590, 260, 170);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
