@@ -27,93 +27,93 @@ public class MainImage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        applicationTitleLabel = new javax.swing.JLabel();
+        managerLoginButton = new javax.swing.JButton();
+        hostessLoginButton = new javax.swing.JButton();
+        serverLoginButton = new javax.swing.JButton();
+        kitchenLoginButton = new javax.swing.JButton();
+        busserLoginButton = new javax.swing.JButton();
+        timeCardButton = new javax.swing.JButton();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(2310, 1704));
         setPreferredSize(new java.awt.Dimension(2000, 1700));
         getContentPane().setLayout(null);
 
-        jLabel1.setBackground(new java.awt.Color(51, 51, 0));
-        jLabel1.setFont(new java.awt.Font("Jokerman", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setText("                                   CS521 Restaurant Automation App");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 110, 2270, 150);
+        applicationTitleLabel.setBackground(new java.awt.Color(51, 51, 0));
+        applicationTitleLabel.setFont(new java.awt.Font("Jokerman", 1, 48)); // NOI18N
+        applicationTitleLabel.setForeground(new java.awt.Color(255, 255, 0));
+        applicationTitleLabel.setText("                                   CS521 Restaurant Automation App");
+        getContentPane().add(applicationTitleLabel);
+        applicationTitleLabel.setBounds(0, 110, 2270, 150);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 0));
-        jButton1.setText("Manager");
-        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        managerLoginButton.setBackground(new java.awt.Color(0, 0, 0));
+        managerLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
+        managerLoginButton.setForeground(new java.awt.Color(255, 255, 0));
+        managerLoginButton.setText("Manager");
+        managerLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        managerLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                managerLoginButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(310, 330, 260, 170);
+        getContentPane().add(managerLoginButton);
+        managerLoginButton.setBounds(310, 330, 260, 170);
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 0));
-        jButton2.setText("Hostess");
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        getContentPane().add(jButton2);
-        jButton2.setBounds(680, 330, 260, 170);
+        hostessLoginButton.setBackground(new java.awt.Color(0, 0, 0));
+        hostessLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
+        hostessLoginButton.setForeground(new java.awt.Color(255, 255, 0));
+        hostessLoginButton.setText("Hostess");
+        hostessLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        getContentPane().add(hostessLoginButton);
+        hostessLoginButton.setBounds(680, 330, 260, 170);
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 0));
-        jButton3.setText("Server");
-        jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        getContentPane().add(jButton3);
-        jButton3.setBounds(1050, 330, 260, 170);
+        serverLoginButton.setBackground(new java.awt.Color(0, 0, 0));
+        serverLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
+        serverLoginButton.setForeground(new java.awt.Color(255, 255, 0));
+        serverLoginButton.setText("Server");
+        serverLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        getContentPane().add(serverLoginButton);
+        serverLoginButton.setBounds(1050, 330, 260, 170);
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 0));
-        jButton4.setText("Kitchen");
-        jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        getContentPane().add(jButton4);
-        jButton4.setBounds(1410, 330, 260, 170);
+        kitchenLoginButton.setBackground(new java.awt.Color(0, 0, 0));
+        kitchenLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
+        kitchenLoginButton.setForeground(new java.awt.Color(255, 255, 0));
+        kitchenLoginButton.setText("Kitchen");
+        kitchenLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        getContentPane().add(kitchenLoginButton);
+        kitchenLoginButton.setBounds(1410, 330, 260, 170);
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 0));
-        jButton5.setText("Busser");
-        jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        getContentPane().add(jButton5);
-        jButton5.setBounds(680, 590, 260, 170);
+        busserLoginButton.setBackground(new java.awt.Color(0, 0, 0));
+        busserLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
+        busserLoginButton.setForeground(new java.awt.Color(255, 255, 0));
+        busserLoginButton.setText("Busser");
+        busserLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        getContentPane().add(busserLoginButton);
+        busserLoginButton.setBounds(680, 590, 260, 170);
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 0));
-        jButton6.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 0));
-        jButton6.setText("Clock In");
-        jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        getContentPane().add(jButton6);
-        jButton6.setBounds(1050, 590, 260, 170);
+        timeCardButton.setBackground(new java.awt.Color(0, 0, 0));
+        timeCardButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
+        timeCardButton.setForeground(new java.awt.Color(255, 255, 0));
+        timeCardButton.setText("Time Card");
+        timeCardButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        getContentPane().add(timeCardButton);
+        timeCardButton.setBounds(1050, 590, 260, 170);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
-        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jLabel2.setOpaque(true);
-        jLabel2.setPreferredSize(new java.awt.Dimension(2000, 1700));
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -130, 2270, 1690);
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
+        backgroundImage.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        backgroundImage.setOpaque(true);
+        backgroundImage.setPreferredSize(new java.awt.Dimension(2000, 1700));
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, -130, 2270, 1690);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_managerLoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,13 +151,13 @@ public class MainImage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel applicationTitleLabel;
+    private javax.swing.JLabel backgroundImage;
+    private javax.swing.JButton busserLoginButton;
+    private javax.swing.JButton hostessLoginButton;
+    private javax.swing.JButton kitchenLoginButton;
+    private javax.swing.JButton managerLoginButton;
+    private javax.swing.JButton serverLoginButton;
+    private javax.swing.JButton timeCardButton;
     // End of variables declaration//GEN-END:variables
 }
