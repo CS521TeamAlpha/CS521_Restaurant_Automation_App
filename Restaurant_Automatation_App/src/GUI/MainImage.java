@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Owner
@@ -112,7 +115,11 @@ public class MainImage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
-        
+        managerLoginButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                
+            }
+        });
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
     /**
