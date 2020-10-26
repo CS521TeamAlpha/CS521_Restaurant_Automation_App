@@ -118,7 +118,7 @@ public class MainImage extends javax.swing.JFrame {
         LoginScreen login = new LoginScreen();
         managerLoginButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                login.initComponents();
+                login.showLogin();
             }
         });
     }//GEN-LAST:event_managerLoginButtonActionPerformed

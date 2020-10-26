@@ -273,7 +273,7 @@ public class LoginScreen extends javax.swing.JFrame {
         });
     }
 public void showLogin(){
-   // login
+   new LoginScreen().setVisible(true);
 }
     
     
