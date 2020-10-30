@@ -121,11 +121,11 @@ public class MainImage extends javax.swing.JFrame {
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
         LoginScreen login = new LoginScreen();
-        managerLoginButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+        
+            
                 login.showLogin();
-            }
-        });
+            
+        
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
     private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
