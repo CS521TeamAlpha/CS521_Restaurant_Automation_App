@@ -101,6 +101,11 @@ public class MainImage extends javax.swing.JFrame {
         timeCardButton.setForeground(new java.awt.Color(255, 255, 0));
         timeCardButton.setText("Time Card");
         timeCardButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        timeCardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeCardButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(timeCardButton);
         timeCardButton.setBounds(1050, 590, 260, 170);
 
@@ -123,6 +128,17 @@ public class MainImage extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
+    private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
+        TimeClock timeClock = new TimeClock();
+        timeCardButton.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+            timeClock.showTimeClock();
+        }
+    });
+                // TODO add your handling code here:
+    }//GEN-LAST:event_timeCardButtonActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */

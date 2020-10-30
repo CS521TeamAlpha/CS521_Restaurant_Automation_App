@@ -32,6 +32,8 @@ public class TimeClock extends javax.swing.JFrame {
     public TimeClock() {
         initComponents();
        
+        
+        
         updateTimer = new Timer(Delay, (ActionEvent e) -> {
            Date currentTime = new Date();
            String TimeFormat = "hh:mm:ss";
@@ -42,7 +44,12 @@ public class TimeClock extends javax.swing.JFrame {
            
         });
         updateTimer.start();
+        
+        
+    
     }
+
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,14 +60,14 @@ public class TimeClock extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        clockIn = new javax.swing.JButton();
+        clockOut = new javax.swing.JButton();
+        startBreak = new javax.swing.JButton();
         displayClock = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        endBreak = new javax.swing.JButton();
         newDate = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(750, 650));
         setMinimumSize(new java.awt.Dimension(750, 650));
         setPreferredSize(new java.awt.Dimension(750, 650));
@@ -70,23 +77,38 @@ public class TimeClock extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jButton1.setText("Clock-In");
-        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 100));
+        clockIn.setBackground(new java.awt.Color(204, 204, 255));
+        clockIn.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        clockIn.setText("Clock-In");
+        clockIn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        clockIn.setPreferredSize(new java.awt.Dimension(100, 100));
+        clockIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clockInActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 255));
-        jButton2.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jButton2.setText("Clock-Out");
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton2.setPreferredSize(new java.awt.Dimension(100, 100));
+        clockOut.setBackground(new java.awt.Color(255, 204, 255));
+        clockOut.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        clockOut.setText("Clock-Out");
+        clockOut.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        clockOut.setPreferredSize(new java.awt.Dimension(100, 100));
+        clockOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clockOutActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(204, 255, 204));
-        jButton3.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jButton3.setText("Start Break");
-        jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton3.setPreferredSize(new java.awt.Dimension(100, 100));
+        startBreak.setBackground(new java.awt.Color(204, 255, 204));
+        startBreak.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        startBreak.setText("Start Break");
+        startBreak.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        startBreak.setPreferredSize(new java.awt.Dimension(100, 100));
+        startBreak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBreakActionPerformed(evt);
+            }
+        });
 
         displayClock.setBackground(new java.awt.Color(0, 0, 0));
         displayClock.setFont(new java.awt.Font("French Script MT", 0, 72)); // NOI18N
@@ -95,11 +117,16 @@ public class TimeClock extends javax.swing.JFrame {
         displayClock.setText("00:00:00");
         displayClock.setOpaque(true);
 
-        jButton4.setBackground(new java.awt.Color(153, 204, 255));
-        jButton4.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jButton4.setText("End Break");
-        jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton4.setPreferredSize(new java.awt.Dimension(100, 100));
+        endBreak.setBackground(new java.awt.Color(153, 204, 255));
+        endBreak.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        endBreak.setText("End Break");
+        endBreak.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        endBreak.setPreferredSize(new java.awt.Dimension(100, 100));
+        endBreak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endBreakActionPerformed(evt);
+            }
+        });
 
         newDate.setFont(new java.awt.Font("French Script MT", 0, 72)); // NOI18N
         newDate.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,12 +146,12 @@ public class TimeClock extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(clockIn, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(startBreak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(endBreak, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(clockOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(130, 130, 130))
         );
         jPanel1Layout.setVerticalGroup(
@@ -135,13 +162,13 @@ public class TimeClock extends javax.swing.JFrame {
                     .addComponent(displayClock, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                     .addComponent(newDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(clockOut, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clockIn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(endBreak, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                    .addComponent(startBreak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -151,48 +178,63 @@ public class TimeClock extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void clockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockInActionPerformed
+        LoginScreen login = new LoginScreen();
+        clockIn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                login.showLogin();
+            }
+        });   
+    }//GEN-LAST:event_clockInActionPerformed
+
+    private void clockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockOutActionPerformed
+        LoginScreen login = new LoginScreen();
+        clockOut.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                login.showLogin();
+            }
+        });   
+    }//GEN-LAST:event_clockOutActionPerformed
+
+    private void startBreakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBreakActionPerformed
+       LoginScreen login = new LoginScreen();
+        startBreak.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                login.showLogin();
+            }
+        });   
+    }//GEN-LAST:event_startBreakActionPerformed
+
+    private void endBreakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endBreakActionPerformed
+       LoginScreen login = new LoginScreen();
+        endBreak.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                login.showLogin();
+            }
+        });   
+    }//GEN-LAST:event_endBreakActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TimeClock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TimeClock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TimeClock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TimeClock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TimeClock().setVisible(true);
-            }
-        });
+    
+    
+    public void showTimeClock(){
+   new TimeClock().setVisible(true);
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clockIn;
+    private javax.swing.JButton clockOut;
     private javax.swing.JLabel displayClock;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton endBreak;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel newDate;
+    private javax.swing.JButton startBreak;
     // End of variables declaration//GEN-END:variables
 }
