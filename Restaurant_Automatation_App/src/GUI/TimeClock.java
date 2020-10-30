@@ -180,12 +180,9 @@ public class TimeClock extends javax.swing.JFrame {
 
     private void clockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockInActionPerformed
         LoginScreen login = new LoginScreen();
-        clockIn.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                login.showLogin();
-            }
-        });   
+        
+        login.showLogin();
+ 
     }//GEN-LAST:event_clockInActionPerformed
 
     private void clockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockOutActionPerformed

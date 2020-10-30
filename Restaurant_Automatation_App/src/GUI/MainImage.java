@@ -130,11 +130,10 @@ public class MainImage extends javax.swing.JFrame {
 
     private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
         TimeClock timeClock = new TimeClock();
-        timeCardButton.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
+        
             timeClock.showTimeClock();
-        }
-    });
+        
+   
                 // TODO add your handling code here:
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
