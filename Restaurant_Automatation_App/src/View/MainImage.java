@@ -5,8 +5,10 @@
  */
 package View;
 
+import Controller.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*; 
 
 /**
  *
@@ -17,8 +19,10 @@ public class MainImage extends javax.swing.JFrame {
     /**
      * Creates new form MainImage
      */
-    public MainImage() {
+    public MainImage(Controller c) {
+        controller = c; 
         initComponents();
+        
     }
 
     /**
@@ -121,29 +125,32 @@ public class MainImage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
-        LoginScreen login = new LoginScreen("Manager");
-        
-            
-        login.showLogin();
+
+        controller.showLoginScreen("Manager"); 
             
         
     }//GEN-LAST:event_managerLoginButtonActionPerformed
+    public void addButtonListener(java.awt.event.ActionListener listenForClick){
 
+         
+        timeCardButton.addActionListener(listenForClick);
+
+         
+
+    }
     private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
-        LoginScreen login = new LoginScreen("TimeCard");
         
-        login.showLogin();
+        controller.showLoginScreen("TimeCard"); 
         
-        //TimeClock tc = new TimeClock(); 
-        //tc.showTimeClock(); 
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
-    
+ 
     /**
      * @param args the command line arguments
      */
     
 
+    private Controller controller; 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel applicationTitleLabel;
     private javax.swing.JLabel backgroundImage;

@@ -5,6 +5,10 @@
  */
 package View;
 
+import Controller.Controller;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Frums
@@ -17,8 +21,10 @@ public class LoginScreen extends javax.swing.JFrame {
     public LoginScreen() {
         initComponents();
     }
-    public LoginScreen(String moduleClicked) {
+    public LoginScreen(String moduleClicked, Controller c) {
         initComponents();
+        controller = c; 
+        this.moduleClicked = moduleClicked; 
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -194,6 +200,7 @@ public class LoginScreen extends javax.swing.JFrame {
 
     private void inputKeyEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyEnterActionPerformed
         // TODO add your handling code here:
+        controller.login(moduleClicked, loginPadInput.getText());
         
     }//GEN-LAST:event_inputKeyEnterActionPerformed
 
@@ -257,7 +264,6 @@ public class LoginScreen extends javax.swing.JFrame {
         
         loginPadInput.setText(removeLastChar(currentText));
         
-        
     }//GEN-LAST:event_inputKeyBackSpaceActionPerformed
 
     private void inputKeyZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyZeroActionPerformed
@@ -265,7 +271,11 @@ public class LoginScreen extends javax.swing.JFrame {
         String currentText = loginPadInput.getText(); 
         loginPadInput.setText(currentText + "0");
     }//GEN-LAST:event_inputKeyZeroActionPerformed
-   
+
+    public JButton getButton(){
+    
+        return inputKeyOne; 
+    }
     public String removeLastChar(String s) {
         //copy pasta from https://www.baeldung.com/java-remove-last-character-of-string :)
         return (s == null || s.length() == 0)
@@ -330,4 +340,5 @@ public void showLogin(){
     private javax.swing.JTextField loginPadInput;
     // End of variables declaration//GEN-END:variables
     private String moduleClicked; 
+    private Controller controller; 
 }
