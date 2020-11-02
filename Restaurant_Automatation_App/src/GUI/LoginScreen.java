@@ -28,20 +28,20 @@ public class LoginScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        loginPadInput = new javax.swing.JTextField();
+        inputKeyExit = new javax.swing.JButton();
+        inputKeyEnter = new javax.swing.JButton();
+        inputKeySeven = new javax.swing.JButton();
+        inputKeyEight = new javax.swing.JButton();
+        inputKeyNine = new javax.swing.JButton();
+        inputKeyFour = new javax.swing.JButton();
+        inputKeyFive = new javax.swing.JButton();
+        inputKeySix = new javax.swing.JButton();
+        inputKeyOne = new javax.swing.JButton();
+        inputKeyTwo = new javax.swing.JButton();
+        inputKeyThree = new javax.swing.JButton();
+        inputKeyBackSpace = new javax.swing.JButton();
+        inputKeyZero = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(375, 700));
@@ -53,190 +53,190 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel2.setPreferredSize(new java.awt.Dimension(141, 59));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, -1));
 
-        jTextField2.setBorder(new javax.swing.border.MatteBorder(null));
-        jTextField2.setPreferredSize(new java.awt.Dimension(141, 59));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        loginPadInput.setBorder(new javax.swing.border.MatteBorder(null));
+        loginPadInput.setPreferredSize(new java.awt.Dimension(141, 59));
+        loginPadInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                loginPadInputActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 220, -1));
+        getContentPane().add(loginPadInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 220, -1));
 
-        jButton1.setText("Exit");
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyExit.setText("Exit");
+        inputKeyExit.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                inputKeyExitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, -1, -1));
+        getContentPane().add(inputKeyExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, -1, -1));
 
-        jButton2.setText("Enter");
-        jButton2.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyEnter.setText("Enter");
+        inputKeyEnter.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                inputKeyEnterActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
+        getContentPane().add(inputKeyEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
 
-        jButton3.setText("7");
-        jButton3.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        inputKeySeven.setText("7");
+        inputKeySeven.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeySeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                inputKeySevenActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        getContentPane().add(inputKeySeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        jButton4.setText("8");
-        jButton4.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyEight.setText("8");
+        inputKeyEight.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyEight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                inputKeyEightActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+        getContentPane().add(inputKeyEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
 
-        jButton5.setText("9");
-        jButton5.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyNine.setText("9");
+        inputKeyNine.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyNine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                inputKeyNineActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+        getContentPane().add(inputKeyNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
 
-        jButton6.setText("4");
-        jButton6.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyFour.setText("4");
+        inputKeyFour.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyFour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                inputKeyFourActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        getContentPane().add(inputKeyFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
-        jButton7.setText("5");
-        jButton7.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyFive.setText("5");
+        inputKeyFive.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                inputKeyFiveActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
+        getContentPane().add(inputKeyFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
-        jButton8.setText("6");
-        jButton8.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        inputKeySix.setText("6");
+        inputKeySix.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeySix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                inputKeySixActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+        getContentPane().add(inputKeySix, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
-        jButton9.setText("1");
-        jButton9.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyOne.setText("1");
+        inputKeyOne.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                inputKeyOneActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        getContentPane().add(inputKeyOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
-        jButton10.setText("2");
-        jButton10.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyTwo.setText("2");
+        inputKeyTwo.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                inputKeyTwoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
+        getContentPane().add(inputKeyTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
 
-        jButton11.setText("3");
-        jButton11.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyThree.setText("3");
+        inputKeyThree.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                inputKeyThreeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
+        getContentPane().add(inputKeyThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
-        jButton12.setText("Backspace");
-        jButton12.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyBackSpace.setText("Backspace");
+        inputKeyBackSpace.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyBackSpace.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                inputKeyBackSpaceActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
+        getContentPane().add(inputKeyBackSpace, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
 
-        jButton13.setText("0");
-        jButton13.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        inputKeyZero.setText("0");
+        inputKeyZero.setPreferredSize(new java.awt.Dimension(100, 100));
+        inputKeyZero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                inputKeyZeroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
+        getContentPane().add(inputKeyZero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void loginPadInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPadInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_loginPadInputActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void inputKeyExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_inputKeyExitActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void inputKeyEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyEnterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_inputKeyEnterActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void inputKeySevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeySevenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_inputKeySevenActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void inputKeyEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyEightActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_inputKeyEightActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void inputKeyNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyNineActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_inputKeyNineActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void inputKeyFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyFourActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_inputKeyFourActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void inputKeyFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyFiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_inputKeyFiveActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void inputKeySixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeySixActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_inputKeySixActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void inputKeyOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyOneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_inputKeyOneActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void inputKeyTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyTwoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_inputKeyTwoActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void inputKeyThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyThreeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_inputKeyThreeActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void inputKeyBackSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyBackSpaceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_inputKeyBackSpaceActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void inputKeyZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyZeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_inputKeyZeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,20 +279,20 @@ public void showLogin(){
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton inputKeyBackSpace;
+    private javax.swing.JButton inputKeyEight;
+    private javax.swing.JButton inputKeyEnter;
+    private javax.swing.JButton inputKeyExit;
+    private javax.swing.JButton inputKeyFive;
+    private javax.swing.JButton inputKeyFour;
+    private javax.swing.JButton inputKeyNine;
+    private javax.swing.JButton inputKeyOne;
+    private javax.swing.JButton inputKeySeven;
+    private javax.swing.JButton inputKeySix;
+    private javax.swing.JButton inputKeyThree;
+    private javax.swing.JButton inputKeyTwo;
+    private javax.swing.JButton inputKeyZero;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField loginPadInput;
     // End of variables declaration//GEN-END:variables
 }
