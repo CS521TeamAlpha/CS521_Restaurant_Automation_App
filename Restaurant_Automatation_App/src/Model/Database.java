@@ -5,6 +5,7 @@
  */
 package Model;
 import java.sql.*;
+import java.util.*; 
 /**
  *
  * @author Johnny
@@ -14,6 +15,9 @@ public class Database {
     private String DB_URL = "";
     private String USER = "";
     private String PASS = "";   
+    private ArrayList<String> column = new ArrayList<String>();
+    private ArrayList<String> row = new ArrayList<String>();
+    
     
     public Database(String DB_URL, String USER,String PASS){
     
@@ -24,7 +28,14 @@ public class Database {
         
     }
     
-    public String findMatchingEmployee(String code){
+    public ArrayList getCurrentColumn(){
+        return column; 
+    }
+    public ArrayList getCurrentRow(){
+        return row; 
+    }
+    
+    public boolean findEmployeeByloginCode(String code){
         
         String employeeName = "null";
         String query = "Select * from Employee";
@@ -48,13 +59,33 @@ public class Database {
             while(rs.next()){
                 //Retrieve by column name
                 String loginCode = rs.getString("loginCode");
-                String firstName = rs.getString("firstName");
-                String lastName = rs.getString("lastName");
-                
+    
                 if(loginCode.equals(code)){
-                    return(firstName + " " + lastName);
+                    String empoloyeeId = rs.getString("employeeId");       
+                    column.add("empoloyeeId");
+                    row.add(empoloyeeId);
+                    String firstName = rs.getString("firstName");
+                    column.add("firstName");
+                    row.add(firstName);
+                    String lastName = rs.getString("lastName");   
+                    column.add("lastName");
+                    row.add(lastName);
+                    String dob = rs.getString("dob");
+                    column.add("dob");
+                    row.add(dob);
+                    String ssn = rs.getString("ssn");  
+                    column.add("ssn");
+                    row.add(ssn);
+                    String taxStatus = rs.getString("taxStatus");
+                    column.add("taxStatus");
+                    row.add(taxStatus);
+                    String address = rs.getString("address");
+                    column.add("address");
+                    row.add(address);
+                    String positionId = rs.getString("positionId");
+                    column.add("positionId");
+                    row.add(positionId);
                 }
-               
             }
             //STEP 6: Clean-up environment
             rs.close();
@@ -64,10 +95,12 @@ public class Database {
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
+            return false; 
        
         }catch(Exception e){
             //Handle errors for Class.forName
             e.printStackTrace();
+            return false; 
          
         }finally{
           //finally block used to close resources
@@ -84,7 +117,7 @@ public class Database {
             }//end finally try
         }//end try
         System.out.println("Goodbye!");    
-        return employeeName; 
+        return true; 
         
     }
     

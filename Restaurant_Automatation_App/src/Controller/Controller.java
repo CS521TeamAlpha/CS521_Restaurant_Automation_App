@@ -7,8 +7,8 @@ package Controller;
 
 import View.*; 
 import Model.*; 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  *
@@ -20,13 +20,15 @@ public class Controller {
     
     private Database database;
     
+    private ArrayList<String> resultColumn; 
+    private ArrayList<String> resultRow; 
+    
+    
     public Controller(){
         database = new Database("jdbc:mysql://mysql.stackcp.com:55219/RestaurantApp-37371618", "RestaurantApp-37371618", "oki80a0ih2"); 
         mainScreen = new MainImage(this);
         
         initialize(); 
-
-    
     }
     
     public void initialize(){
@@ -45,15 +47,23 @@ public class Controller {
             
             System.out.println("Timecard was clicked... prearing to login: " + code);
             //database.runSelectQuery("Select * from Employee");
-            String name = database.findMatchingEmployee(code);
-            if(name.equals("null")){
-                System.out.println("employee not found... come back to this line to handle the exception later!!!");
+            if(database.findEmployeeByloginCode(code)){
+                resultColumn = database.getCurrentColumn();
+                resultRow = database.getCurrentRow();
+                System.out.println("Logged in as: "  + resultRow.get(1));
+                TimeClock tc = new TimeClock(resultRow.get(1), this);
+                tc.setVisible(true);
+                
+                /*
+                for(int i = 0; i < resultColumn.size(); i++){
+                    System.out.print(resultRow.get(i)); 
+                }
+                */
             }
             else{
-                System.out.println("Logged in as: "  + name);
-                TimeClock tc = new TimeClock(name);
-                tc.setVisible(true);
+                System.out.println("employee not found... come back to this line to handle the exception later!!!");
             }
+            
         }
         else if(moduleClicked.equalsIgnoreCase("Manager")){
             
@@ -79,5 +89,32 @@ public class Controller {
             System.out.println("Busser was clicked... prearing to login: " + code);
         }
       
+    }
+    
+    public void clockIn(GregorianCalendar now){
+        //this method should only be called within timeclock's gui, 
+        //which means login method has to run before this, which means resultRow and resultColumn are not null; 
+        
+        System.out.println("Logging in... Current time is: " + now.getTime());
+        //sql datetime format 2020-11-02 14:50:10
+                            //2020-11-02 14:58:51
+        //Logging in... Current time is: Mon Nov 02 14:51:09 CST 2020
+        
+        // Creating an object of SimpleDateFormat 
+        SimpleDateFormat formattedDate = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss"); 
+  
+        // Use format() method to change the format 
+        // Using getTime() method, 
+        // this required date is passed 
+        // to format() method 
+        String dateFormatted  = formattedDate.format( now.getTime()); 
+  
+        // Displaying grogorian date ia SimpleDateFormat 
+        System.out.print("SimpleDateFormat: "+ dateFormatted); 
+        String query = "INSERT INTO TimeCard (employeeId, clockInTime) VALUES ('" + resultRow.get(0) + "', '" + dateFormatted + "')";
+        
+        database.runInsertQuery(query);
+        
+        
     }
 }

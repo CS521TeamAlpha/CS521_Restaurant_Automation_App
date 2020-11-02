@@ -5,12 +5,13 @@
  */
 package View;
 
+import Controller.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.*;
 import javax.swing.Timer;
 
 /**
@@ -29,9 +30,9 @@ public class TimeClock extends javax.swing.JFrame {
     Timer updateTimer;
     int Delay = 100;
     
-    public TimeClock(String name) {
+    public TimeClock(String name, Controller c) {
         initComponents();
-        
+        controller = c; 
         employeeName = name; 
         
         nameLabel.setText(employeeName);
@@ -189,7 +190,8 @@ public class TimeClock extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockInActionPerformed
-
+        GregorianCalendar now = new GregorianCalendar(); 
+        controller.clockIn(now);
  
     }//GEN-LAST:event_clockInActionPerformed
 
@@ -221,4 +223,5 @@ public class TimeClock extends javax.swing.JFrame {
     private javax.swing.JButton startBreak;
     // End of variables declaration//GEN-END:variables
     private String employeeName; 
+    private Controller controller; 
 }
