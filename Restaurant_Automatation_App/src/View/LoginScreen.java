@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
 /**
  *
@@ -17,7 +17,9 @@ public class LoginScreen extends javax.swing.JFrame {
     public LoginScreen() {
         initComponents();
     }
-
+    public LoginScreen(String moduleClicked) {
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +46,6 @@ public class LoginScreen extends javax.swing.JFrame {
         inputKeyZero = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(375, 700));
         setResizable(false);
         setSize(new java.awt.Dimension(700, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -188,56 +189,89 @@ public class LoginScreen extends javax.swing.JFrame {
 
     private void inputKeyExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyExitActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_inputKeyExitActionPerformed
 
     private void inputKeyEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyEnterActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_inputKeyEnterActionPerformed
 
     private void inputKeySevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeySevenActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "7");
     }//GEN-LAST:event_inputKeySevenActionPerformed
 
     private void inputKeyEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyEightActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "8");
     }//GEN-LAST:event_inputKeyEightActionPerformed
 
     private void inputKeyNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyNineActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "9");
     }//GEN-LAST:event_inputKeyNineActionPerformed
 
     private void inputKeyFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyFourActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "4");
     }//GEN-LAST:event_inputKeyFourActionPerformed
 
     private void inputKeyFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyFiveActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "5");
     }//GEN-LAST:event_inputKeyFiveActionPerformed
 
     private void inputKeySixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeySixActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "6");
     }//GEN-LAST:event_inputKeySixActionPerformed
 
     private void inputKeyOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyOneActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "1");
     }//GEN-LAST:event_inputKeyOneActionPerformed
 
     private void inputKeyTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyTwoActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "2");
     }//GEN-LAST:event_inputKeyTwoActionPerformed
 
     private void inputKeyThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyThreeActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "3");
     }//GEN-LAST:event_inputKeyThreeActionPerformed
 
     private void inputKeyBackSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyBackSpaceActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        
+        loginPadInput.setText(removeLastChar(currentText));
+        
+        
     }//GEN-LAST:event_inputKeyBackSpaceActionPerformed
 
     private void inputKeyZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyZeroActionPerformed
         // TODO add your handling code here:
+        String currentText = loginPadInput.getText(); 
+        loginPadInput.setText(currentText + "0");
     }//GEN-LAST:event_inputKeyZeroActionPerformed
-
+   
+    public String removeLastChar(String s) {
+        //copy pasta from https://www.baeldung.com/java-remove-last-character-of-string :)
+        return (s == null || s.length() == 0)
+          ? null 
+          : (s.substring(0, s.length() - 1));
+    }
     /**
      * @param args the command line arguments
      */
@@ -295,4 +329,5 @@ public void showLogin(){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField loginPadInput;
     // End of variables declaration//GEN-END:variables
+    private String moduleClicked; 
 }

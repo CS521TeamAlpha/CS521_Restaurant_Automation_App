@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,8 +40,9 @@ public class MainImage extends javax.swing.JFrame {
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(2310, 1704));
-        setPreferredSize(new java.awt.Dimension(2000, 1700));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(null);
 
         applicationTitleLabel.setBackground(new java.awt.Color(51, 51, 0));
@@ -114,27 +115,27 @@ public class MainImage extends javax.swing.JFrame {
         backgroundImage.setOpaque(true);
         backgroundImage.setPreferredSize(new java.awt.Dimension(2000, 1700));
         getContentPane().add(backgroundImage);
-        backgroundImage.setBounds(0, -130, 2270, 1690);
+        backgroundImage.setBounds(0, -130, 2000, 1700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
-        LoginScreen login = new LoginScreen();
+        LoginScreen login = new LoginScreen("Manager");
         
             
-                login.showLogin();
+        login.showLogin();
             
         
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
     private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
-        TimeClock timeClock = new TimeClock();
+        LoginScreen login = new LoginScreen("TimeCard");
         
-            timeClock.showTimeClock();
+        login.showLogin();
         
-   
-                // TODO add your handling code here:
+        //TimeClock tc = new TimeClock(); 
+        //tc.showTimeClock(); 
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
     
