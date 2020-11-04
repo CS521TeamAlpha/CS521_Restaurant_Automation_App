@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.Controller;
+import Controller.TimeClockController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -30,7 +30,7 @@ public class TimeClock extends javax.swing.JFrame {
     Timer updateTimer;
     int Delay = 100;
     
-    public TimeClock(String name, Controller c) {
+    public TimeClock(String name, TimeClockController c) {
         initComponents();
         controller = c; 
         employeeName = name; 
@@ -196,15 +196,18 @@ public class TimeClock extends javax.swing.JFrame {
     }//GEN-LAST:event_clockInActionPerformed
 
     private void clockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockOutActionPerformed
-
+        GregorianCalendar now2 = new GregorianCalendar(); 
+        controller.clockOut(now2);
     }//GEN-LAST:event_clockOutActionPerformed
 
     private void startBreakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBreakActionPerformed
-
+        GregorianCalendar now3 = new GregorianCalendar(); 
+        controller.startBreak(now3);    
     }//GEN-LAST:event_startBreakActionPerformed
 
     private void endBreakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endBreakActionPerformed
-
+        GregorianCalendar now4 = new GregorianCalendar(); 
+        controller.endBreak(now4);
     }//GEN-LAST:event_endBreakActionPerformed
 
     /**
@@ -223,5 +226,5 @@ public class TimeClock extends javax.swing.JFrame {
     private javax.swing.JButton startBreak;
     // End of variables declaration//GEN-END:variables
     private String employeeName; 
-    private Controller controller; 
+    private TimeClockController controller; 
 }

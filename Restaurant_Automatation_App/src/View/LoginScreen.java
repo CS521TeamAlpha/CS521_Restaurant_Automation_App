@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.Controller;
+import Controller.TimeClockController;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
@@ -21,7 +21,7 @@ public class LoginScreen extends javax.swing.JFrame {
     public LoginScreen() {
         initComponents();
     }
-    public LoginScreen(String moduleClicked, Controller c) {
+    public LoginScreen(String moduleClicked, TimeClockController c) {
         initComponents();
         controller = c; 
         this.moduleClicked = moduleClicked; 
@@ -340,5 +340,5 @@ public void showLogin(){
     private javax.swing.JTextField loginPadInput;
     // End of variables declaration//GEN-END:variables
     private String moduleClicked; 
-    private Controller controller; 
+    private TimeClockController controller; 
 }
