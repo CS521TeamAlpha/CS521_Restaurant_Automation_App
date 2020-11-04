@@ -5,6 +5,8 @@
  */
 package View;
 
+import Controller.*;
+
 /**
  *
  * @author Owner
@@ -16,6 +18,10 @@ public class Tables extends javax.swing.JPanel {
      */
     public Tables() {
         initComponents();
+    }    
+    public Tables(TimeClockController c) {
+        initComponents();
+        controller = c; 
     }
 
     /**
@@ -27,15 +33,15 @@ public class Tables extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        tableOne = new javax.swing.JButton();
+        tableTwo = new javax.swing.JButton();
+        tableThree = new javax.swing.JButton();
+        tableSix = new javax.swing.JButton();
+        tableFive = new javax.swing.JButton();
+        tableFour = new javax.swing.JButton();
+        tableSeven = new javax.swing.JButton();
+        tableEight = new javax.swing.JButton();
+        tableNine = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -47,59 +53,74 @@ public class Tables extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(500, 500));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setText("Table 1");
-        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton1.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        tableOne.setBackground(new java.awt.Color(0, 204, 0));
+        tableOne.setText("Table 1");
+        tableOne.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableOne.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableOneActionPerformed(evt);
+            }
+        });
+        add(tableOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 204, 0));
-        jButton2.setText("Table 2");
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton2.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        tableTwo.setBackground(new java.awt.Color(0, 204, 0));
+        tableTwo.setText("Table 2");
+        tableTwo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableTwo.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableTwoActionPerformed(evt);
+            }
+        });
+        add(tableTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 204, 0));
-        jButton3.setText("Table 3");
-        jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton3.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+        tableThree.setBackground(new java.awt.Color(0, 204, 0));
+        tableThree.setText("Table 3");
+        tableThree.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableThree.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableThreeActionPerformed(evt);
+            }
+        });
+        add(tableThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(0, 204, 0));
-        jButton4.setText("Table 6");
-        jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton4.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        tableSix.setBackground(new java.awt.Color(0, 204, 0));
+        tableSix.setText("Table 6");
+        tableSix.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableSix.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(tableSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(0, 204, 0));
-        jButton5.setText("Table 5");
-        jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton5.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
+        tableFive.setBackground(new java.awt.Color(0, 204, 0));
+        tableFive.setText("Table 5");
+        tableFive.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableFive.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(tableFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
 
-        jButton6.setBackground(new java.awt.Color(0, 204, 0));
-        jButton6.setText("Table 4");
-        jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton6.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, -1, -1));
+        tableFour.setBackground(new java.awt.Color(0, 204, 0));
+        tableFour.setText("Table 4");
+        tableFour.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableFour.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(tableFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, -1, -1));
 
-        jButton7.setBackground(new java.awt.Color(0, 204, 0));
-        jButton7.setText("Table 7");
-        jButton7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton7.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, -1));
+        tableSeven.setBackground(new java.awt.Color(0, 204, 0));
+        tableSeven.setText("Table 7");
+        tableSeven.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableSeven.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(tableSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, -1));
 
-        jButton8.setBackground(new java.awt.Color(0, 204, 0));
-        jButton8.setText("Table 8");
-        jButton8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton8.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 630, -1, -1));
+        tableEight.setBackground(new java.awt.Color(0, 204, 0));
+        tableEight.setText("Table 8");
+        tableEight.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableEight.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(tableEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 630, -1, -1));
 
-        jButton9.setBackground(new java.awt.Color(0, 204, 0));
-        jButton9.setText("Table 9");
-        jButton9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jButton9.setPreferredSize(new java.awt.Dimension(300, 300));
-        add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 630, -1, -1));
+        tableNine.setBackground(new java.awt.Color(0, 204, 0));
+        tableNine.setText("Table 9");
+        tableNine.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableNine.setPreferredSize(new java.awt.Dimension(300, 300));
+        add(tableNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 630, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(51, 204, 0));
         jLabel1.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
@@ -144,22 +165,36 @@ public class Tables extends javax.swing.JPanel {
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 90, 210, 100));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
+        // TODO add your handling code here: read from tables and time card database tables, make a list of everyone thats currently clocked in
+        // make a drop down and allow select and assignment of server. 
+    }//GEN-LAST:event_tableOneActionPerformed
+
+    private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableTwoActionPerformed
+
+    private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableThreeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton tableEight;
+    private javax.swing.JButton tableFive;
+    private javax.swing.JButton tableFour;
+    private javax.swing.JButton tableNine;
+    private javax.swing.JButton tableOne;
+    private javax.swing.JButton tableSeven;
+    private javax.swing.JButton tableSix;
+    private javax.swing.JButton tableThree;
+    private javax.swing.JButton tableTwo;
     // End of variables declaration//GEN-END:variables
+    TimeClockController controller; 
 }

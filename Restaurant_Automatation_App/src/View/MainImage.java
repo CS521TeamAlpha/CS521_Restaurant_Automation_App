@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.TimeClockController;
+import Controller.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*; 
@@ -20,7 +20,7 @@ public class MainImage extends javax.swing.JFrame {
      * Creates new form MainImage
      */
     public MainImage(TimeClockController c) {
-        controller = c; 
+        timeClockController = c; 
         initComponents();
         
     }
@@ -74,6 +74,11 @@ public class MainImage extends javax.swing.JFrame {
         hostessLoginButton.setForeground(new java.awt.Color(255, 255, 0));
         hostessLoginButton.setText("Hostess");
         hostessLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        hostessLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hostessLoginButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(hostessLoginButton);
         hostessLoginButton.setBounds(680, 330, 260, 170);
 
@@ -133,7 +138,7 @@ public class MainImage extends javax.swing.JFrame {
     }
     private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
         
-        controller.showLoginScreen("TimeCard"); 
+        timeClockController.showLoginScreen("TimeCard"); 
         
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
@@ -143,13 +148,20 @@ public class MainImage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
+    private void hostessLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hostessLoginButtonActionPerformed
+        // TODO add your handling code here:
+        timeClockController.showHostessModule(); 
+        System.out.println("action performed");
+    }//GEN-LAST:event_hostessLoginButtonActionPerformed
+
  
     /**
      * @param args the command line arguments
      */
     
 
-    private TimeClockController controller; 
+    private TimeClockController timeClockController; 
+    private HostessController hostessController; 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel applicationTitleLabel;
     private javax.swing.JLabel backgroundImage;

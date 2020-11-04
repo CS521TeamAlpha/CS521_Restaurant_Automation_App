@@ -201,6 +201,7 @@ public class LoginScreen extends javax.swing.JFrame {
     private void inputKeyEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputKeyEnterActionPerformed
         // TODO add your handling code here:
         controller.login(moduleClicked, loginPadInput.getText());
+        controller.hideLoginScreen(); 
         
     }//GEN-LAST:event_inputKeyEnterActionPerformed
 

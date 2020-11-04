@@ -85,6 +85,7 @@ public class Database {
                     String positionId = rs.getString("positionId");
                     column.add("positionId");
                     row.add(positionId);
+                    return true; 
                 }
             }
             //STEP 6: Clean-up environment
@@ -117,7 +118,7 @@ public class Database {
             }//end finally try
         }//end try
         System.out.println("Goodbye!");    
-        return true; 
+        return false; 
         
     }
     

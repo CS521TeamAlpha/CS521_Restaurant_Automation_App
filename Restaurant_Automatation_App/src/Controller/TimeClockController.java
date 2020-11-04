@@ -9,6 +9,8 @@ import View.*;
 import Model.*; 
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +24,7 @@ public class TimeClockController {
     
     private ArrayList<String> resultColumn; 
     private ArrayList<String> resultRow; 
+    private LoginScreen keypad; 
     
     
     public TimeClockController(){
@@ -37,11 +40,15 @@ public class TimeClockController {
     }
     
     public void showLoginScreen(String moduleSelected){
-        LoginScreen keypad = new LoginScreen(moduleSelected, this);
+        keypad = new LoginScreen(moduleSelected, this);
         keypad.setVisible(true);
         
     }
-    
+    public void hideLoginScreen(){
+        
+        keypad.setVisible(false);
+        
+    }
     public void login(String moduleClicked, String code){
         if(moduleClicked.equalsIgnoreCase("TimeCard")){
             
@@ -61,7 +68,9 @@ public class TimeClockController {
                 */
             }
             else{
-                System.out.println("employee not found... come back to this line to handle the exception later!!!");
+                JFrame frame = new JFrame("Error Message");
+                JOptionPane.showMessageDialog(frame,"Incorrect Login Code");
+                //System.out.println("employee not found... come back to this line to handle the exception later!!!");
             }
             
         }
@@ -162,6 +171,19 @@ public class TimeClockController {
         
         database.runInsertQuery(query);
         
+    }
+    
+    public void showHostessModule(){
+        
+        Tables tables = new Tables(this);
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Error Message");
+        frame.add(tables);
+        //frame.pack();
+        frame.setSize(1920,1080);
+        frame.setVisible(true); 
+    
     }
     
 }

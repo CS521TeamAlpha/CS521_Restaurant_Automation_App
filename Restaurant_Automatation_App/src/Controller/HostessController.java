@@ -11,4 +11,11 @@ package Controller;
  */
 public class HostessController {
     
+    public HostessController(){
+        
+    }
+    
+    public void showModule(){
+    
+    }
 }
