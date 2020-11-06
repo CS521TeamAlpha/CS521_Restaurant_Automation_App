@@ -20,6 +20,7 @@ public class LoginScreen extends javax.swing.JFrame {
      */
     public LoginScreen() {
         initComponents();
+        
     }
     public LoginScreen(String moduleClicked, TimeClockController c) {
         initComponents();
@@ -246,9 +247,11 @@ public class LoginScreen extends javax.swing.JFrame {
         getContentPane().add(inputKeyZero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 650));
+        jPanel1.setAutoscrolls(true);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 650));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginPadInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPadInputActionPerformed
@@ -381,6 +384,7 @@ public class LoginScreen extends javax.swing.JFrame {
     }
 public void showLogin(){
    new LoginScreen().setVisible(true);
+   
 }
     
     
@@ -405,4 +409,5 @@ public void showLogin(){
     // End of variables declaration//GEN-END:variables
     private String moduleClicked; 
     private TimeClockController controller; 
+    
 }
