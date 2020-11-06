@@ -39,6 +39,9 @@ public class Menuchecklist extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
+        jCheckBox1.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox1.setText("French Fries");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -48,8 +51,10 @@ public class Menuchecklist extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Menu Items");
 
+        jCheckBox2.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox2.setText("Fried Cheese Cake");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -58,15 +63,19 @@ public class Menuchecklist extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox3.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox3.setText("Coca Cola");
 
+        jCheckBox4.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox4.setText("Chicken Fried Rice");
 
+        jCheckBox5.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox5.setText("Mashed Potatoes");
 
+        jCheckBox6.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox6.setText("Pie");
         jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -75,9 +84,11 @@ public class Menuchecklist extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox7.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox7.setText("IceCream");
 
+        jCheckBox8.setBackground(new java.awt.Color(255, 255, 0));
         jCheckBox8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jCheckBox8.setText("Hotdog");
 
@@ -94,26 +105,21 @@ public class Menuchecklist extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox8)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jLabel1)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox7))))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jCheckBox8)
+                    .addComponent(jCheckBox6)
+                    .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jLabel1)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox7)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(80, 80, 80))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,8 +143,8 @@ public class Menuchecklist extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );

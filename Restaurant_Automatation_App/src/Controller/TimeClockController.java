@@ -46,9 +46,10 @@ public class TimeClockController {
     }
     public void hideLoginScreen(){
         
-        keypad.setVisible(false);
+        keypad.dispose();
         
     }
+    
     public void login(String moduleClicked, String code){
         if(moduleClicked.equalsIgnoreCase("TimeCard")){
             

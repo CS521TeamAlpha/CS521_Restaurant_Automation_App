@@ -50,16 +50,23 @@ public class LoginScreen extends javax.swing.JFrame {
         inputKeyThree = new javax.swing.JButton();
         inputKeyBackSpace = new javax.swing.JButton();
         inputKeyZero = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setForeground(new java.awt.Color(255, 255, 0));
+        setMinimumSize(new java.awt.Dimension(450, 450));
+        setPreferredSize(new java.awt.Dimension(250, 675));
         setResizable(false);
-        setSize(new java.awt.Dimension(700, 500));
+        setSize(new java.awt.Dimension(750, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Enter Employee ID:");
         jLabel2.setPreferredSize(new java.awt.Dimension(141, 59));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
 
+        loginPadInput.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         loginPadInput.setBorder(new javax.swing.border.MatteBorder(null));
         loginPadInput.setPreferredSize(new java.awt.Dimension(141, 59));
         loginPadInput.addActionListener(new java.awt.event.ActionListener() {
@@ -67,27 +74,39 @@ public class LoginScreen extends javax.swing.JFrame {
                 loginPadInputActionPerformed(evt);
             }
         });
-        getContentPane().add(loginPadInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 220, -1));
+        getContentPane().add(loginPadInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 230, -1));
 
+        inputKeyExit.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyExit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyExit.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyExit.setText("Exit");
+        inputKeyExit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyExit.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyExitActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, -1, -1));
+        getContentPane().add(inputKeyExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, -1, -1));
 
+        inputKeyEnter.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyEnter.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyEnter.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyEnter.setText("Enter");
+        inputKeyEnter.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyEnter.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyEnterActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
+        getContentPane().add(inputKeyEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, -1, -1));
 
+        inputKeySeven.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeySeven.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeySeven.setForeground(new java.awt.Color(255, 255, 0));
         inputKeySeven.setText("7");
+        inputKeySeven.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeySeven.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeySeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,25 +115,37 @@ public class LoginScreen extends javax.swing.JFrame {
         });
         getContentPane().add(inputKeySeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
+        inputKeyEight.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyEight.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyEight.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyEight.setText("8");
+        inputKeyEight.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyEight.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyEight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyEightActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+        getContentPane().add(inputKeyEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
 
+        inputKeyNine.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyNine.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyNine.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyNine.setText("9");
+        inputKeyNine.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyNine.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyNine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyNineActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+        getContentPane().add(inputKeyNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, -1, -1));
 
+        inputKeyFour.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyFour.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyFour.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyFour.setText("4");
+        inputKeyFour.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyFour.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyFour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,25 +154,37 @@ public class LoginScreen extends javax.swing.JFrame {
         });
         getContentPane().add(inputKeyFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
+        inputKeyFive.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyFive.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyFive.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyFive.setText("5");
+        inputKeyFive.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyFive.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyFiveActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
+        getContentPane().add(inputKeyFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
 
+        inputKeySix.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeySix.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeySix.setForeground(new java.awt.Color(255, 255, 0));
         inputKeySix.setText("6");
+        inputKeySix.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeySix.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeySix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeySixActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeySix, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+        getContentPane().add(inputKeySix, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, -1));
 
+        inputKeyOne.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyOne.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyOne.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyOne.setText("1");
+        inputKeyOne.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyOne.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,25 +193,37 @@ public class LoginScreen extends javax.swing.JFrame {
         });
         getContentPane().add(inputKeyOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
+        inputKeyTwo.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyTwo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyTwo.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyTwo.setText("2");
+        inputKeyTwo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyTwo.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyTwoActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
+        getContentPane().add(inputKeyTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
 
+        inputKeyThree.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyThree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyThree.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyThree.setText("3");
+        inputKeyThree.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyThree.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyThreeActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
+        getContentPane().add(inputKeyThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
 
+        inputKeyBackSpace.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyBackSpace.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyBackSpace.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyBackSpace.setText("Backspace");
+        inputKeyBackSpace.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyBackSpace.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyBackSpace.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,14 +232,21 @@ public class LoginScreen extends javax.swing.JFrame {
         });
         getContentPane().add(inputKeyBackSpace, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
 
+        inputKeyZero.setBackground(new java.awt.Color(0, 0, 0));
+        inputKeyZero.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inputKeyZero.setForeground(new java.awt.Color(255, 255, 0));
         inputKeyZero.setText("0");
+        inputKeyZero.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         inputKeyZero.setPreferredSize(new java.awt.Dimension(100, 100));
         inputKeyZero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputKeyZeroActionPerformed(evt);
             }
         });
-        getContentPane().add(inputKeyZero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
+        getContentPane().add(inputKeyZero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -338,6 +400,7 @@ public void showLogin(){
     private javax.swing.JButton inputKeyTwo;
     private javax.swing.JButton inputKeyZero;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField loginPadInput;
     // End of variables declaration//GEN-END:variables
     private String moduleClicked; 

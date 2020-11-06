@@ -166,8 +166,7 @@ public class Tables extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        // TODO add your handling code here: read from tables and time card database tables, make a list of everyone thats currently clocked in
-        // make a drop down and allow select and assignment of server. 
+        
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed

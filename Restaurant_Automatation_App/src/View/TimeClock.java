@@ -135,7 +135,6 @@ public class TimeClock extends javax.swing.JFrame {
         newDate.setText("...");
 
         nameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        nameLabel.setText("ss");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -192,7 +191,7 @@ public class TimeClock extends javax.swing.JFrame {
     private void clockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockInActionPerformed
         GregorianCalendar now = new GregorianCalendar(); 
         controller.clockIn(now);
- 
+        
     }//GEN-LAST:event_clockInActionPerformed
 
     private void clockOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockOutActionPerformed
@@ -227,4 +226,5 @@ public class TimeClock extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String employeeName; 
     private TimeClockController controller; 
+   
 }
