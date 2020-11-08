@@ -12,7 +12,8 @@ import Controller.*;
  * @author Owner
  */
 public class Tables extends javax.swing.JPanel {
-
+    private String tableSelected; 
+   
     /**
      * Creates new form Tables
      */
@@ -48,9 +49,10 @@ public class Tables extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setOpaque(false);
-        setPreferredSize(new java.awt.Dimension(500, 500));
+        setPreferredSize(new java.awt.Dimension(100, 100));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tableOne.setBackground(new java.awt.Color(0, 204, 0));
@@ -90,36 +92,66 @@ public class Tables extends javax.swing.JPanel {
         tableSix.setText("Table 6");
         tableSix.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         tableSix.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableSixActionPerformed(evt);
+            }
+        });
         add(tableSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
         tableFive.setBackground(new java.awt.Color(0, 204, 0));
         tableFive.setText("Table 5");
         tableFive.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         tableFive.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableFiveActionPerformed(evt);
+            }
+        });
         add(tableFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
 
         tableFour.setBackground(new java.awt.Color(0, 204, 0));
         tableFour.setText("Table 4");
         tableFour.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         tableFour.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableFourActionPerformed(evt);
+            }
+        });
         add(tableFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, -1, -1));
 
         tableSeven.setBackground(new java.awt.Color(0, 204, 0));
         tableSeven.setText("Table 7");
         tableSeven.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         tableSeven.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableSevenActionPerformed(evt);
+            }
+        });
         add(tableSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, -1));
 
         tableEight.setBackground(new java.awt.Color(0, 204, 0));
         tableEight.setText("Table 8");
         tableEight.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         tableEight.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableEightActionPerformed(evt);
+            }
+        });
         add(tableEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 630, -1, -1));
 
         tableNine.setBackground(new java.awt.Color(0, 204, 0));
         tableNine.setText("Table 9");
         tableNine.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         tableNine.setPreferredSize(new java.awt.Dimension(300, 300));
+        tableNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableNineActionPerformed(evt);
+            }
+        });
         add(tableNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 630, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(51, 204, 0));
@@ -163,19 +195,46 @@ public class Tables extends javax.swing.JPanel {
         jLabel6.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel6.setOpaque(true);
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 90, 210, 100));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 950));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        
+        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
-        // TODO add your handling code here:
+        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
     }//GEN-LAST:event_tableTwoActionPerformed
 
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
-        // TODO add your handling code here:
+        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
     }//GEN-LAST:event_tableThreeActionPerformed
+
+    private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
+       controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+    }//GEN-LAST:event_tableFourActionPerformed
+
+    private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
+        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+    }//GEN-LAST:event_tableFiveActionPerformed
+
+    private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
+       controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+    }//GEN-LAST:event_tableSixActionPerformed
+
+    private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
+        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+    }//GEN-LAST:event_tableSevenActionPerformed
+
+    private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
+        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+    }//GEN-LAST:event_tableEightActionPerformed
+
+    private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
+       controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+    }//GEN-LAST:event_tableNineActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -185,6 +244,7 @@ public class Tables extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton tableEight;
     private javax.swing.JButton tableFive;
     private javax.swing.JButton tableFour;

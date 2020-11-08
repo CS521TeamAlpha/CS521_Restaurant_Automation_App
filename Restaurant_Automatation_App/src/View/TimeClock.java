@@ -71,14 +71,18 @@ public class TimeClock extends javax.swing.JFrame {
         nameLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(750, 650));
+        setMaximumSize(new java.awt.Dimension(750, 600));
+        setMinimumSize(new java.awt.Dimension(750, 600));
+        setPreferredSize(new java.awt.Dimension(750, 600));
         setResizable(false);
+        setSize(new java.awt.Dimension(750, 600));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        clockIn.setBackground(new java.awt.Color(204, 204, 255));
+        clockIn.setBackground(new java.awt.Color(0, 0, 0));
         clockIn.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        clockIn.setForeground(new java.awt.Color(255, 255, 0));
         clockIn.setText("Clock-In");
         clockIn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         clockIn.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -88,8 +92,9 @@ public class TimeClock extends javax.swing.JFrame {
             }
         });
 
-        clockOut.setBackground(new java.awt.Color(255, 204, 255));
+        clockOut.setBackground(new java.awt.Color(0, 0, 0));
         clockOut.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        clockOut.setForeground(new java.awt.Color(255, 255, 0));
         clockOut.setText("Clock-Out");
         clockOut.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         clockOut.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -99,8 +104,9 @@ public class TimeClock extends javax.swing.JFrame {
             }
         });
 
-        startBreak.setBackground(new java.awt.Color(204, 255, 204));
+        startBreak.setBackground(new java.awt.Color(0, 0, 0));
         startBreak.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        startBreak.setForeground(new java.awt.Color(255, 255, 51));
         startBreak.setText("Start Break");
         startBreak.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         startBreak.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -112,13 +118,14 @@ public class TimeClock extends javax.swing.JFrame {
 
         displayClock.setBackground(new java.awt.Color(0, 0, 0));
         displayClock.setFont(new java.awt.Font("French Script MT", 0, 72)); // NOI18N
-        displayClock.setForeground(new java.awt.Color(255, 255, 255));
+        displayClock.setForeground(new java.awt.Color(255, 255, 0));
         displayClock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displayClock.setText("00:00:00");
         displayClock.setOpaque(true);
 
-        endBreak.setBackground(new java.awt.Color(153, 204, 255));
+        endBreak.setBackground(new java.awt.Color(0, 0, 0));
         endBreak.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
+        endBreak.setForeground(new java.awt.Color(255, 255, 0));
         endBreak.setText("End Break");
         endBreak.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         endBreak.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -129,11 +136,12 @@ public class TimeClock extends javax.swing.JFrame {
         });
 
         newDate.setFont(new java.awt.Font("French Script MT", 0, 72)); // NOI18N
-        newDate.setForeground(new java.awt.Color(255, 255, 255));
+        newDate.setForeground(new java.awt.Color(255, 255, 0));
         newDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         newDate.setText("...");
 
-        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 255, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,7 +152,7 @@ public class TimeClock extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(clockIn, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                     .addComponent(startBreak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(endBreak, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                     .addComponent(clockOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -182,7 +190,7 @@ public class TimeClock extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 750, 573);
+        jPanel1.setBounds(0, 0, 770, 573);
 
         pack();
         setLocationRelativeTo(null);

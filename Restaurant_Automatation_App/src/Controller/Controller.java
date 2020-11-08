@@ -25,6 +25,7 @@ public class Controller {
     private ArrayList<String> resultColumn; 
     private ArrayList<String> resultRow; 
     private LoginScreen keypad; 
+    private TableManagement tm;
     
     
     public Controller(){
@@ -47,6 +48,12 @@ public class Controller {
     public void hideLoginScreen(){
         
         keypad.dispose();
+        
+    }
+    
+    public void showTableManagmentScreen(String tableSelected){
+        tm = new TableManagement(tableSelected, this);
+            tm.setVisible(true);
         
     }
     
@@ -181,9 +188,10 @@ public class Controller {
         tables.setVisible(true);
         JFrame frame = new JFrame("Error Message");
         frame.add(tables);
-        //frame.pack();
-        frame.setSize(1920,1080);
-        frame.setVisible(true); 
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     
     }
     
