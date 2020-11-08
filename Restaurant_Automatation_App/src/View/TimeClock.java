@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.TimeClockController;
+import Controller.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -30,7 +30,7 @@ public class TimeClock extends javax.swing.JFrame {
     Timer updateTimer;
     int Delay = 100;
     
-    public TimeClock(String name, TimeClockController c) {
+    public TimeClock(String name, Controller c) {
         initComponents();
         controller = c; 
         employeeName = name; 
@@ -225,6 +225,6 @@ public class TimeClock extends javax.swing.JFrame {
     private javax.swing.JButton startBreak;
     // End of variables declaration//GEN-END:variables
     private String employeeName; 
-    private TimeClockController controller; 
+    private Controller controller; 
    
 }

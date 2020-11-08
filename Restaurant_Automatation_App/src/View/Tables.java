@@ -19,7 +19,7 @@ public class Tables extends javax.swing.JPanel {
     public Tables() {
         initComponents();
     }    
-    public Tables(TimeClockController c) {
+    public Tables(Controller c) {
         initComponents();
         controller = c; 
     }
@@ -195,5 +195,5 @@ public class Tables extends javax.swing.JPanel {
     private javax.swing.JButton tableThree;
     private javax.swing.JButton tableTwo;
     // End of variables declaration//GEN-END:variables
-    TimeClockController controller; 
+    Controller controller; 
 }

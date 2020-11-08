@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Johnny
  */
-public class TimeClockController {
+public class Controller {
     
     private MainImage mainScreen; 
     
@@ -27,7 +27,7 @@ public class TimeClockController {
     private LoginScreen keypad; 
     
     
-    public TimeClockController(){
+    public Controller(){
         database = new Database("jdbc:mysql://mysql.stackcp.com:55219/RestaurantApp-37371618", "RestaurantApp-37371618", "oki80a0ih2"); 
         mainScreen = new MainImage(this);
         

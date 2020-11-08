@@ -19,7 +19,7 @@ public class MainImage extends javax.swing.JFrame {
     /**
      * Creates new form MainImage
      */
-    public MainImage(TimeClockController c) {
+    public MainImage(Controller c) {
         timeClockController = c; 
         initComponents();
         
@@ -160,8 +160,8 @@ public class MainImage extends javax.swing.JFrame {
      */
     
 
-    private TimeClockController timeClockController; 
-    private HostessController hostessController; 
+    private Controller timeClockController; 
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel applicationTitleLabel;
     private javax.swing.JLabel backgroundImage;

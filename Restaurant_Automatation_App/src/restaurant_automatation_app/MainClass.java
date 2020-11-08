@@ -18,7 +18,7 @@ public class MainClass {
     public static void main (String [] args){
        
         
-        TimeClockController applicationController = new TimeClockController(); 
+        Controller applicationController = new Controller(); 
        
     }
 }
