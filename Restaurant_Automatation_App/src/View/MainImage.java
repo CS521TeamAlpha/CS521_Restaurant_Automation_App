@@ -20,7 +20,7 @@ public class MainImage extends javax.swing.JFrame {
      * Creates new form MainImage
      */
     public MainImage(Controller c) {
-        timeClockController = c; 
+        Controller = c; 
         initComponents();
         
     }
@@ -103,6 +103,11 @@ public class MainImage extends javax.swing.JFrame {
         busserLoginButton.setForeground(new java.awt.Color(255, 255, 0));
         busserLoginButton.setText("Busser");
         busserLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        busserLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busserLoginButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(busserLoginButton);
         busserLoginButton.setBounds(680, 590, 260, 170);
 
@@ -138,7 +143,7 @@ public class MainImage extends javax.swing.JFrame {
     }
     private void timeCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeCardButtonActionPerformed
         
-        timeClockController.showLoginScreen("TimeCard"); 
+     Controller.showLoginScreen("TimeCard"); 
         
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
@@ -150,17 +155,23 @@ public class MainImage extends javax.swing.JFrame {
 
     private void hostessLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hostessLoginButtonActionPerformed
         // TODO add your handling code here:
-        timeClockController.showHostessModule(); 
+        Controller.showHostessModule(); 
         System.out.println("action performed");
     }//GEN-LAST:event_hostessLoginButtonActionPerformed
 
- 
+    private void busserLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busserLoginButtonActionPerformed
+        // TODO add your handling code here:
+        Controller.showBusserModule();
+        System.out.println("action performed");
+    }//GEN-LAST:event_busserLoginButtonActionPerformed
+
+   
     /**
      * @param args the command line arguments
      */
     
 
-    private Controller timeClockController; 
+    private Controller Controller; 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel applicationTitleLabel;

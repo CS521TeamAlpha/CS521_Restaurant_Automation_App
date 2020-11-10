@@ -73,6 +73,7 @@ public class Tables extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        applicationTitleLabel = new javax.swing.JLabel();
         tableOne = new javax.swing.JButton();
         tableTwo = new javax.swing.JButton();
         tableThree = new javax.swing.JButton();
@@ -84,159 +85,159 @@ public class Tables extends javax.swing.JPanel {
         tableNine = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(100, 100));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        applicationTitleLabel.setBackground(new java.awt.Color(51, 51, 0));
+        applicationTitleLabel.setFont(new java.awt.Font("Jokerman", 1, 48)); // NOI18N
+        applicationTitleLabel.setForeground(new java.awt.Color(255, 255, 0));
+        applicationTitleLabel.setText("  CS521 Restaurant Automation App");
+        add(applicationTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 850, -1, -1));
+
         tableOne.setBackground(new java.awt.Color(0, 204, 0));
         tableOne.setText("Table 1");
-        tableOne.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableOne.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableOne.setPreferredSize(new java.awt.Dimension(300, 300));
         tableOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableOneActionPerformed(evt);
             }
         });
-        add(tableOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        add(tableOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 200, 200));
 
         tableTwo.setBackground(new java.awt.Color(0, 204, 0));
         tableTwo.setText("Table 2");
-        tableTwo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableTwo.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableTwo.setPreferredSize(new java.awt.Dimension(300, 300));
         tableTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableTwoActionPerformed(evt);
             }
         });
-        add(tableTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        add(tableTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, 200, 200));
 
         tableThree.setBackground(new java.awt.Color(0, 204, 0));
         tableThree.setText("Table 3");
-        tableThree.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableThree.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableThree.setPreferredSize(new java.awt.Dimension(300, 300));
         tableThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableThreeActionPerformed(evt);
             }
         });
-        add(tableThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+        add(tableThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 40, 200, 200));
 
         tableSix.setBackground(new java.awt.Color(0, 204, 0));
         tableSix.setText("Table 6");
-        tableSix.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableSix.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableSix.setPreferredSize(new java.awt.Dimension(300, 300));
         tableSix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableSixActionPerformed(evt);
             }
         });
-        add(tableSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        add(tableSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 200, 200));
 
         tableFive.setBackground(new java.awt.Color(0, 204, 0));
         tableFive.setText("Table 5");
-        tableFive.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableFive.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableFive.setPreferredSize(new java.awt.Dimension(300, 300));
         tableFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableFiveActionPerformed(evt);
             }
         });
-        add(tableFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
+        add(tableFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 200, 200));
 
         tableFour.setBackground(new java.awt.Color(0, 204, 0));
         tableFour.setText("Table 4");
-        tableFour.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableFour.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableFour.setPreferredSize(new java.awt.Dimension(300, 300));
         tableFour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableFourActionPerformed(evt);
             }
         });
-        add(tableFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, -1, -1));
+        add(tableFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 290, 200, 200));
 
         tableSeven.setBackground(new java.awt.Color(0, 204, 0));
         tableSeven.setText("Table 7");
-        tableSeven.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableSeven.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableSeven.setPreferredSize(new java.awt.Dimension(300, 300));
         tableSeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableSevenActionPerformed(evt);
             }
         });
-        add(tableSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, -1));
+        add(tableSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 200, 200));
 
         tableEight.setBackground(new java.awt.Color(0, 204, 0));
         tableEight.setText("Table 8");
-        tableEight.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableEight.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableEight.setPreferredSize(new java.awt.Dimension(300, 300));
         tableEight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableEightActionPerformed(evt);
             }
         });
-        add(tableEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 630, -1, -1));
+        add(tableEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 200, 200));
 
         tableNine.setBackground(new java.awt.Color(0, 204, 0));
         tableNine.setText("Table 9");
-        tableNine.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableNine.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         tableNine.setPreferredSize(new java.awt.Dimension(300, 300));
         tableNine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableNineActionPerformed(evt);
             }
         });
-        add(tableNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 630, -1, -1));
+        add(tableNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 540, 200, 200));
 
         jLabel1.setBackground(new java.awt.Color(51, 204, 0));
         jLabel1.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jLabel1.setText("        Ready");
-        jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel1.setText("      Ready");
+        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jLabel1.setOpaque(true);
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 200, 210, 100));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 780, 200, 50));
 
         jLabel2.setBackground(new java.awt.Color(204, 0, 204));
         jLabel2.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jLabel2.setText("    Order Ready");
-        jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel2.setText("   Order Ready");
+        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jLabel2.setOpaque(true);
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 320, 210, 100));
-
-        jLabel3.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel3.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jLabel3.setText("        Dirty");
-        jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
-        jLabel3.setOpaque(true);
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 200, 210, 100));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 780, 200, 50));
 
         jLabel4.setBackground(new java.awt.Color(0, 51, 204));
         jLabel4.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jLabel4.setText("      Order In");
-        jLabel4.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel4.setText("    Order In");
+        jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jLabel4.setOpaque(true);
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 440, 210, 100));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 840, 200, 50));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 51));
         jLabel5.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jLabel5.setText("    New Arrival");
-        jLabel5.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel5.setText("  New Arrival");
+        jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jLabel5.setOpaque(true);
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 560, 210, 100));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 780, 200, 50));
 
         jLabel6.setBackground(new java.awt.Color(255, 51, 51));
         jLabel6.setFont(new java.awt.Font("French Script MT", 0, 36)); // NOI18N
-        jLabel6.setText("        Dirty");
-        jLabel6.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel6.setText("      Dirty");
+        jLabel6.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jLabel6.setOpaque(true);
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 90, 210, 100));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 840, 200, 50));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 950));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant3.jpg"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1480, 950));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
@@ -277,13 +278,13 @@ public class Tables extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel applicationTitleLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton tableEight;
     private javax.swing.JButton tableFive;
     private javax.swing.JButton tableFour;

@@ -71,7 +71,16 @@ public class Controller {
             String query = "UPDATE `Booths` SET `status` = 'NEW ARRIVAL YELLOW' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
             database.updateTableStatus(query);
             updateTableColor(selectedTable);
-        }else{
+        }else if (status.equalsIgnoreCase("order in")){
+            String query = "UPDATE `Booths` SET `status` = 'ORDER IN BLUE' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
+        }else if (status.equalsIgnoreCase("order ready")){
+            String query = "UPDATE `Booths` SET `status` = 'ORDER READY MAGENTA' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
+        }
+        else{
             System.out.println("oops, something has gone terribly wrong... please contact customer support");
         }
         
@@ -101,6 +110,8 @@ public class Controller {
             case "BLUE":
                 tables.setTableColor(selectedTable, Color.BLUE);
                 break;
+            case "MAGENTA":
+                tables.setTableColor(selectedTable, Color.MAGENTA);
             default:
               // code block
                 System.out.println("Something has gone terribly wrong in the set color method, please contact support");
@@ -137,6 +148,8 @@ public class Controller {
                 case "BLUE":
                     tables.setTableColor(tableNames[i], Color.BLUE);
                     break;
+                case "MAGENTA":
+                    tables.setTableColor(tableNames[i], Color.MAGENTA);
                 default:
                   // code block
                     System.out.println("Controller: Something has gone terribly wrong in the set color method, please contact support");
@@ -285,5 +298,19 @@ public class Controller {
         
         
     }
-    
+    public void showBusserModule(){
+        
+        tables = new Tables(this);
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Table Management");
+        frame.add(tables);
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        updateAllTableColor();
+        
+        
+    }
 }
