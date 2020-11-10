@@ -111,7 +111,6 @@ public class Controller {
     
     public void updateAllTableColor(){
         String query = "SELECT * FROM `Booths`";
-        database.getBoothsTable(query);
         Map<String, String> statusMap = database.getBoothsTable(query);
         //System.out.println("Table One's status is: " + statusMap.get("ONE"));
         
