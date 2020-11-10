@@ -6,6 +6,7 @@
 package View;
 
 import Controller.*;
+import java.awt.*;
 
 /**
  *
@@ -13,6 +14,7 @@ import Controller.*;
  */
 public class Tables extends javax.swing.JPanel {
     private String tableSelected; 
+    private String TOOL_TIP_TEXT_KEY = "Blah blah";
    
     /**
      * Creates new form Tables
@@ -24,7 +26,44 @@ public class Tables extends javax.swing.JPanel {
         initComponents();
         controller = c; 
     }
-
+    
+    
+    public void setTableColor(String selectedTable, Color c){
+        
+        
+        switch(selectedTable.toUpperCase()) {
+            case "ONE":
+                tableOne.setBackground(c);
+                break;
+            case "TWO":
+                tableTwo.setBackground(c);
+                break;
+            case "THREE":
+                tableThree.setBackground(c);
+                break;
+            case "FOUR":
+                tableFour.setBackground(c);
+                break;
+            case "FIVE":
+                tableFive.setBackground(c);
+                break;
+            case "SIX":
+                tableSix.setBackground(c);
+                break;
+            case "SEVEN":
+                tableSeven.setBackground(c);
+                break;
+            case "EIGHT":
+                tableEight.setBackground(c);
+                break;
+            case "NINE":
+                tableNine.setBackground(c);
+                break;
+            default:
+              // code block
+                System.out.println("Tables: Something has gone terribly wrong in the set color method, please contact support");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -201,39 +240,39 @@ public class Tables extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+        controller.showTableManagmentScreen("One");
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
-        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+        controller.showTableManagmentScreen("Two");
     }//GEN-LAST:event_tableTwoActionPerformed
 
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
-        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+        controller.showTableManagmentScreen("Three");
     }//GEN-LAST:event_tableThreeActionPerformed
 
     private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
-       controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+       controller.showTableManagmentScreen("Four");
     }//GEN-LAST:event_tableFourActionPerformed
 
     private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
-        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+        controller.showTableManagmentScreen("Five");
     }//GEN-LAST:event_tableFiveActionPerformed
 
     private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
-       controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+       controller.showTableManagmentScreen("Six");
     }//GEN-LAST:event_tableSixActionPerformed
 
     private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
-        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+        controller.showTableManagmentScreen("Seven");
     }//GEN-LAST:event_tableSevenActionPerformed
 
     private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
-        controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+        controller.showTableManagmentScreen("Eight");
     }//GEN-LAST:event_tableEightActionPerformed
 
     private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
-       controller.showTableManagmentScreen(TOOL_TIP_TEXT_KEY);
+       controller.showTableManagmentScreen("Nine");
     }//GEN-LAST:event_tableNineActionPerformed
 
 

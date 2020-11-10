@@ -114,6 +114,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Update Table Status"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTableStatusActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="exit">
           <Properties>

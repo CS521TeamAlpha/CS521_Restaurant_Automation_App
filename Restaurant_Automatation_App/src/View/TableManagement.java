@@ -25,6 +25,7 @@ public class TableManagement extends javax.swing.JFrame {
         initComponents();
         controller = c;
         this.tableSelected = tableSelected;
+        System.out.println("You clicked on Table: " + tableSelected);
         
     }
 
@@ -58,6 +59,11 @@ public class TableManagement extends javax.swing.JFrame {
 
         updateTableStatus.setBackground(new java.awt.Color(255, 255, 0));
         updateTableStatus.setText("Update Table Status");
+        updateTableStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTableStatusActionPerformed(evt);
+            }
+        });
 
         exit.setBackground(new java.awt.Color(255, 255, 0));
         exit.setText("Exit");
@@ -124,6 +130,13 @@ public class TableManagement extends javax.swing.JFrame {
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
        this.hide();
     }//GEN-LAST:event_exitActionPerformed
+
+    private void updateTableStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTableStatusActionPerformed
+        // TODO add your handling code here:
+        String status = TableManagement.getSelectedItem().toString();
+   
+        controller.updateTableStatus(tableSelected, status); 
+    }//GEN-LAST:event_updateTableStatusActionPerformed
 
     /**
      * @param args the command line arguments

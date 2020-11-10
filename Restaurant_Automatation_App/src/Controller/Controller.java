@@ -7,10 +7,12 @@ package Controller;
 
 import View.*; 
 import Model.*; 
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -25,8 +27,7 @@ public class Controller {
     private ArrayList<String> resultColumn; 
     private ArrayList<String> resultRow; 
     private LoginScreen keypad; 
-    private TableManagement tm;
-    
+    private Tables tables;
     
     public Controller(){
         database = new Database("jdbc:mysql://mysql.stackcp.com:55219/RestaurantApp-37371618", "RestaurantApp-37371618", "oki80a0ih2"); 
@@ -34,7 +35,7 @@ public class Controller {
         
         initialize(); 
     }
-    
+
     public void initialize(){
         mainScreen.setVisible(true);
        
@@ -52,11 +53,100 @@ public class Controller {
     }
     
     public void showTableManagmentScreen(String tableSelected){
-        tm = new TableManagement(tableSelected, this);
+        TableManagement tm = new TableManagement(tableSelected, this);
             tm.setVisible(true);
         
     }
+    public void updateTableStatus(String selectedTable, String status){ //updates the database
+        System.out.println("Setting table " + selectedTable + "'s status to " + status);
+        if(status.equalsIgnoreCase("dirty")){
+            String query = "UPDATE `Booths` SET `status` = 'DIRTY RED' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
+        }else if (status.equalsIgnoreCase("ready")){
+            String query = "UPDATE `Booths` SET `status` = 'READY GREEN' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
+        }else if (status.equalsIgnoreCase("new arrival")){
+            String query = "UPDATE `Booths` SET `status` = 'NEW ARRIVAL YELLOW' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
+        }else{
+            System.out.println("oops, something has gone terribly wrong... please contact customer support");
+        }
+        
+    }
+    public void updateTableColor(String selectedTable){ //updates the gui
+        
+        String query = "SELECT * FROM `Booths` WHERE tableName = '" + selectedTable + "'";
+        String status = database.getTableColor(query);
+        
+        String[] tempArray;
+        /* delimiter */
+        String delimiter = " ";
+        /* given string will be split by the argument delimiter provided. */
+        tempArray = status.split(delimiter);
+        
+        String color = tempArray[tempArray.length-1];
+        switch(color) {
+            case "RED":
+                tables.setTableColor(selectedTable, Color.RED);
+                break;
+            case "GREEN":
+                tables.setTableColor(selectedTable, Color.GREEN);
+                break;
+            case "YELLOW":
+                tables.setTableColor(selectedTable, Color.YELLOW);
+                break;
+            case "BLUE":
+                tables.setTableColor(selectedTable, Color.BLUE);
+                break;
+            default:
+              // code block
+                System.out.println("Something has gone terribly wrong in the set color method, please contact support");
+        }
+        //tables.setTableColor(selectedTable, color);
     
+    }
+    
+    public void updateAllTableColor(){
+        String query = "SELECT * FROM `Booths`";
+        database.getBoothsTable(query);
+        Map<String, String> statusMap = database.getBoothsTable(query);
+        //System.out.println("Table One's status is: " + statusMap.get("ONE"));
+        
+        String[] tableNames = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
+        for(int i = 0; i < 9; i++){
+            String status = statusMap.get(tableNames[i]); 
+            String[] tempArray;
+            /* delimiter */
+            String delimiter = " ";
+            /* given string will be split by the argument delimiter provided. */
+            tempArray = status.split(delimiter);
+
+            String color = tempArray[tempArray.length-1];
+            switch(color) {
+                case "RED":
+                    tables.setTableColor(tableNames[i], Color.RED);
+                    break;
+                case "GREEN":
+                    tables.setTableColor(tableNames[i], Color.GREEN);
+                    break;
+                case "YELLOW":
+                    tables.setTableColor(tableNames[i], Color.YELLOW);
+                    break;
+                case "BLUE":
+                    tables.setTableColor(tableNames[i], Color.BLUE);
+                    break;
+                default:
+                  // code block
+                    System.out.println("Controller: Something has gone terribly wrong in the set color method, please contact support");
+            }
+        }
+        
+       
+    
+    }
     public void login(String moduleClicked, String code){
         if(moduleClicked.equalsIgnoreCase("TimeCard")){
             
@@ -183,16 +273,18 @@ public class Controller {
     
     public void showHostessModule(){
         
-        Tables tables = new Tables(this);
+        tables = new Tables(this);
         System.out.println("method performed");
         tables.setVisible(true);
-        JFrame frame = new JFrame("Error Message");
+        JFrame frame = new JFrame("Table Management");
         frame.add(tables);
         frame.pack();
         frame.setSize(1470,970);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-    
+        updateAllTableColor();
+        
+        
     }
     
 }

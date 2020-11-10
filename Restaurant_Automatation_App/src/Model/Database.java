@@ -228,4 +228,171 @@ public class Database {
         return true; 
         //https://github.com/suchamillennial/RestaurantAutomation
     }
+    
+    public boolean updateTableStatus(String query){
+        
+        
+        Connection conn = null;
+        Statement statement = null;
+        try{
+
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            statement.executeUpdate(sql);
+
+        
+            //STEP 6: Clean-up environment
+            statement.close();
+            conn.close();
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+            return false; 
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            return false;
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+        return true; 
+        
+    }
+    public Map<String, String> getBoothsTable(String query){
+        
+        Map<String, String> hm = new HashMap<String, String>(); 
+        
+        Connection conn = null;
+        Statement statement = null;
+        try{
+
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            ResultSet rs = statement.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numColumns = rs.getMetaData().getColumnCount();
+            //STEP 5: Extract data from result set
+           while(rs.next()){
+                //Retrieve by column name
+                
+                
+                String tableName = rs.getString("tableName");
+                String status = rs.getString("status");
+                hm.put(tableName, status);
+                System.out.println(tableName + ", line 307 " + status);
+                //Display values
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            statement.close();
+            conn.close();
+            return hm; 
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+           
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+      
+        return hm; 
+    }
+    public String getTableColor(String query){
+        
+        
+        Connection conn = null;
+        Statement statement = null;
+        
+        try{
+            
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            ResultSet rs = statement.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numColumns = rs.getMetaData().getColumnCount();
+            //STEP 5: Extract data from result set
+            while(rs.next()){
+                //Retrieve by column name
+                String status = rs.getString("status");
+                return status; 
+         
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            statement.close();
+            conn.close();
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+          
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+        return "null";
+    }
 }
