@@ -7,6 +7,8 @@ package View;
 
 import Controller.*;
 import java.awt.*;
+import java.util.Locale;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -21,12 +23,51 @@ public class Tables extends javax.swing.JPanel {
      */
     public Tables() {
         initComponents();
+       
     }    
     public Tables(Controller c) {
         initComponents();
         controller = c; 
     }
     
+    public void setTableServer(String server){
+        
+        switch(server.toUpperCase()) {
+            case "ONE":
+               tableOneServer.setText(server);
+                break;
+            case "TWO":
+                tableTwoServer.setText(server);
+                break;
+            case "THREE":
+                tableThreeServer.setText(server);
+                break;
+            case "FOUR":
+               tableFourServer.setText(server);
+                break;
+            case "FIVE":
+                tableFiveServer.setText(server);
+                break;
+            case "SIX":
+               tableSixServer.setText(server);
+                break;
+            case "SEVEN":
+                tableSevenServer.setText(server);
+                break;
+            case "EIGHT":
+              tableEightServer.setText(server);
+                break;
+            case "NINE":
+               tableNineServer.setText(server);
+                break;
+            default:
+              // code block
+                System.out.println("Tables: Something has gone terribly wrong in the set color method, please contact support");
+        }
+    } 
+    
+    
+       
     
     public void setTableColor(String selectedTable, Color c){
         
@@ -73,6 +114,15 @@ public class Tables extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tableNineServer = new javax.swing.JLabel();
+        tableOneServer = new javax.swing.JLabel();
+        tableSixServer = new javax.swing.JLabel();
+        tableFiveServer = new javax.swing.JLabel();
+        tableTwoServer = new javax.swing.JLabel();
+        tableThreeServer = new javax.swing.JLabel();
+        tableFourServer = new javax.swing.JLabel();
+        tableSevenServer = new javax.swing.JLabel();
+        tableEightServer = new javax.swing.JLabel();
         applicationTitleLabel = new javax.swing.JLabel();
         tableOne = new javax.swing.JButton();
         tableTwo = new javax.swing.JButton();
@@ -93,6 +143,60 @@ public class Tables extends javax.swing.JPanel {
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(100, 100));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tableNineServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableNineServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableNineServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableNineServer.setOpaque(true);
+        add(tableNineServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 740, 180, 30));
+
+        tableOneServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableOneServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableOneServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableOneServer.setOpaque(true);
+        add(tableOneServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 180, 30));
+
+        tableSixServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableSixServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableSixServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableSixServer.setOpaque(true);
+        add(tableSixServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 180, 30));
+
+        tableFiveServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableFiveServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableFiveServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableFiveServer.setOpaque(true);
+        add(tableFiveServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 180, 30));
+
+        tableTwoServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableTwoServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableTwoServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableTwoServer.setOpaque(true);
+        add(tableTwoServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 180, 30));
+
+        tableThreeServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableThreeServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableThreeServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableThreeServer.setOpaque(true);
+        add(tableThreeServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 240, 180, 30));
+
+        tableFourServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableFourServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableFourServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableFourServer.setOpaque(true);
+        add(tableFourServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 490, 180, 30));
+
+        tableSevenServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableSevenServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableSevenServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableSevenServer.setOpaque(true);
+        add(tableSevenServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 740, 180, 30));
+
+        tableEightServer.setBackground(new java.awt.Color(0, 0, 0));
+        tableEightServer.setForeground(new java.awt.Color(255, 255, 0));
+        tableEightServer.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        tableEightServer.setOpaque(true);
+        add(tableEightServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 740, 180, 30));
 
         applicationTitleLabel.setBackground(new java.awt.Color(51, 51, 0));
         applicationTitleLabel.setFont(new java.awt.Font("Jokerman", 1, 48)); // NOI18N
@@ -237,43 +341,45 @@ public class Tables extends javax.swing.JPanel {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant3.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
         jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
+        jLabel7.setOpaque(true);
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1480, 950));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        controller.showTableManagmentScreen("One");
+        controller.showTableManagmentScreen("One", "One");
+       
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
-        controller.showTableManagmentScreen("Two");
+        controller.showTableManagmentScreen("Two", "Two");
     }//GEN-LAST:event_tableTwoActionPerformed
 
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
-        controller.showTableManagmentScreen("Three");
+        controller.showTableManagmentScreen("Three", "Three");
     }//GEN-LAST:event_tableThreeActionPerformed
 
     private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
-       controller.showTableManagmentScreen("Four");
+       controller.showTableManagmentScreen("Four", "Four");
     }//GEN-LAST:event_tableFourActionPerformed
 
     private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
-        controller.showTableManagmentScreen("Five");
+        controller.showTableManagmentScreen("Five", "Five");
     }//GEN-LAST:event_tableFiveActionPerformed
 
     private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
-       controller.showTableManagmentScreen("Six");
+       controller.showTableManagmentScreen("Six", "Six");
     }//GEN-LAST:event_tableSixActionPerformed
 
     private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
-        controller.showTableManagmentScreen("Seven");
+        controller.showTableManagmentScreen("Seven", "Seven");
     }//GEN-LAST:event_tableSevenActionPerformed
 
     private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
-        controller.showTableManagmentScreen("Eight");
+        controller.showTableManagmentScreen("Eight", "Eight");
     }//GEN-LAST:event_tableEightActionPerformed
 
     private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
-       controller.showTableManagmentScreen("Nine");
+       controller.showTableManagmentScreen("Nine", "Nine");
     }//GEN-LAST:event_tableNineActionPerformed
 
 
@@ -286,14 +392,23 @@ public class Tables extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JButton tableEight;
+    public javax.swing.JLabel tableEightServer;
     private javax.swing.JButton tableFive;
+    public javax.swing.JLabel tableFiveServer;
     private javax.swing.JButton tableFour;
+    public javax.swing.JLabel tableFourServer;
     private javax.swing.JButton tableNine;
+    public javax.swing.JLabel tableNineServer;
     private javax.swing.JButton tableOne;
+    public javax.swing.JLabel tableOneServer;
     private javax.swing.JButton tableSeven;
+    public javax.swing.JLabel tableSevenServer;
     private javax.swing.JButton tableSix;
+    public javax.swing.JLabel tableSixServer;
     private javax.swing.JButton tableThree;
+    public javax.swing.JLabel tableThreeServer;
     private javax.swing.JButton tableTwo;
+    public javax.swing.JLabel tableTwoServer;
     // End of variables declaration//GEN-END:variables
     Controller controller; 
 }

@@ -52,11 +52,27 @@ public class Controller {
         
     }
     
-    public void showTableManagmentScreen(String tableSelected){
-        TableManagement tm = new TableManagement(tableSelected, this);
+    public void showTableManagmentScreen(String tableSelected, String serverSelected){
+        TableManagement tm = new TableManagement(tableSelected, serverSelected, this);
             tm.setVisible(true);
-        
+           
     }
+    
+    public void updateServer(String selectedTable, String testServer){ 
+       
+        updateTableServer(selectedTable, testServer);
+        tables.tableOneServer.setText(testServer); //just testing here
+        
+       
+    }
+    
+    public void updateTableServer(String selectedTable, String testServer){
+       
+       
+     
+    }
+    
+   
     public void updateTableStatus(String selectedTable, String status){ //updates the database
         System.out.println("Setting table " + selectedTable + "'s status to " + status);
         if(status.equalsIgnoreCase("dirty")){
@@ -157,7 +173,6 @@ public class Controller {
         }
         
        
-    
     }
     public void login(String moduleClicked, String code){
         if(moduleClicked.equalsIgnoreCase("TimeCard")){
@@ -313,4 +328,6 @@ public class Controller {
         
         
     }
+
+   
 }
