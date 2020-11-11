@@ -309,40 +309,40 @@ public class Tables extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        controller.showTableManagmentScreen("One", "Color");
+        controller.showTableManagmentScreen("One");
        
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
-        controller.showTableManagmentScreen("Two", "Color");
+        controller.showTableManagmentScreen("Two");
     }//GEN-LAST:event_tableTwoActionPerformed
 
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
-        controller.showTableManagmentScreen("Three", "Color");
+        controller.showTableManagmentScreen("Three");
     }//GEN-LAST:event_tableThreeActionPerformed
 
     private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
-       controller.showTableManagmentScreen("Four", "Color");
+       controller.showTableManagmentScreen("Four");
     }//GEN-LAST:event_tableFourActionPerformed
 
     private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
-        controller.showTableManagmentScreen("Five", "Color");
+        controller.showTableManagmentScreen("Five");
     }//GEN-LAST:event_tableFiveActionPerformed
 
     private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
-       controller.showTableManagmentScreen("Six", "Color");
+       controller.showTableManagmentScreen("Six");
     }//GEN-LAST:event_tableSixActionPerformed
 
     private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
-        controller.showTableManagmentScreen("Seven", "Color");
+        controller.showTableManagmentScreen("Seven");
     }//GEN-LAST:event_tableSevenActionPerformed
 
     private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
-        controller.showTableManagmentScreen("Eight", "Color");
+        controller.showTableManagmentScreen("Eight");
     }//GEN-LAST:event_tableEightActionPerformed
 
     private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
-       controller.showTableManagmentScreen("Nine", "Color");
+       controller.showTableManagmentScreen("Nine");
     }//GEN-LAST:event_tableNineActionPerformed
 
 

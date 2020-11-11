@@ -23,10 +23,11 @@ public class TableManagement extends javax.swing.JFrame {
         initComponents();
     }
     
-    public TableManagement(String tableSelected, String serverSelected, Controller c){
+    public TableManagement(String tableSelected, Controller c){
         initComponents();
         controller = c;
         this.tableSelected = tableSelected;
+        
        
        
         
@@ -48,7 +49,7 @@ public class TableManagement extends javax.swing.JFrame {
         TableManagement = new javax.swing.JComboBox<>();
         updateTableStatus = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        assignServer = new javax.swing.JComboBox<>();
+        selectServer = new javax.swing.JComboBox<>();
         updateServer = new javax.swing.JButton();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant3.jpg"))); // NOI18N
@@ -91,13 +92,13 @@ public class TableManagement extends javax.swing.JFrame {
             }
         });
 
-        assignServer.setBackground(new java.awt.Color(255, 255, 0));
-        assignServer.setEditable(true);
-        assignServer.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        assignServer.setBorder(new javax.swing.border.MatteBorder(null));
-        assignServer.addActionListener(new java.awt.event.ActionListener() {
+        selectServer.setBackground(new java.awt.Color(255, 255, 0));
+        selectServer.setEditable(true);
+        selectServer.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        selectServer.setBorder(new javax.swing.border.MatteBorder(null));
+        selectServer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignServerActionPerformed(evt);
+                selectServerActionPerformed(evt);
             }
         });
 
@@ -128,7 +129,7 @@ public class TableManagement extends javax.swing.JFrame {
                             .addComponent(TableManagement, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(assignServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(selectServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(updateServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
@@ -138,7 +139,7 @@ public class TableManagement extends javax.swing.JFrame {
                 .addGap(88, 88, 88)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TableManagement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(assignServer))
+                    .addComponent(selectServer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateTableStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,11 +179,12 @@ public class TableManagement extends javax.swing.JFrame {
         controller.updateTableStatus(tableSelected, status); 
     }//GEN-LAST:event_updateTableStatusActionPerformed
 
-    private void assignServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignServerActionPerformed
+    private void selectServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectServerActionPerformed
       
-    }//GEN-LAST:event_assignServerActionPerformed
+    }//GEN-LAST:event_selectServerActionPerformed
 
     private void updateServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateServerActionPerformed
+       String tableServer = selectServer.getSelectedItem().toString();
        
     }//GEN-LAST:event_updateServerActionPerformed
 
@@ -194,10 +196,10 @@ public class TableManagement extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> TableManagement;
-    private javax.swing.JComboBox<String> assignServer;
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> selectServer;
     private javax.swing.JButton updateServer;
     private javax.swing.JButton updateTableStatus;
     // End of variables declaration//GEN-END:variables

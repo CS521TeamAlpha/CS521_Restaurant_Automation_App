@@ -52,13 +52,15 @@ public class Controller {
         
     }
     
-    public void showTableManagmentScreen(String tableSelected, String serverSelected){
-        TableManagement tm = new TableManagement(tableSelected, serverSelected, this);
+    public void showTableManagmentScreen(String tableSelected){
+        TableManagement tm = new TableManagement(tableSelected, this);
             tm.setVisible(true);
            
     }
     
- 
+   public void updateServer(String serverSelected, String tableServer){
+       
+   }
     
     
     public void updateTableStatus(String selectedTable, String status){ //updates the database

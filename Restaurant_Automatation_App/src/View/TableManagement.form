@@ -77,7 +77,7 @@
                           </Group>
                           <EmptySpace pref="36" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="assignServer" alignment="1" min="-2" pref="201" max="-2" attributes="0"/>
+                              <Component id="selectServer" alignment="1" min="-2" pref="201" max="-2" attributes="0"/>
                               <Component id="updateServer" alignment="1" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -92,7 +92,7 @@
                   <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="TableManagement" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="assignServer" alignment="3" max="32767" attributes="0"/>
+                      <Component id="selectServer" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="111" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -171,7 +171,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="assignServer">
+        <Component class="javax.swing.JComboBox" name="selectServer">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" red="ff" type="rgb"/>
@@ -190,7 +190,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignServerActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectServerActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
