@@ -58,21 +58,9 @@ public class Controller {
            
     }
     
-    public void updateServer(String selectedTable, String testServer){ 
-       
-        updateTableServer(selectedTable, testServer);
-        tables.tableOneServer.setText(testServer); //just testing here
-        
-       
-    }
+ 
     
-    public void updateTableServer(String selectedTable, String testServer){
-       
-       
-     
-    }
     
-   
     public void updateTableStatus(String selectedTable, String status){ //updates the database
         System.out.println("Setting table " + selectedTable + "'s status to " + status);
         if(status.equalsIgnoreCase("dirty")){

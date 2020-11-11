@@ -30,44 +30,7 @@ public class Tables extends javax.swing.JPanel {
         controller = c; 
     }
     
-    public void setTableServer(String server){
-        
-        switch(server.toUpperCase()) {
-            case "ONE":
-               tableOneServer.setText(server);
-                break;
-            case "TWO":
-                tableTwoServer.setText(server);
-                break;
-            case "THREE":
-                tableThreeServer.setText(server);
-                break;
-            case "FOUR":
-               tableFourServer.setText(server);
-                break;
-            case "FIVE":
-                tableFiveServer.setText(server);
-                break;
-            case "SIX":
-               tableSixServer.setText(server);
-                break;
-            case "SEVEN":
-                tableSevenServer.setText(server);
-                break;
-            case "EIGHT":
-              tableEightServer.setText(server);
-                break;
-            case "NINE":
-               tableNineServer.setText(server);
-                break;
-            default:
-              // code block
-                System.out.println("Tables: Something has gone terribly wrong in the set color method, please contact support");
-        }
-    } 
-    
-    
-       
+          
     
     public void setTableColor(String selectedTable, Color c){
         
@@ -346,40 +309,40 @@ public class Tables extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        controller.showTableManagmentScreen("One", "One");
+        controller.showTableManagmentScreen("One"));
        
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
-        controller.showTableManagmentScreen("Two", "Two");
+        controller.showTableManagmentScreen("Two");
     }//GEN-LAST:event_tableTwoActionPerformed
 
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
-        controller.showTableManagmentScreen("Three", "Three");
+        controller.showTableManagmentScreen("Three");
     }//GEN-LAST:event_tableThreeActionPerformed
 
     private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
-       controller.showTableManagmentScreen("Four", "Four");
+       controller.showTableManagmentScreen("Four");
     }//GEN-LAST:event_tableFourActionPerformed
 
     private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
-        controller.showTableManagmentScreen("Five", "Five");
+        controller.showTableManagmentScreen("Five");
     }//GEN-LAST:event_tableFiveActionPerformed
 
     private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
-       controller.showTableManagmentScreen("Six", "Six");
+       controller.showTableManagmentScreen("Six");
     }//GEN-LAST:event_tableSixActionPerformed
 
     private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
-        controller.showTableManagmentScreen("Seven", "Seven");
+        controller.showTableManagmentScreen("Seven");
     }//GEN-LAST:event_tableSevenActionPerformed
 
     private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
-        controller.showTableManagmentScreen("Eight", "Eight");
+        controller.showTableManagmentScreen("Eight");
     }//GEN-LAST:event_tableEightActionPerformed
 
     private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
-       controller.showTableManagmentScreen("Nine", "Nine");
+       controller.showTableManagmentScreen("Nine");
     }//GEN-LAST:event_tableNineActionPerformed
 
 

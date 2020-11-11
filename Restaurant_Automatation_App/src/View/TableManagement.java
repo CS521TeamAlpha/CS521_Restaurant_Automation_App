@@ -27,7 +27,7 @@ public class TableManagement extends javax.swing.JFrame {
         initComponents();
         controller = c;
         this.tableSelected = tableSelected;
-        this.serverSelected = serverSelected;
+       
        
         
     }
@@ -164,7 +164,7 @@ public class TableManagement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TableManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableManagementActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_TableManagementActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -183,8 +183,7 @@ public class TableManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_assignServerActionPerformed
 
     private void updateServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateServerActionPerformed
-        String testServer = assignServer.getSelectedItem().toString();
-        controller.updateServer(serverSelected, testServer);
+       
     }//GEN-LAST:event_updateServerActionPerformed
 
     /**
