@@ -7,6 +7,8 @@ package View;
 
 import Controller.*;
 import java.awt.*;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 //import javafx.scene.text.Text;
 
@@ -30,8 +32,42 @@ public class Tables extends javax.swing.JPanel {
         controller = c; 
     }
     
-          
-    
+        public void setTableServer(String selectedTable, String server){
+        
+        
+        switch(selectedTable.toUpperCase()) {
+            case "ONE":
+                tableOneServer.setText(server);
+                break;
+            case "TWO":
+                tableTwoServer.setText(server);
+                break;
+            case "THREE":
+               tableThreeServer.setText(server);
+                break;
+            case "FOUR":
+              tableFourServer.setText(server);
+                break;
+            case "FIVE":
+              tableFiveServer.setText(server);
+                break;
+            case "SIX":
+               tableSixServer.setText(server);
+                break;
+            case "SEVEN":
+                tableSevenServer.setText(server);
+                break;
+            case "EIGHT":
+               tableEightServer.setText(server);
+                break;
+            case "NINE":
+                tableNineServer.setText(server);
+                break;
+            default:
+              // code block
+                System.out.println("Tables: Something has gone terribly wrong in the set color method, please contact support");
+        }  
+        }
     public void setTableColor(String selectedTable, Color c){
         
         

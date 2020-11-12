@@ -59,7 +59,7 @@ public class Controller {
     }
     
    public void updateServer(String serverSelected, String tableServer){
-       
+       tables.setTableServer(serverSelected, tableServer);
    }
     
     

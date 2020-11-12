@@ -189,7 +189,7 @@ public class TableManagement extends javax.swing.JFrame {
 
     private void updateServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateServerActionPerformed
        String tableServer = selectServer.getSelectedItem().toString();
-       
+        controller.updateServer(tableSelected, tableServer);
     }//GEN-LAST:event_updateServerActionPerformed
 
     /**
