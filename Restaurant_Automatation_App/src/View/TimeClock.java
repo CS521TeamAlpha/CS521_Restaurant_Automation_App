@@ -43,14 +43,17 @@ public class TimeClock extends javax.swing.JFrame {
            String formattedTime = formatTime.format(currentTime);
            displayClock.setText(formattedTime);
            newDate.setText(LocalDate.now().toString());
-           
+          
         });
         updateTimer.start();
         nameLabel.setText("Currently Logged in as: " + employeeName);
         
+        
     
     }
 
+   
+    
      
     /**
      * This method is called from within the constructor to initialize the form.
@@ -199,6 +202,7 @@ public class TimeClock extends javax.swing.JFrame {
     private void clockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockInActionPerformed
         GregorianCalendar now = new GregorianCalendar(); 
         controller.clockIn(now);
+        
         
     }//GEN-LAST:event_clockInActionPerformed
 
