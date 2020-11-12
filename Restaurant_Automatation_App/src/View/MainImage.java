@@ -87,6 +87,11 @@ public class MainImage extends javax.swing.JFrame {
         serverLoginButton.setForeground(new java.awt.Color(255, 255, 0));
         serverLoginButton.setText("Server");
         serverLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        serverLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serverLoginButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(serverLoginButton);
         serverLoginButton.setBounds(1050, 330, 260, 170);
 
@@ -95,6 +100,11 @@ public class MainImage extends javax.swing.JFrame {
         kitchenLoginButton.setForeground(new java.awt.Color(255, 255, 0));
         kitchenLoginButton.setText("Kitchen");
         kitchenLoginButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        kitchenLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kitchenLoginButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(kitchenLoginButton);
         kitchenLoginButton.setBounds(1410, 330, 260, 170);
 
@@ -149,7 +159,7 @@ public class MainImage extends javax.swing.JFrame {
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
 
-        //controller.showLoginScreen("Manager");
+        Controller.showLoginScreen("TimeCard");
 
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
@@ -164,6 +174,14 @@ public class MainImage extends javax.swing.JFrame {
         Controller.showBusserModule();
         System.out.println("action performed");
     }//GEN-LAST:event_busserLoginButtonActionPerformed
+
+    private void serverLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serverLoginButtonActionPerformed
+        Controller.showLoginScreen("TimeCard");
+    }//GEN-LAST:event_serverLoginButtonActionPerformed
+
+    private void kitchenLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitchenLoginButtonActionPerformed
+        Controller.showLoginScreen("TimeCard");
+    }//GEN-LAST:event_kitchenLoginButtonActionPerformed
 
    
     /**

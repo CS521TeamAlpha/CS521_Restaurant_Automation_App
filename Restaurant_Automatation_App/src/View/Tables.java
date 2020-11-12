@@ -32,10 +32,10 @@ public class Tables extends javax.swing.JPanel {
         controller = c; 
     }
     
-        public void setTableServer(String selectedTable, String server){
+        public void setTableServer(String selectedServer, String server){
         
         
-        switch(selectedTable.toUpperCase()) {
+        switch(selectedServer.toUpperCase()) {
             case "ONE":
                 tableOneServer.setText(server);
                 break;
