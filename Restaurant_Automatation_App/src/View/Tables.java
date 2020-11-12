@@ -8,7 +8,7 @@ package View;
 import Controller.*;
 import java.awt.*;
 import java.util.Locale;
-import javafx.scene.text.Text;
+//import javafx.scene.text.Text;
 
 /**
  *

@@ -170,12 +170,12 @@ public class Controller {
             System.out.println("Timecard was clicked... prearing to login: " + code);
             //database.runSelectQuery("Select * from Employee");
             if(database.findEmployeeByloginCode(code)){
+                
                 resultColumn = database.getCurrentColumn();
                 resultRow = database.getCurrentRow();
                 System.out.println("Logged in as: "  + resultRow.get(1));
                 TimeClock tc = new TimeClock(resultRow.get(1), this);
                 tc.setVisible(true);
-                
                 /*
                 for(int i = 0; i < resultColumn.size(); i++){
                     System.out.print(resultRow.get(i)); 
@@ -213,6 +213,10 @@ public class Controller {
         // Displaying grogorian date ia SimpleDateFormat 
         System.out.print("SimpleDateFormat: "+ dateFormatted); 
         String query = "INSERT INTO TimeCard (employeeId, clockInTime) VALUES ('" + resultRow.get(0) + "', '" + dateFormatted + "')";
+        
+        database.runInsertQuery(query);
+        
+        query = "UPDATE Employee SET clockedIn = 'TRUE' WHERE employeeId = '" + resultRow.get(0) + "'";
         
         database.runInsertQuery(query);
         
@@ -318,6 +322,13 @@ public class Controller {
         
         
     }
-
+    
+    public String[] getServerList(){
+    
+        String query = "SELECT * FROM `Employee` Left Join Position on Position.positionId = Employee.positionId Where Position.Name = 'Server' AND Employee.clockedIn = 'TRUE'";
+        
+        return database.grabServerList(query);
+        
+    }
    
 }

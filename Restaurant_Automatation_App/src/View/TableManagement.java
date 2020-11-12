@@ -28,7 +28,11 @@ public class TableManagement extends javax.swing.JFrame {
         controller = c;
         this.tableSelected = tableSelected;
         
-       
+        String[] args = { "Person A", "PersonB", "Person C" };
+        
+        args = controller.getServerList(); 
+        
+        selectServer.setModel(new javax.swing.DefaultComboBoxModel<>(args));
        
         
     }

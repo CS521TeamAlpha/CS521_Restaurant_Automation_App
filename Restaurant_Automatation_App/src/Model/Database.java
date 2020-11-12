@@ -15,8 +15,8 @@ public class Database {
     private String DB_URL = "";
     private String USER = "";
     private String PASS = "";   
-    private ArrayList<String> column = new ArrayList<String>();
-    private ArrayList<String> row = new ArrayList<String>();
+    private ArrayList<String> column;
+    private ArrayList<String> row;
     
     
     public Database(String DB_URL, String USER,String PASS){
@@ -41,6 +41,8 @@ public class Database {
         String query = "Select * from Employee";
         Connection conn = null;
         Statement statement = null;
+        column = new ArrayList<String>();
+        row = new ArrayList<String>();
 
         try{
 
@@ -394,6 +396,67 @@ public class Database {
         }//end try
         System.out.println("Goodbye!");    
         return "null";
+    }
+    public String[] grabServerList(String query){
+        Connection conn = null;
+        Statement statement = null;
+        
+        try{
+            
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            ResultSet rs = statement.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numColumns = rs.getMetaData().getColumnCount();
+            //STEP 5: Extract data from result set
+            
+            List<String> temp = new ArrayList<String>();
+            while(rs.next()){
+                //Retrieve by column name
+                String serverName = rs.getString("firstName");
+                
+                temp.add(serverName);  
+         
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            statement.close();
+            conn.close();
+            
+            String result[]=temp.toArray(new String[temp.size()]);
+
+            return result; 
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+          
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+        return null;
     }
    
 }
