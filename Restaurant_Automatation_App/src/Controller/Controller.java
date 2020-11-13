@@ -59,7 +59,7 @@ public class Controller {
     }
     
    public void updateServer(String serverSelected, String tableServer){
-       tables.setTableServer(serverSelected, tableServer);
+       tables.setTableServer(serverSelected, tableServer) ;
    }
     
     
@@ -219,6 +219,8 @@ public class Controller {
         query = "UPDATE Employee SET clockedIn = 'TRUE' WHERE employeeId = '" + resultRow.get(0) + "'";
         
         database.runInsertQuery(query);
+      
+        
         
         
     }

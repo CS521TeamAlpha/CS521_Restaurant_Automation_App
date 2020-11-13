@@ -50,6 +50,7 @@ public class TableManagement extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         TableManagement = new javax.swing.JComboBox<>();
         updateTableStatus = new javax.swing.JButton();
         exit = new javax.swing.JButton();
@@ -65,6 +66,8 @@ public class TableManagement extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         jPanel1.setOpaque(false);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant3.jpg"))); // NOI18N
 
         TableManagement.setBackground(new java.awt.Color(255, 255, 0));
         TableManagement.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
@@ -97,7 +100,6 @@ public class TableManagement extends javax.swing.JFrame {
         });
 
         selectServer.setBackground(new java.awt.Color(255, 255, 0));
-        selectServer.setEditable(true);
         selectServer.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
         selectServer.setBorder(new javax.swing.border.MatteBorder(null));
         selectServer.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +138,8 @@ public class TableManagement extends javax.swing.JFrame {
                             .addComponent(selectServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(updateServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 282, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,6 +155,8 @@ public class TableManagement extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,6 +208,7 @@ public class TableManagement extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TableManagement;
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> selectServer;
     private javax.swing.JButton updateServer;
