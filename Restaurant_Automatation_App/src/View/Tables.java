@@ -104,6 +104,10 @@ public class Tables extends javax.swing.JPanel {
                 System.out.println("Tables: Something has gone terribly wrong in the set color method, please contact support");
         }
     }
+    
+   
+        
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -346,6 +350,7 @@ public class Tables extends javax.swing.JPanel {
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
         controller.showTableManagmentScreen("One");
+                   
        
     }//GEN-LAST:event_tableOneActionPerformed
 

@@ -325,11 +325,51 @@ public class Controller {
         
     }
     
+    public void showServerModule(){
+        tables = new Tables(this);
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Table Management");
+        frame.add(tables);
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        updateAllTableColor();
+    }
+    
+    public void enterOrder(){
+        OrderEntryScreen enterOrder = new OrderEntryScreen();
+        enterOrder.setVisible(true);
+       
+    }
+    
+    public void showKitchenModule(){
+      tables = new Tables(this);
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Table Management");
+        frame.add(tables);
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        updateAllTableColor();  
+    }
+    
+        
     public String[] getServerList(){
     
         String query = "SELECT * FROM `Employee` Left Join Position on Position.positionId = Employee.positionId Where Position.Name = 'Server' AND Employee.clockedIn = 'TRUE'";
         
         return database.grabServerList(query);
+        
+    }
+    
+    public String[] getMenuItems(){
+        
+        String query = "SELCT * FROM `MenuItems";
+        return database.getMenuItems(query);
         
     }
    

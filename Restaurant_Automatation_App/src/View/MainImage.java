@@ -159,7 +159,7 @@ public class MainImage extends javax.swing.JFrame {
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
 
-        Controller.showLoginScreen("TimeCard");
+        
 
     }//GEN-LAST:event_managerLoginButtonActionPerformed
 
@@ -176,11 +176,11 @@ public class MainImage extends javax.swing.JFrame {
     }//GEN-LAST:event_busserLoginButtonActionPerformed
 
     private void serverLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serverLoginButtonActionPerformed
-        Controller.showLoginScreen("TimeCard");
+        Controller.showServerModule();
     }//GEN-LAST:event_serverLoginButtonActionPerformed
 
     private void kitchenLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitchenLoginButtonActionPerformed
-        Controller.showLoginScreen("TimeCard");
+        Controller.showKitchenModule();
     }//GEN-LAST:event_kitchenLoginButtonActionPerformed
 
    

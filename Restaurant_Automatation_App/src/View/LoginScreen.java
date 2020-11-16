@@ -56,7 +56,6 @@ public class LoginScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setForeground(new java.awt.Color(255, 255, 0));
         setMinimumSize(new java.awt.Dimension(450, 450));
-        setPreferredSize(new java.awt.Dimension(250, 675));
         setResizable(false);
         setSize(new java.awt.Dimension(750, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
