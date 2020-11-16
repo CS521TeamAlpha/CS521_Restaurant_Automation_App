@@ -185,29 +185,29 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        // comment
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void seatOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatOneActionPerformed
         
         
-        CheckListMenu menu = new CheckListMenu();
+        MenuList menu = new MenuList();
         menu.setVisible(true);
-        System.out.println();
+      
     }//GEN-LAST:event_seatOneActionPerformed
 
     private void seatTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatTwoActionPerformed
-       CheckListMenu menu = new CheckListMenu();
+        MenuList menu = new MenuList();
         menu.setVisible(true);
     }//GEN-LAST:event_seatTwoActionPerformed
 
     private void seatThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatThreeActionPerformed
-       CheckListMenu menu = new CheckListMenu();
+       MenuList menu = new MenuList();
         menu.setVisible(true);
     }//GEN-LAST:event_seatThreeActionPerformed
 
     private void seatFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatFourActionPerformed
-        CheckListMenu menu = new CheckListMenu();
+        MenuList menu = new MenuList();
         menu.setVisible(true);
     }//GEN-LAST:event_seatFourActionPerformed
 
