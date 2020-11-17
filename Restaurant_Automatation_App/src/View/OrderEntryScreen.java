@@ -41,7 +41,7 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         exit = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel6.setBackground(new java.awt.Color(0, 0, 0));
         jPanel6.setForeground(new java.awt.Color(255, 255, 0));
