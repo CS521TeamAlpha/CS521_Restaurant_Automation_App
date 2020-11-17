@@ -6,6 +6,7 @@
 package View;
 
 import java.util.*;
+import java.lang.StringBuilder;
 
 /**
  *
@@ -14,6 +15,7 @@ import java.util.*;
 public class MenuList extends javax.swing.JFrame {
     
     OrderEntryScreen OrderScreen; 
+    StringBuilder menuItems = new StringBuilder();
     /**
      * Creates new form MenuList
      */
@@ -59,28 +61,55 @@ public class MenuList extends javax.swing.JFrame {
         dessertsComboBox = new javax.swing.JComboBox<>();
         drinksComboBox = new javax.swing.JComboBox<>();
         addEntreeButton = new javax.swing.JButton();
-        entreeModifierField = new javax.swing.JTextField();
         entreeLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        dessertsModifierField = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        entreeModifierField = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        sidesModifierField = new javax.swing.JTextPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        drinksModifierField = new javax.swing.JTextPane();
+        addDessertsButton = new javax.swing.JButton();
+        addSidesButton = new javax.swing.JButton();
+        addDrinksButton = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 0));
+
+        sidesLabel.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        sidesLabel.setForeground(new java.awt.Color(255, 255, 0));
         sidesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sidesLabel.setText("Sides");
         sidesLabel.setBorder(new javax.swing.border.MatteBorder(null));
 
+        entreeLabel.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        entreeLabel.setForeground(new java.awt.Color(255, 255, 0));
         entreeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         entreeLabel.setText("Entree");
         entreeLabel.setBorder(new javax.swing.border.MatteBorder(null));
 
+        dessertsLabel.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        dessertsLabel.setForeground(new java.awt.Color(255, 255, 0));
         dessertsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dessertsLabel.setText("Desserts");
         dessertsLabel.setBorder(new javax.swing.border.MatteBorder(null));
 
+        drinksLabel.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        drinksLabel.setForeground(new java.awt.Color(255, 255, 0));
         drinksLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         drinksLabel.setText("Drinks");
         drinksLabel.setBorder(new javax.swing.border.MatteBorder(null));
 
+        addEntreeButton.setBackground(new java.awt.Color(255, 255, 0));
+        addEntreeButton.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
         addEntreeButton.setText("add");
         addEntreeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,11 +117,81 @@ public class MenuList extends javax.swing.JFrame {
             }
         });
 
-        entreeModifierField.setText("extra cheese ");
-
+        entreeLabel1.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        entreeLabel1.setForeground(new java.awt.Color(255, 255, 0));
         entreeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         entreeLabel1.setText("Modifiers");
         entreeLabel1.setBorder(new javax.swing.border.MatteBorder(null));
+
+        jLabel1.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Modifiers");
+        jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
+
+        jLabel2.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Modifiers");
+        jLabel2.setBorder(new javax.swing.border.MatteBorder(null));
+
+        jLabel3.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Modifiers");
+        jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
+
+        dessertsModifierField.setBackground(new java.awt.Color(255, 255, 0));
+        dessertsModifierField.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane1.setViewportView(dessertsModifierField);
+
+        entreeModifierField.setBackground(new java.awt.Color(255, 255, 0));
+        entreeModifierField.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane2.setViewportView(entreeModifierField);
+
+        sidesModifierField.setBackground(new java.awt.Color(255, 255, 0));
+        sidesModifierField.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane3.setViewportView(sidesModifierField);
+
+        drinksModifierField.setBackground(new java.awt.Color(255, 255, 0));
+        drinksModifierField.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane4.setViewportView(drinksModifierField);
+
+        addDessertsButton.setBackground(new java.awt.Color(255, 255, 0));
+        addDessertsButton.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        addDessertsButton.setText("add");
+        addDessertsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addDessertsButtonActionPerformed(evt);
+            }
+        });
+
+        addSidesButton.setBackground(new java.awt.Color(255, 255, 0));
+        addSidesButton.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        addSidesButton.setText("add");
+        addSidesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addSidesButtonActionPerformed(evt);
+            }
+        });
+
+        addDrinksButton.setBackground(new java.awt.Color(255, 255, 0));
+        addDrinksButton.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        addDrinksButton.setText("add");
+        addDrinksButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addDrinksButtonActionPerformed(evt);
+            }
+        });
+
+        exit.setBackground(new java.awt.Color(255, 255, 0));
+        exit.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,26 +201,52 @@ public class MenuList extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(entreeLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(entreeModifierField)
-                        .addComponent(addEntreeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(entreeComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(entreeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
-                .addGap(27, 27, 27)
+                    .addComponent(addEntreeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(entreeComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(entreeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addSidesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sidesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sidesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sidesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sidesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dessertsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dessertsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(drinksComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(drinksLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(256, 256, 256)
+                                        .addComponent(drinksComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(215, 215, 215)
+                                        .addComponent(drinksLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 4, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(addDessertsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dessertsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dessertsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addDrinksButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(357, 357, 357))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,88 +263,113 @@ public class MenuList extends javax.swing.JFrame {
                     .addComponent(sidesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dessertsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(drinksComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(entreeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(entreeModifierField, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addEntreeButton)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(entreeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addEntreeButton)
+                    .addComponent(addSidesButton)
+                    .addComponent(addDessertsButton)
+                    .addComponent(addDrinksButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addEntreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEntreeButtonActionPerformed
-        // TODO add your handling code here:
         String s = OrderScreen.getText(); 
         s += "\n";
         s += String.valueOf(entreeComboBox.getSelectedItem());
-        s += ": " + entreeModifierField.getText(); 
-        OrderScreen.setText(s); 
+        s += ": " + entreeModifierField.getText();
+        OrderScreen.setText(s);
+        
+        
     }//GEN-LAST:event_addEntreeButtonActionPerformed
+
+    private void addDessertsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDessertsButtonActionPerformed
+        String s = OrderScreen.getText(); 
+        s += "\n";
+        s += String.valueOf(dessertsComboBox.getSelectedItem());
+        s += ": " + dessertsModifierField.getText(); 
+       OrderScreen.setText(s);
+    }//GEN-LAST:event_addDessertsButtonActionPerformed
+
+    private void addSidesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSidesButtonActionPerformed
+       String s = OrderScreen.getText(); 
+       s += "\n";
+       s += String.valueOf(sidesComboBox.getSelectedItem());
+       s += ": " + sidesModifierField.getText(); 
+       OrderScreen.setText(s);
+    }//GEN-LAST:event_addSidesButtonActionPerformed
+
+    private void addDrinksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDrinksButtonActionPerformed
+       String s = OrderScreen.getText(); 
+       s += "\n";
+       s += String.valueOf(drinksComboBox.getSelectedItem());
+       s += ": " + drinksModifierField.getText(); 
+       OrderScreen.setText(s);
+    }//GEN-LAST:event_addDrinksButtonActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+     this.dispose();
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuList().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addDessertsButton;
+    private javax.swing.JButton addDrinksButton;
     private javax.swing.JButton addEntreeButton;
+    private javax.swing.JButton addSidesButton;
     private javax.swing.JComboBox<String> dessertsComboBox;
     private javax.swing.JLabel dessertsLabel;
+    private javax.swing.JTextPane dessertsModifierField;
     private javax.swing.JComboBox<String> drinksComboBox;
     private javax.swing.JLabel drinksLabel;
+    private javax.swing.JTextPane drinksModifierField;
     private javax.swing.JComboBox<String> entreeComboBox;
     private javax.swing.JLabel entreeLabel;
     private javax.swing.JLabel entreeLabel1;
-    private javax.swing.JTextField entreeModifierField;
+    private javax.swing.JTextPane entreeModifierField;
+    private javax.swing.JButton exit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JComboBox<String> sidesComboBox;
     private javax.swing.JLabel sidesLabel;
+    private javax.swing.JTextPane sidesModifierField;
     // End of variables declaration//GEN-END:variables
 }

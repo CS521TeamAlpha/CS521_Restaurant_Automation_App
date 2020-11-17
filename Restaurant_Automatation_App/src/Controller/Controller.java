@@ -303,8 +303,10 @@ public class Controller {
         frame.add(tables);
         frame.pack();
         frame.setSize(1470,970);
+        frame.setResizable(false);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+        
         updateAllTableColor();
         
         
@@ -318,6 +320,7 @@ public class Controller {
         frame.add(tables);
         frame.pack();
         frame.setSize(1470,970);
+        frame.setResizable(false);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();
@@ -333,6 +336,7 @@ public class Controller {
         frame.add(tables);
         frame.pack();
         frame.setSize(1470,970);
+        frame.setResizable(false);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();
@@ -353,6 +357,7 @@ public class Controller {
         frame.pack();
         frame.setSize(1470,970);
         frame.setVisible(true);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();  
     }

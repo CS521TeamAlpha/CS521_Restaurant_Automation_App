@@ -341,17 +341,18 @@ public class Tables extends javax.swing.JPanel {
         jLabel6.setOpaque(true);
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 840, 200, 50));
 
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant3.jpg"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
+        jLabel7.setText("Exit");
         jLabel7.setOpaque(true);
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1480, 950));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
         controller.showTableManagmentScreen("One");
-                   
-       
+                
+      
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
@@ -415,4 +416,6 @@ public class Tables extends javax.swing.JPanel {
     public javax.swing.JLabel tableTwoServer;
     // End of variables declaration//GEN-END:variables
     Controller controller; 
+
+   
 }
