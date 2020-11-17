@@ -6,6 +6,7 @@
 package View;
 import Controller.Controller;
 import Model.Database;
+import java.util.*;
 
 /**
  *
@@ -17,7 +18,8 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     /**
      * Creates new form Orderenteringscreen
      */
-    public OrderEntryScreen() {
+    public OrderEntryScreen(Controller c) {
+        controller = c;
         initComponents();
     }
 
@@ -191,23 +193,51 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     private void seatOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatOneActionPerformed
         
         
-        MenuList menu = new MenuList();
+        
+        Map<String, String[]> hm = new HashMap<String, String[]>(); 
+        hm = controller.getMenuItems(); 
+        
+        
+        MenuList menu = new MenuList(hm);
+        
+        
         menu.setVisible(true);
       
     }//GEN-LAST:event_seatOneActionPerformed
 
     private void seatTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatTwoActionPerformed
-        MenuList menu = new MenuList();
+           
+        Map<String, String[]> hm = new HashMap<String, String[]>(); 
+        hm = controller.getMenuItems(); 
+        
+        
+        MenuList menu = new MenuList(hm);
+        
+        
         menu.setVisible(true);
     }//GEN-LAST:event_seatTwoActionPerformed
 
     private void seatThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatThreeActionPerformed
-       MenuList menu = new MenuList();
+          
+        Map<String, String[]> hm = new HashMap<String, String[]>(); 
+        hm = controller.getMenuItems(); 
+        
+        
+        MenuList menu = new MenuList(hm);
+        
+        
         menu.setVisible(true);
     }//GEN-LAST:event_seatThreeActionPerformed
 
     private void seatFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatFourActionPerformed
-        MenuList menu = new MenuList();
+           
+        Map<String, String[]> hm = new HashMap<String, String[]>(); 
+        hm = controller.getMenuItems(); 
+        
+        
+        MenuList menu = new MenuList(hm);
+        
+        
         menu.setVisible(true);
     }//GEN-LAST:event_seatFourActionPerformed
 

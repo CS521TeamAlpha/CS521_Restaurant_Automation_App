@@ -459,7 +459,7 @@ public class Database {
         return null;
     }
     
-    public String[] getMenuItems(String query){
+    public Map<String, String[]> getMenuItems(String query){
         Connection conn = null;
         Statement statement = null;
         
@@ -476,23 +476,47 @@ public class Database {
             ResultSet rs = statement.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
             int numColumns = rs.getMetaData().getColumnCount();
-            //STEP 5: Extract data from result set
             
-            List<String> temp = new ArrayList<String>();
+            Map<String, String[]> menuItems = new HashMap<String, String[]>(); 
+            //STEP 5: Extract data from result set
+            /*
+            String[] list1 = {"entree 1","entree2"};
+            String[] list2 = {"drink2","drink","drinksss"};
+            String[] list3 = {"dessert"};
+            String[] list4 = {"sides","ssss","side numba 3", "sides numba 4"};
+
+            
+
+            menuItems.put("ENTREES", list1);
+            menuItems.put("DRINKS", list2);
+            menuItems.put("DESSERTS", list3);
+            menuItems.put("SIDES", list4);
+            */
+            List<String> entrees = new ArrayList<String>();
+            List<String> drinks = new ArrayList<String>();
+            List<String> sides = new ArrayList<String>();
+            List<String> desserts = new ArrayList<String>();
             while(rs.next()){
                 //Retrieve by column name
-                String menuItemId = rs.getString("menuItemID");
                 String name = rs.getString("name");
                 String price = rs.getString("price");
                 String category = rs.getString("category");
                 String active = rs.getString("active");       
 
-                        
-                temp.add(menuItemId);
-                temp.add(name);
-                temp.add(price);
-                temp.add(category);
-                temp.add(active);
+                if(active.equals("1")){
+                    if(category.equals("Sides")){
+                        sides.add(name);
+                    }
+                    if(category.equals("Drinks")){
+                        drinks.add(name);
+                    }
+                    if(category.equals("Entrees")){
+                        entrees.add(name);
+                    }
+                    if(category.equals("Desserts")){
+                        desserts.add(name);
+                    }
+                }
          
             }
             //STEP 6: Clean-up environment
@@ -500,9 +524,17 @@ public class Database {
             statement.close();
             conn.close();
             
-            String result[]=temp.toArray(new String[temp.size()]);
-
-            return result; 
+            String[] entreeList = entrees.toArray(new String[entrees.size()]);
+            String[] drinksList = drinks.toArray(new String[drinks.size()]);
+            String[] dessertList = desserts.toArray(new String[desserts.size()]);
+            String[] sidesList = sides.toArray(new String[sides.size()]);
+            
+            menuItems.put("ENTREES", entreeList);
+            menuItems.put("DRINKS", drinksList);
+            menuItems.put("SIDES", sidesList);
+            menuItems.put("DESSERTS", dessertList);
+            
+            return menuItems; 
             
         }catch(SQLException se){
             //Handle errors for JDBC

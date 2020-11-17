@@ -339,7 +339,7 @@ public class Controller {
     }
     
     public void enterOrder(){
-        OrderEntryScreen enterOrder = new OrderEntryScreen();
+        OrderEntryScreen enterOrder = new OrderEntryScreen(this);
         enterOrder.setVisible(true);
        
     }
@@ -366,10 +366,28 @@ public class Controller {
         
     }
     
-    public String[] getMenuItems(){
+    public  Map<String, String[]> getMenuItems(){
         
-        String query = "SELCT * FROM `MenuItems";
+        String query = "SELECT * FROM `MenuItems";
+        
+        //return database.getMenuItems(query);
+        /*
+        String[] list1 = {"entree 1","entree2"};
+        String[] list2 = {"drink2","drink","drinksss"};
+        String[] list3 = {"dessert"};
+        String[] list4 = {"sides","ssss","side numba 3", "sides numba 4"};
+        
+        Map<String, String[]> menuItems = new HashMap<String, String[]>(); 
+        
+        menuItems.put("ENTREES", list1);
+        menuItems.put("DRINKS", list2);
+        menuItems.put("DESSERTS", list3);
+        menuItems.put("SIDES", list4);
+        */
+        
+        
         return database.getMenuItems(query);
+        
         
     }
    
