@@ -12,7 +12,8 @@ import java.util.*;
  * @author Owner
  */
 public class MenuList extends javax.swing.JFrame {
-
+    
+    OrderEntryScreen OrderScreen; 
     /**
      * Creates new form MenuList
      */
@@ -23,9 +24,9 @@ public class MenuList extends javax.swing.JFrame {
         
         System.out.println("This should never be called... MenuList.java line 23ish");
     }
-    public MenuList(Map<String, String[]> hm) {
+    public MenuList(Map<String, String[]> hm, OrderEntryScreen blah) {
         
-       
+        OrderScreen = blah;
        
         initComponents();
         
@@ -57,6 +58,9 @@ public class MenuList extends javax.swing.JFrame {
         sidesComboBox = new javax.swing.JComboBox<>();
         dessertsComboBox = new javax.swing.JComboBox<>();
         drinksComboBox = new javax.swing.JComboBox<>();
+        addEntreeButton = new javax.swing.JButton();
+        entreeModifierField = new javax.swing.JTextField();
+        entreeLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -77,15 +81,32 @@ public class MenuList extends javax.swing.JFrame {
         drinksLabel.setText("Drinks");
         drinksLabel.setBorder(new javax.swing.border.MatteBorder(null));
 
+        addEntreeButton.setText("add");
+        addEntreeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addEntreeButtonActionPerformed(evt);
+            }
+        });
+
+        entreeModifierField.setText("extra cheese ");
+
+        entreeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        entreeLabel1.setText("Modifiers");
+        entreeLabel1.setBorder(new javax.swing.border.MatteBorder(null));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(entreeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(entreeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(entreeLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(entreeModifierField)
+                        .addComponent(addEntreeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(entreeComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(entreeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sidesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,7 +138,13 @@ public class MenuList extends javax.swing.JFrame {
                     .addComponent(sidesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dessertsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(drinksComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(327, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(entreeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(entreeModifierField, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addEntreeButton)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +163,15 @@ public class MenuList extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addEntreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEntreeButtonActionPerformed
+        // TODO add your handling code here:
+        String s = OrderScreen.getText(); 
+        s += "\n";
+        s += String.valueOf(entreeComboBox.getSelectedItem());
+        s += ": " + entreeModifierField.getText(); 
+        OrderScreen.setText(s); 
+    }//GEN-LAST:event_addEntreeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,12 +209,15 @@ public class MenuList extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addEntreeButton;
     private javax.swing.JComboBox<String> dessertsComboBox;
     private javax.swing.JLabel dessertsLabel;
     private javax.swing.JComboBox<String> drinksComboBox;
     private javax.swing.JLabel drinksLabel;
     private javax.swing.JComboBox<String> entreeComboBox;
     private javax.swing.JLabel entreeLabel;
+    private javax.swing.JLabel entreeLabel1;
+    private javax.swing.JTextField entreeModifierField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> sidesComboBox;
     private javax.swing.JLabel sidesLabel;
