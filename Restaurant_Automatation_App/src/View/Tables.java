@@ -19,6 +19,7 @@ import java.util.Locale;
 public class Tables extends javax.swing.JPanel {
     private String tableSelected; 
     private String TOOL_TIP_TEXT_KEY = "Blah blah";
+    private String moduleClicked = ""; 
    
     /**
      * Creates new form Tables
@@ -31,8 +32,13 @@ public class Tables extends javax.swing.JPanel {
         initComponents();
         controller = c; 
     }
+    public Tables(Controller c, String s) {
+        initComponents();
+        controller = c; 
+        moduleClicked = s; 
+    }
     
-        public void setTableServer(String selectedServer, String server){
+    public void setTableServer(String selectedServer, String server){
         
         
         switch(selectedServer.toUpperCase()) {
@@ -67,7 +73,7 @@ public class Tables extends javax.swing.JPanel {
               // code block
                 System.out.println("Tables: Something has gone terribly wrong in the set color method, please contact support");
         }  
-        }
+    }
     public void setTableColor(String selectedTable, Color c){
         
         
@@ -350,41 +356,78 @@ public class Tables extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
-        controller.showTableManagmentScreen("One");
-                
-      
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("One"); 
+        }else{
+            controller.showTableManagmentScreen("One");
+        }
+        
     }//GEN-LAST:event_tableOneActionPerformed
 
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Two"); 
+        }else{
         controller.showTableManagmentScreen("Two");
+        }
     }//GEN-LAST:event_tableTwoActionPerformed
 
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
-        controller.showTableManagmentScreen("Three");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Three"); 
+        }else{
+            controller.showTableManagmentScreen("Three");
+        }
     }//GEN-LAST:event_tableThreeActionPerformed
 
     private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
-       controller.showTableManagmentScreen("Four");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Four"); 
+        }else{
+            controller.showTableManagmentScreen("Four");
+        }
     }//GEN-LAST:event_tableFourActionPerformed
 
     private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
-        controller.showTableManagmentScreen("Five");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Five"); 
+        }else{
+            controller.showTableManagmentScreen("Five");
+        }
     }//GEN-LAST:event_tableFiveActionPerformed
 
     private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
-       controller.showTableManagmentScreen("Six");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Six"); 
+        }else{
+            controller.showTableManagmentScreen("Six");
+        }
     }//GEN-LAST:event_tableSixActionPerformed
 
     private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
-        controller.showTableManagmentScreen("Seven");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Seven"); 
+        }else{
+        
+            controller.showTableManagmentScreen("Seven");
+        }
     }//GEN-LAST:event_tableSevenActionPerformed
 
     private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
-        controller.showTableManagmentScreen("Eight");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Eight"); 
+        }else{
+        
+            controller.showTableManagmentScreen("Eight");
+        }
     }//GEN-LAST:event_tableEightActionPerformed
 
     private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
-       controller.showTableManagmentScreen("Nine");
+        if(moduleClicked.equals("kitchen")){
+            controller.showKitchenOrderScreen("Nine"); 
+        }else{
+            controller.showTableManagmentScreen("Nine");
+        }
     }//GEN-LAST:event_tableNineActionPerformed
 
 

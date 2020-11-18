@@ -223,7 +223,7 @@ public class TableManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_updateServerActionPerformed
 
     private void enterOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterOrderActionPerformed
-      controller.enterOrder();
+      controller.enterOrder(tableSelected);
     }//GEN-LAST:event_enterOrderActionPerformed
 
     /**

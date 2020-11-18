@@ -14,17 +14,27 @@ import java.lang.StringBuilder;
  * @author Vaibhav T
  */
 public class OrderEntryScreen extends javax.swing.JFrame {
+    
+    
+    private ArrayList<String> seatOneArray = new ArrayList<>();
+    private ArrayList<String> seatTwoArray = new ArrayList<>();
+    private ArrayList<String> seatThreeArray = new ArrayList<>();
+    private ArrayList<String> seatFourArray = new ArrayList<>();
 
     private Controller controller;
     StringBuilder order = new StringBuilder();
+    private int activeSeat = 0; 
+    private String selectedTable; 
     /**
      * Creates new form Orderenteringscreen
      */
-    public OrderEntryScreen(Controller c) {
+    public OrderEntryScreen(Controller c, String t) {
         controller = c;
+        selectedTable = t; 
         initComponents();
+      
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,6 +106,11 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         sendToKitchen.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
         sendToKitchen.setText("Send to Kitchen");
         sendToKitchen.setBorder(new javax.swing.border.MatteBorder(null));
+        sendToKitchen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendToKitchenActionPerformed(evt);
+            }
+        });
 
         payment.setBackground(new java.awt.Color(255, 255, 0));
         payment.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
@@ -146,11 +161,12 @@ public class OrderEntryScreen extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(seatOne, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seatTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seatThree, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seatFour, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(seatTwo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(seatOne, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seatThree, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seatFour, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
@@ -176,13 +192,31 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void setArrays(ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d){
+        seatOneArray = a;
+        seatTwoArray = b;
+        seatThreeArray = c;
+        seatFourArray = d; 
+    }
+    public ArrayList<String> getseatOneArray(){
+        return seatOneArray;
+    }
+    public ArrayList<String> getseatTwoArray(){
+        return seatTwoArray;
+    }
+    public ArrayList<String> getseatThreeArray(){
+        return seatThreeArray;
+    }
+    public ArrayList<String> getseatFourArray(){
+        return seatFourArray;
+    }
     private void seatOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatOneActionPerformed
                  
         Map<String, String[]> hm = new HashMap<String, String[]>(); 
         hm = controller.getMenuItems(); 
         
-        
+        activeSeat = 1; 
         MenuList menu = new MenuList(hm, this);
         
         
@@ -197,6 +231,7 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         Map<String, String[]> hm = new HashMap<String, String[]>(); 
         hm = controller.getMenuItems(); 
         
+        activeSeat = 2; 
         
         MenuList menu = new MenuList(hm, this);
         
@@ -212,7 +247,7 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         Map<String, String[]> hm = new HashMap<String, String[]>(); 
         hm = controller.getMenuItems(); 
         
-        
+        activeSeat = 3; 
         MenuList menu = new MenuList(hm, this);
         
         
@@ -224,17 +259,28 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         Map<String, String[]> hm = new HashMap<String, String[]>(); 
         hm = controller.getMenuItems(); 
         
-        
+        activeSeat = 4; 
         MenuList menu = new MenuList(hm, this);
         
         
         menu.setVisible(true);
     }//GEN-LAST:event_seatFourActionPerformed
+
+    private void sendToKitchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendToKitchenActionPerformed
+        // TODO add your handling code here:
+        controller.sendOrderToKitchen(Ticket.getText(), selectedTable);
+    }//GEN-LAST:event_sendToKitchenActionPerformed
     public void setText(String s){
         Ticket.setText(s);
     }
     public String getText(){
         return Ticket.getText();
+    }
+    public int getActiveSeat(){
+        if(activeSeat == 0 || activeSeat > 4){
+            return -1; 
+        }
+        return activeSeat; 
     }
     /**
      * @param args the command line arguments

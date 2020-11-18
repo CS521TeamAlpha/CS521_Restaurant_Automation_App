@@ -561,5 +561,179 @@ public class Database {
         System.out.println("Goodbye!");    
         return null;
     }
-   
+    
+    public int getLastOrderID(String query){
+        Connection conn = null;
+        Statement statement = null;
+        
+        try{
+            
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            ResultSet rs = statement.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numColumns = rs.getMetaData().getColumnCount();
+            
+  
+            while(rs.next()){
+                //Retrieve by column name
+                String id = rs.getString("orderId");
+                return Integer.parseInt(id); 
+         
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            statement.close();
+            conn.close();
+
+            
+            
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+          
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+        return -1; 
+    }
+    public int getActiveOrder(String query){
+        Connection conn = null;
+        Statement statement = null;
+        
+        try{
+            
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            ResultSet rs = statement.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numColumns = rs.getMetaData().getColumnCount();
+            
+  
+            while(rs.next()){
+                //Retrieve by column name
+                String activeOrder = rs.getString("ActiveOrder");
+                return Integer.parseInt(activeOrder); 
+         
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            statement.close();
+            conn.close();
+
+            
+            
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+          
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+        return -1; 
+    }
+    public String getOrderItems(String query){
+        Connection conn = null;
+        Statement statement = null;
+        
+        try{
+            
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            statement = conn.createStatement();
+            String sql = query; 
+            ResultSet rs = statement.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numColumns = rs.getMetaData().getColumnCount();
+            
+  
+            while(rs.next()){
+                //Retrieve by column name
+                String OrderItems = rs.getString("orderItems");
+                return (OrderItems); 
+         
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            statement.close();
+            conn.close();
+
+            
+            
+            
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+          
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+            
+        }finally{
+          //finally block used to close resources
+            try{
+            if(statement!=null)
+                statement.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+            if(conn!=null)
+                conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");    
+        return null; 
+    }
 }

@@ -16,6 +16,12 @@ public class MenuList extends javax.swing.JFrame {
     
     OrderEntryScreen OrderScreen; 
     StringBuilder menuItems = new StringBuilder();
+    
+    ArrayList<String> seatOne = new ArrayList<>();
+    ArrayList<String> seatTwo = new ArrayList<>();
+    ArrayList<String> seatThree = new ArrayList<>();
+    ArrayList<String> seatFour = new ArrayList<>();
+            
     /**
      * Creates new form MenuList
      */
@@ -37,7 +43,58 @@ public class MenuList extends javax.swing.JFrame {
         drinksComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(hm.get("DRINKS")));
         dessertsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(hm.get("DESSERTS")));
         
+        pullOrderArrays(); 
         
+    }
+    
+    public void updateOrderReceipt(){
+            
+        String seatOneHeader = "Seat 1 \n ****************************************************************** \n";
+        String seatOneOrder = ""; 
+
+        for(int i = 0; i < seatOne.size(); i++){
+            seatOneOrder += seatOne.get(i) + "\n"; 
+        }
+        
+        
+        String seatTwoHeader = "\nSeat 2 \n ****************************************************************** \n";
+        String seatTwoOrder = ""; 
+
+        for(int i = 0; i < seatTwo.size(); i++){
+            seatTwoOrder += seatTwo.get(i) + "\n"; 
+        }
+
+        
+        String seatThreeHeader = "\nSeat 3 \n ****************************************************************** \n";
+        String seatThreeOrder = ""; 
+
+        for(int i = 0; i < seatThree.size(); i++){
+            seatThreeOrder += seatThree.get(i) + "\n"; 
+        }
+
+        
+        String seatFourHeader = "\nSeat 4 \n ****************************************************************** \n";
+        String seatFourOrder = ""; 
+
+        for(int i = 0; i < seatFour.size(); i++){
+            seatFourOrder += seatFour.get(i) + "\n"; 
+        }
+        String combinedReceipt = seatOneHeader + seatOneOrder + seatTwoHeader + seatTwoOrder + seatThreeHeader + seatThreeOrder + seatFourHeader + seatFourOrder; 
+        OrderScreen.setText(combinedReceipt);
+        
+        updateOrderArrays(); 
+        
+    }
+    
+    public void updateOrderArrays(){
+        
+        OrderScreen.setArrays(seatOne, seatTwo, seatThree, seatFour); 
+    }
+    public void pullOrderArrays(){
+        seatOne = OrderScreen.getseatOneArray();
+        seatTwo = OrderScreen.getseatTwoArray();
+        seatThree = OrderScreen.getseatThreeArray();
+        seatFour = OrderScreen.getseatFourArray();
     }
     
     
@@ -302,37 +359,67 @@ public class MenuList extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addEntreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEntreeButtonActionPerformed
-        String s = OrderScreen.getText(); 
-        s += "\n";
+        String s = ""; 
         s += String.valueOf(entreeComboBox.getSelectedItem());
-        s += ": " + entreeModifierField.getText();
-        OrderScreen.setText(s);
+        s += ": " + entreeModifierField.getText(); 
+        entreeModifierField.setText(""); 
         
-        
+        if(OrderScreen.getActiveSeat() == -1){
+            System.out.println("error, active seat did not update correctly. check orderentryscreen.java");
+        }
+        if(OrderScreen.getActiveSeat() == 1){seatOne.add(s);}
+        if(OrderScreen.getActiveSeat() == 2){seatTwo.add(s);}
+        if(OrderScreen.getActiveSeat() == 3){seatThree.add(s);}
+        if(OrderScreen.getActiveSeat() == 4){seatFour.add(s);}
+        updateOrderReceipt(); 
     }//GEN-LAST:event_addEntreeButtonActionPerformed
 
     private void addDessertsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDessertsButtonActionPerformed
-        String s = OrderScreen.getText(); 
-        s += "\n";
+        String s = ""; 
         s += String.valueOf(dessertsComboBox.getSelectedItem());
-        s += ": " + dessertsModifierField.getText(); 
-       OrderScreen.setText(s);
+        s += ": " + dessertsModifierField.getText();
+        dessertsModifierField.setText(""); 
+       
+        if(OrderScreen.getActiveSeat() == -1){
+            System.out.println("error, active seat did not update correctly. check orderentryscreen.java");
+        }
+        if(OrderScreen.getActiveSeat() == 1){seatOne.add(s);}
+        if(OrderScreen.getActiveSeat() == 2){seatTwo.add(s);}
+        if(OrderScreen.getActiveSeat() == 3){seatThree.add(s);}
+        if(OrderScreen.getActiveSeat() == 4){seatFour.add(s);}
+        updateOrderReceipt(); 
     }//GEN-LAST:event_addDessertsButtonActionPerformed
 
     private void addSidesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSidesButtonActionPerformed
-       String s = OrderScreen.getText(); 
-       s += "\n";
-       s += String.valueOf(sidesComboBox.getSelectedItem());
-       s += ": " + sidesModifierField.getText(); 
-       OrderScreen.setText(s);
+        String s = ""; 
+        s += String.valueOf(sidesComboBox.getSelectedItem());
+        s += ": " + sidesModifierField.getText();
+        sidesModifierField.setText(""); 
+       
+        if(OrderScreen.getActiveSeat() == -1){
+            System.out.println("error, active seat did not update correctly. check orderentryscreen.java");
+        }
+        if(OrderScreen.getActiveSeat() == 1){seatOne.add(s);}
+        if(OrderScreen.getActiveSeat() == 2){seatTwo.add(s); }
+        if(OrderScreen.getActiveSeat() == 3){seatThree.add(s);}
+        if(OrderScreen.getActiveSeat() == 4){ seatFour.add(s);}
+        updateOrderReceipt(); 
     }//GEN-LAST:event_addSidesButtonActionPerformed
 
     private void addDrinksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDrinksButtonActionPerformed
-       String s = OrderScreen.getText(); 
-       s += "\n";
-       s += String.valueOf(drinksComboBox.getSelectedItem());
-       s += ": " + drinksModifierField.getText(); 
-       OrderScreen.setText(s);
+        String s = ""; 
+        s += String.valueOf(drinksComboBox.getSelectedItem());
+        s += ": " + drinksModifierField.getText();
+        drinksModifierField.setText(""); 
+
+        if(OrderScreen.getActiveSeat() == -1){
+            System.out.println("error, active seat did not update correctly. check orderentryscreen.java");
+        }
+        if(OrderScreen.getActiveSeat() == 1){seatOne.add(s);}
+        if(OrderScreen.getActiveSeat() == 2){seatTwo.add(s);}
+        if(OrderScreen.getActiveSeat() == 3){seatThree.add(s);}
+        if(OrderScreen.getActiveSeat() == 4){seatFour.add(s);}
+        updateOrderReceipt(); 
     }//GEN-LAST:event_addDrinksButtonActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

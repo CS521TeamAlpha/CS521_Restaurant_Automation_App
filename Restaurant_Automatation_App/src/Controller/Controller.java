@@ -58,9 +58,11 @@ public class Controller {
            
     }
     
-   public void updateServer(String serverSelected, String tableServer){
-       tables.setTableServer(serverSelected, tableServer) ;
-   }
+
+    
+    public void updateServer(String serverSelected, String tableServer){
+        tables.setTableServer(serverSelected, tableServer) ;
+    }
     
     
     public void updateTableStatus(String selectedTable, String status){ //updates the database
@@ -342,14 +344,14 @@ public class Controller {
         updateAllTableColor();
     }
     
-    public void enterOrder(){
-        OrderEntryScreen enterOrder = new OrderEntryScreen(this);
+    public void enterOrder(String selectedTable){
+        OrderEntryScreen enterOrder = new OrderEntryScreen(this, selectedTable);
         enterOrder.setVisible(true);
        
     }
     
     public void showKitchenModule(){
-      tables = new Tables(this);
+        tables = new Tables(this, "kitchen");
         System.out.println("method performed");
         tables.setVisible(true);
         JFrame frame = new JFrame("Table Management");
@@ -360,6 +362,14 @@ public class Controller {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();  
+    }
+    public void showKitchenOrderScreen(String table){
+        KitchenOrderScreen screen = new KitchenOrderScreen(this);
+       
+        screen.setVisible(true);
+
+        updateAllTableColor();  
+        screen.setText(getKitchenOrder(table));
     }
     
         
@@ -395,5 +405,32 @@ public class Controller {
         
         
     }
-   
+    
+    public void sendOrderToKitchen(String order, String table){
+        
+        String query = "SELECT * FROM CustomerOrders ORDER BY orderId DESC LIMIT 1";
+        int lastId = database.getLastOrderID(query); 
+        int incrememt = lastId + 1; 
+        System.out.println(table);
+        query = "INSERT INTO `CustomerOrders`(`orderId`, `orderItems`) VALUES ('" + Integer.toString(incrememt) + "','"+ order +"')";
+        database.runInsertQuery(query);
+        query = "UPDATE `Booths` SET `ActiveOrder` = '"+ Integer.toString(incrememt) +"' WHERE tableName = '" + table.toUpperCase() + "'";
+        database.updateTableStatus(query);
+    }
+    
+    public String getKitchenOrder(String table){
+        String query = "SELECT ActiveOrder FROM Booths Left Join CustomerOrders on CustomerOrders.orderId = Booths.ActiveOrder Where TableName = '"+ table +"'";
+        int activeOrder = database.getActiveOrder(query);
+        
+        if(activeOrder == 0){
+            return "There is no order on this table";
+        }
+        else{
+            query = "SELECT * FROM `CustomerOrders` WHERE orderId = '"+ activeOrder +"'"; 
+            String s = database.getOrderItems(query); 
+            return s;
+        }
+        
+    }
+
 }
