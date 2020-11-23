@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package ActiveView;
 import Controller.Controller;
 import java.util.Arrays;
 /**
@@ -63,7 +63,7 @@ public class TableManagement extends javax.swing.JFrame {
         //System.out.println("Server: " + assignedServer + " Table status: " + tableStatus); 
         
         selectServer.setSelectedIndex(getServerIndex(assignedServer, args));
-        TableManagement.setSelectedIndex(getStatusIndex(tableStatus, statusList));
+      
 
         
     }
@@ -76,11 +76,9 @@ public class TableManagement extends javax.swing.JFrame {
         return index;
     }
     private int getStatusIndex(String status, String[] statusList){
-        int index = Arrays.asList(statusList).indexOf(status.toUpperCase());
-        if(index == -1){
-            return 0; 
-        }
-        return index; 
+        
+        
+        return 0; 
     }
     
 

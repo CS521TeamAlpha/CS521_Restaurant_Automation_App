@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package ActiveView;
 import Controller.Controller;
 import Model.Database;
 import java.util.*;
@@ -51,7 +51,6 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         seatFour = new javax.swing.JButton();
         sendToKitchen = new javax.swing.JButton();
         payment = new javax.swing.JButton();
-        save = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         Ticket = new javax.swing.JTextPane();
@@ -116,16 +115,21 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         payment.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
         payment.setText("Payment");
         payment.setBorder(new javax.swing.border.MatteBorder(null));
-
-        save.setBackground(new java.awt.Color(255, 255, 0));
-        save.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        save.setText("Save");
-        save.setBorder(new javax.swing.border.MatteBorder(null));
+        payment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paymentActionPerformed(evt);
+            }
+        });
 
         exit.setBackground(new java.awt.Color(255, 255, 0));
         exit.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
         exit.setText("Exit");
         exit.setBorder(new javax.swing.border.MatteBorder(null));
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
 
         Ticket.setBackground(new java.awt.Color(255, 255, 51));
         Ticket.setBorder(new javax.swing.border.MatteBorder(null));
@@ -139,10 +143,8 @@ public class OrderEntryScreen extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(85, 85, 85)
                         .addComponent(sendToKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98)
+                        .addGap(211, 211, 211)
                         .addComponent(payment, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -169,13 +171,17 @@ public class OrderEntryScreen extends javax.swing.JFrame {
                         .addComponent(seatFour, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sendToKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(payment, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sendToKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(payment, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -269,6 +275,16 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.sendOrderToKitchen(Ticket.getText(), selectedTable);
     }//GEN-LAST:event_sendToKitchenActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentActionPerformed
+        //controller.showPaymentScreen();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paymentActionPerformed
     public void setText(String s){
         Ticket.setText(s);
     }
@@ -293,7 +309,6 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton payment;
-    private javax.swing.JButton save;
     private javax.swing.JButton seatFour;
     private javax.swing.JButton seatOne;
     private javax.swing.JButton seatThree;

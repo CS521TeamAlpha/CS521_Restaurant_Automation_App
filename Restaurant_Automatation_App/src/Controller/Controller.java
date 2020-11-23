@@ -5,7 +5,13 @@
  */
 package Controller;
 
-import View.*; 
+import ActiveView.Tables; 
+import ActiveView.LoginScreen;
+import ActiveView.TableManagement;
+import ActiveView.OrderEntryScreen;
+import ActiveView.TimeClock;
+import ActiveView.KitchenOrderScreen;
+import ActiveView.MainImage;
 import Model.*; 
 import java.awt.Color;
 import java.text.SimpleDateFormat;
