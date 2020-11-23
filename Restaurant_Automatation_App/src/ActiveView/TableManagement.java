@@ -5,6 +5,7 @@
  */
 package ActiveView;
 import Controller.Controller;
+import java.util.ArrayList;
 import java.util.Arrays;
 /**
  *
@@ -63,7 +64,7 @@ public class TableManagement extends javax.swing.JFrame {
         //System.out.println("Server: " + assignedServer + " Table status: " + tableStatus); 
         
         selectServer.setSelectedIndex(getServerIndex(assignedServer, args));
-      
+        TableManagement.setSelectedIndex(getStatusIndex(tableStatus, statusList));
 
         
     }
@@ -76,8 +77,11 @@ public class TableManagement extends javax.swing.JFrame {
         return index;
     }
     private int getStatusIndex(String status, String[] statusList){
-        
-        
+        for(int i = 0; i < statusList.length; i++){
+            if(status.toUpperCase().equals(statusList[i].toUpperCase())){
+                return i; 
+            } 
+        }
         return 0; 
     }
     
