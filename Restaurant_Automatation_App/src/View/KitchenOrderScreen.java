@@ -13,6 +13,7 @@ import Controller.*;
  */
 public class KitchenOrderScreen extends javax.swing.JFrame {
     private Controller controller; 
+    private String selectedTable; 
     /**
      * Creates new form kitchenorderpreperation
      */
@@ -22,9 +23,10 @@ public class KitchenOrderScreen extends javax.swing.JFrame {
       
     }
     
-    public KitchenOrderScreen(Controller c) {
+    public KitchenOrderScreen(Controller c, String table) {
         initComponents();
         controller = c; 
+        selectedTable = table; 
     }
     public void setText(String s){
         orderList.setText(s);
@@ -66,6 +68,11 @@ public class KitchenOrderScreen extends javax.swing.JFrame {
         finishedButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         finishedButton.setForeground(new java.awt.Color(255, 255, 0));
         finishedButton.setText("Finished");
+        finishedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finishedButtonActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(orderList);
 
@@ -117,8 +124,16 @@ public class KitchenOrderScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        this.dispose(); 
         // TODO add your handling code here:
     }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void finishedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishedButtonActionPerformed
+        
+        controller.updateTableStatus(selectedTable, "ORDER READY");
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_finishedButtonActionPerformed
 
     /**
      * @param args the command line arguments

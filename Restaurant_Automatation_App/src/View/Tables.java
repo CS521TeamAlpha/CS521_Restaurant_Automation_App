@@ -38,10 +38,10 @@ public class Tables extends javax.swing.JPanel {
         moduleClicked = s; 
     }
     
-    public void setTableServer(String selectedServer, String server){
+    public void setTableServer(String selectedTable, String server){
         
         
-        switch(selectedServer.toUpperCase()) {
+        switch(selectedTable.toUpperCase()) {
             case "ONE":
                 tableOneServer.setText(server);
                 break;

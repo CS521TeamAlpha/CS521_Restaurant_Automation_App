@@ -51,17 +51,149 @@ public class Controller {
         keypad.dispose();
         
     }
-    
+    public void updateAllTableColor(){
+        String query = "SELECT * FROM `Booths`";
+        Map<String, String> statusMap = database.getBoothsTable(query);
+        //System.out.println("Table One's status is: " + statusMap.get("ONE"));
+        
+        String[] tableNames = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
+        for(int i = 0; i < 9; i++){
+            String status = statusMap.get(tableNames[i]); 
+            String[] tempArray;
+            /* delimiter */
+            String delimiter = " ";
+            /* given string will be split by the argument delimiter provided. */
+            tempArray = status.split(delimiter);
+
+            String color = tempArray[tempArray.length-1];
+            switch(color) {
+                case "RED":
+                    tables.setTableColor(tableNames[i], Color.RED);
+                    break;
+                case "GREEN":
+                    tables.setTableColor(tableNames[i], Color.GREEN);
+                    break;
+                case "YELLOW":
+                    tables.setTableColor(tableNames[i], Color.YELLOW);
+                    break;
+                case "BLUE":
+                    tables.setTableColor(tableNames[i], Color.BLUE);
+                    break;
+                case "MAGENTA":
+                    tables.setTableColor(tableNames[i], Color.MAGENTA);
+                    break; 
+                default:
+                  // code block
+                    System.out.println("Controller: Something has gone terribly wrong in the set color method, please contact support");
+            }
+        }
+        
+    }
+    public void updateAllTableServer(){
+
+        
+        String query = "SELECT tableName, Booths.employeeId, firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId";
+        Map<String, String> namesMap = database.getAssignedTableServerList(query);
+        //System.out.println("Table One's status is: " + statusMap.get("ONE"));
+        
+        String[] tableNames = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
+        
+        
+        
+        for(int i = 0; i < 9; i++){
+            
+            if(namesMap.containsKey(tableNames[i])){
+                
+                String serverName = namesMap.get(tableNames[i]); 
+
+                if(serverName == null){
+                    tables.setTableServer(tableNames[i], "No Server Assigned");
+                }
+                else{
+                    tables.setTableServer(tableNames[i], serverName);
+                }
+            }
+
+        }
+    }
+    public void showHostessModule(){
+        
+        tables = new Tables(this);
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Table Management");
+        frame.add(tables);
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setResizable(false);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);        
+        updateAllTableColor();
+        updateAllTableServer(); 
+
+    }
     public void showTableManagmentScreen(String tableSelected){
-        TableManagement tm = new TableManagement(tableSelected, this);
+        
+        String query = "SELECT Employee.firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId WHERE tableName = '"+tableSelected+"'";
+        String serverName = database.getEmployeeNameById(query);
+        
+       
+        if(serverName == null){
+        
+            TableManagement tm = new TableManagement(tableSelected, this);
             tm.setVisible(true);
+            
+            System.out.println("tablestatus is null, this is not an error. ");
+            
+            tables.setTableServer(tableSelected, "No Server Assigned");
+            
+        }
+        else{
+            
+            String tableQuery = "SELECT * FROM `Booths` WHERE tableName = '" + tableSelected + "'";
+            String status = database.getTableColor(tableQuery);
+            
+       
+                    
+            String[] tempArray;
+        
+            String delimiter = " ";
+         
+            tempArray = status.split(delimiter);
+
+            String color = tempArray[tempArray.length-1];
+           
+            String tableStatus = "null"; 
+            if(tempArray.length == 3){
+                tableStatus = tempArray[0] + " " + tempArray[1];
+            }else if(tempArray.length == 2){
+                tableStatus = tempArray[0];
+            }
+          
+                    
+            TableManagement tm = new TableManagement(tableSelected, this, serverName, tableStatus);
+            tm.setVisible(true);
+            
+            tables.setTableServer(tableSelected, serverName);
+        }
+        
+        
            
     }
     
 
     
-    public void updateServer(String serverSelected, String tableServer){
-        tables.setTableServer(serverSelected, tableServer) ;
+    public void updateServer(String tableSelected, String tableServer){
+        tables.setTableServer(tableSelected, tableServer) ;
+        
+        String query = "SELECT employeeId FROM `Employee` WHERE firstName = '"+ tableServer +"'";
+        String id = database.getEmployeeIdByName(query);
+        //System.out.println(tableServer + "'s ID is " + id);
+        
+        query = "UPDATE `Booths` SET `employeeId`= '" + id + "' WHERE tableName = '" + tableSelected + "'";
+                
+        database.updateTableServer(query);
+        
     }
     
     
@@ -87,6 +219,7 @@ public class Controller {
             String query = "UPDATE `Booths` SET `status` = 'ORDER READY MAGENTA' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
             database.updateTableStatus(query);
             updateTableColor(selectedTable);
+            
         }
         else{
             System.out.println("oops, something has gone terribly wrong... please contact customer support");
@@ -118,54 +251,19 @@ public class Controller {
             case "BLUE":
                 tables.setTableColor(selectedTable, Color.BLUE);
                 break;
-            case "MAGENTA":
+            case "MAGENTA":  
                 tables.setTableColor(selectedTable, Color.MAGENTA);
+                break; 
             default:
               // code block
                 System.out.println("Something has gone terribly wrong in the set color method, please contact support");
+                //System.out.println(color);
         }
         //tables.setTableColor(selectedTable, color);
     
     }
     
-    public void updateAllTableColor(){
-        String query = "SELECT * FROM `Booths`";
-        Map<String, String> statusMap = database.getBoothsTable(query);
-        //System.out.println("Table One's status is: " + statusMap.get("ONE"));
-        
-        String[] tableNames = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
-        for(int i = 0; i < 9; i++){
-            String status = statusMap.get(tableNames[i]); 
-            String[] tempArray;
-            /* delimiter */
-            String delimiter = " ";
-            /* given string will be split by the argument delimiter provided. */
-            tempArray = status.split(delimiter);
-
-            String color = tempArray[tempArray.length-1];
-            switch(color) {
-                case "RED":
-                    tables.setTableColor(tableNames[i], Color.RED);
-                    break;
-                case "GREEN":
-                    tables.setTableColor(tableNames[i], Color.GREEN);
-                    break;
-                case "YELLOW":
-                    tables.setTableColor(tableNames[i], Color.YELLOW);
-                    break;
-                case "BLUE":
-                    tables.setTableColor(tableNames[i], Color.BLUE);
-                    break;
-                case "MAGENTA":
-                    tables.setTableColor(tableNames[i], Color.MAGENTA);
-                default:
-                  // code block
-                    System.out.println("Controller: Something has gone terribly wrong in the set color method, please contact support");
-            }
-        }
-        
-       
-    }
+   
     public void login(String moduleClicked, String code){
         if(moduleClicked.equalsIgnoreCase("TimeCard")){
             
@@ -295,24 +393,7 @@ public class Controller {
         database.runInsertQuery(query);
         
     }
-    
-    public void showHostessModule(){
-        
-        tables = new Tables(this);
-        System.out.println("method performed");
-        tables.setVisible(true);
-        JFrame frame = new JFrame("Table Management");
-        frame.add(tables);
-        frame.pack();
-        frame.setSize(1470,970);
-        frame.setResizable(false);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-        
-        updateAllTableColor();
-        
-        
-    }
+
     public void showBusserModule(){
         
         tables = new Tables(this);
@@ -326,6 +407,8 @@ public class Controller {
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();
+       
+        updateAllTableServer(); 
         
         
     }
@@ -342,6 +425,9 @@ public class Controller {
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();
+        
+     
+        updateAllTableServer(); 
     }
     
     public void enterOrder(String selectedTable){
@@ -362,9 +448,11 @@ public class Controller {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         updateAllTableColor();  
+    
+        updateAllTableServer(); 
     }
     public void showKitchenOrderScreen(String table){
-        KitchenOrderScreen screen = new KitchenOrderScreen(this);
+        KitchenOrderScreen screen = new KitchenOrderScreen(this, table);
        
         screen.setVisible(true);
 

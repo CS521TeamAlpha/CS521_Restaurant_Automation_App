@@ -5,6 +5,7 @@
  */
 package View;
 import Controller.Controller;
+import java.util.Arrays;
 /**
  *
  * @author Owner
@@ -15,6 +16,9 @@ public class TableManagement extends javax.swing.JFrame {
     private String serverSelected;
     private Controller controller;
     
+    private String assignedServer;
+    private String tableStatus;
+    
 
     /**
      * Creates new form TableManagement
@@ -22,7 +26,6 @@ public class TableManagement extends javax.swing.JFrame {
     public TableManagement() {
         initComponents();
     }
-    
     public TableManagement(String tableSelected, Controller c){
         initComponents();
         controller = c;
@@ -33,10 +36,52 @@ public class TableManagement extends javax.swing.JFrame {
         args = controller.getServerList(); 
         
         selectServer.setModel(new javax.swing.DefaultComboBoxModel<>(args));
-       
+        
+        
+        
+        //selectServer.setSelectedIndex(1);
         
     }
+    public TableManagement(String tableSelected, Controller c, String assignedServer, String tableStatus){
+        initComponents();
+        controller = c;
+        this.tableSelected = tableSelected;
+        this.assignedServer = assignedServer; 
+        this.tableStatus = tableStatus; 
+        
+        String[] args = { "Person A", "PersonB", "Person C" };
+        
+        args = controller.getServerList(); 
+        
+        selectServer.setModel(new javax.swing.DefaultComboBoxModel<>(args));
+        
+        String [] statusList = new String[] { "Ready", "Dirty", "New Arrival", "Order In", "Order Ready" };
+        
+        TableManagement.setModel(new javax.swing.DefaultComboBoxModel<>(statusList));
+        
+        
+        //System.out.println("Server: " + assignedServer + " Table status: " + tableStatus); 
+        
+        selectServer.setSelectedIndex(getServerIndex(assignedServer, args));
+        TableManagement.setSelectedIndex(getStatusIndex(tableStatus, statusList));
 
+        
+    }
+    
+    private int getServerIndex(String name, String[] serverList){
+        int index = Arrays.asList(serverList).indexOf(name);
+        if(index == -1){
+            return 0; 
+        }
+        return index;
+    }
+    private int getStatusIndex(String status, String[] statusList){
+        int index = Arrays.asList(statusList).indexOf(status.toUpperCase());
+        if(index == -1){
+            return 0; 
+        }
+        return index; 
+    }
     
 
     /**

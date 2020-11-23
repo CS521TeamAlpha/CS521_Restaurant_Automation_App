@@ -262,7 +262,6 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         activeSeat = 4; 
         MenuList menu = new MenuList(hm, this);
         
-        
         menu.setVisible(true);
     }//GEN-LAST:event_seatFourActionPerformed
 
