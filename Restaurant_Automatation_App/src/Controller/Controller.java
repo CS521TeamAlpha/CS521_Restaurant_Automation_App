@@ -520,6 +520,10 @@ public class Controller {
     public void enterOrder(String selectedTable){
         OrderEntryScreen enterOrder = new OrderEntryScreen(this, selectedTable);
         enterOrder.setVisible(true);
+        
+        String order = getKitchenOrder(selectedTable);
+        
+        enterOrder.setArrays(order);
        
     }
     
@@ -591,6 +595,9 @@ public class Controller {
         database.runInsertQuery(query);
         query = "UPDATE `Booths` SET `ActiveOrder` = '"+ Integer.toString(incrememt) +"' WHERE tableName = '" + table.toUpperCase() + "'";
         database.updateTableStatus(query);
+        updateTableStatus(table, "ORDER IN");
+        
+        
     }
     
     public String getKitchenOrder(String table){

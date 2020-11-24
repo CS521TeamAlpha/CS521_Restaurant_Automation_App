@@ -198,7 +198,63 @@ public class OrderEntryScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+    public void setArrays(String s){
+        
+        System.out.println(s);
+        String[] seats = s.split("%");
+
+        try {
+            ArrayList<String> seatOne = new ArrayList<>(Arrays.asList(seats[0].split("~")));
+            ArrayList<String> seatTwo = new ArrayList<>(Arrays.asList(seats[1].split("~")));
+            ArrayList<String> seatThree = new ArrayList<>(Arrays.asList(seats[2].split("~")));
+            ArrayList<String> seatFour = new ArrayList<>(Arrays.asList(seats[3].split("~")));
+            
+            seatOneArray = seatOne;
+            seatTwoArray = seatTwo;
+            seatThreeArray = seatThree;
+            seatFourArray = seatFour; 
+            
+            String seatOneHeader = "Seat 1 \n ****************************************************************** \n";
+            String seatOneOrder = ""; 
+
+            for(int i = 0; i < seatOne.size(); i++){
+                seatOneOrder += seatOne.get(i) + "\n"; 
+            }
+
+
+            String seatTwoHeader = "\nSeat 2 \n ****************************************************************** \n";
+            String seatTwoOrder = ""; 
+
+            for(int i = 0; i < seatTwo.size(); i++){
+                seatTwoOrder += seatTwo.get(i) + "\n"; 
+            }
+
+
+            String seatThreeHeader = "\nSeat 3 \n ****************************************************************** \n";
+            String seatThreeOrder = ""; 
+
+            for(int i = 0; i < seatThree.size(); i++){
+                seatThreeOrder += seatThree.get(i) + "\n"; 
+            }
+
+
+            String seatFourHeader = "\nSeat 4 \n ****************************************************************** \n";
+            String seatFourOrder = ""; 
+
+            for(int i = 0; i < seatFour.size(); i++){
+                seatFourOrder += seatFour.get(i) + "\n"; 
+            }
+            String combinedReceipt = seatOneHeader + seatOneOrder + seatTwoHeader + seatTwoOrder + seatThreeHeader + seatThreeOrder + seatFourHeader + seatFourOrder; 
+
+            setText(combinedReceipt);
+        }
+        catch(Exception e) {
+            //System.out.println("no active order, error was caught in kitchen order screen.");
+            setText("no active order, please start one");
+            
+        }
+        
+    }
     public void setArrays(ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d){
         seatOneArray = a;
         seatTwoArray = b;
@@ -273,7 +329,7 @@ public class OrderEntryScreen extends javax.swing.JFrame {
 
     private void sendToKitchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendToKitchenActionPerformed
         // TODO add your handling code here:
-        controller.sendOrderToKitchen(Ticket.getText(), selectedTable);
+        //controller.sendOrderToKitchen(Ticket.getText(), selectedTable);
         controller.saveOrderToDatabase(selectedTable, seatOneArray, seatTwoArray, seatThreeArray, seatFourArray);
     }//GEN-LAST:event_sendToKitchenActionPerformed
 
