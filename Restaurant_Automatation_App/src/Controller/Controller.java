@@ -6,6 +6,7 @@
 package Controller;
 
 import ActiveView.AddEmployee;
+import ActiveView.AddItemToDatabase;
 import ActiveView.Tables; 
 import ActiveView.LoginScreen;
 import ActiveView.TableManagement;
@@ -14,6 +15,7 @@ import ActiveView.TimeClock;
 import ActiveView.KitchenOrderScreen;
 import ActiveView.MainImage;
 import ActiveView.ManagerModule;
+import ActiveView.MenuManagement;
 import Model.*; 
 import java.awt.Color;
 import java.text.SimpleDateFormat;
@@ -149,6 +151,17 @@ public class Controller {
     public void showAddEmployeeForm(){
         AddEmployee employee = new AddEmployee();
         employee.setVisible(true);
+    }
+    
+    public void showMenuManagement(){
+       
+       MenuManagement menuManagement = new MenuManagement(this);
+       menuManagement.setVisible(true);
+    }
+    
+    public void showAddItemToDataBaseScreen(){
+        AddItemToDatabase addItem = new AddItemToDatabase();
+        addItem.setVisible(true);
     }
     
     public void showTableManagmentScreen(String tableSelected){
@@ -600,4 +613,5 @@ public class Controller {
         
     }
 
+   
 }
