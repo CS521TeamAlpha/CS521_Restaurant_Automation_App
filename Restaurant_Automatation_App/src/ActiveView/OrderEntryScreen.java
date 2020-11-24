@@ -274,6 +274,7 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     private void sendToKitchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendToKitchenActionPerformed
         // TODO add your handling code here:
         controller.sendOrderToKitchen(Ticket.getText(), selectedTable);
+        controller.saveOrderToDatabase(selectedTable, seatOneArray, seatTwoArray, seatThreeArray, seatFourArray);
     }//GEN-LAST:event_sendToKitchenActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

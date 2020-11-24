@@ -187,7 +187,62 @@ public class Controller {
            
     }
     
+    public void showTableManagmentScreen(String tableSelected, String moduleClicked){ //if you want to add constraints based on module selected. 
+        
+        String query = "SELECT Employee.firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId WHERE tableName = '"+tableSelected+"'";
+        String serverName = database.getEmployeeNameById(query);
+        
+        
+        String tableQuery = "SELECT * FROM `Booths` WHERE tableName = '" + tableSelected + "'";
+        String status = database.getTableColor(tableQuery);
+        String[] tempArray;
+        
+        String delimiter = " ";
 
+        tempArray = status.split(delimiter);
+
+        String color = tempArray[tempArray.length-1];
+
+        String tableStatus = "null"; 
+        if(tempArray.length == 3){
+            tableStatus = tempArray[0] + " " + tempArray[1];
+        }else if(tempArray.length == 2){
+            tableStatus = tempArray[0];
+        }
+        
+       
+        if(serverName == null){
+
+            
+            TableManagement tm = new TableManagement(tableSelected, this, "No Server Assigned", tableStatus, moduleClicked);
+            tm.setVisible(true);
+            
+            System.out.println("tablestatus is null, this is not an error. ");
+            
+            tables.setTableServer(tableSelected, "No Server Assigned");
+            
+        }
+        else{
+            
+            tableQuery = "SELECT * FROM `Booths` WHERE tableName = '" + tableSelected + "'";
+            status = database.getTableColor(tableQuery);
+
+            if(tempArray.length == 3){
+                tableStatus = tempArray[0] + " " + tempArray[1];
+            }else if(tempArray.length == 2){
+                tableStatus = tempArray[0];
+            }
+          
+                    
+            TableManagement tm = new TableManagement(tableSelected, this, serverName, tableStatus, moduleClicked);
+            tm.setVisible(true);
+            
+            tables.setTableServer(tableSelected, serverName);
+        }
+        
+        
+           
+    }
     
     public void updateServer(String tableSelected, String tableServer){
         tables.setTableServer(tableSelected, tableServer) ;
@@ -402,7 +457,7 @@ public class Controller {
 
     public void showBusserModule(){
         
-        tables = new Tables(this);
+        tables = new Tables(this, "busser");
         System.out.println("method performed");
         tables.setVisible(true);
         JFrame frame = new JFrame("Table Management");
@@ -420,7 +475,7 @@ public class Controller {
     }
     
     public void showServerModule(){
-        tables = new Tables(this);
+        tables = new Tables(this, "server");
         System.out.println("method performed");
         tables.setVisible(true);
         JFrame frame = new JFrame("Table Management");
@@ -524,6 +579,11 @@ public class Controller {
             String s = database.getOrderItems(query); 
             return s;
         }
+        
+    }
+    public void saveOrderToDatabase(String selectedTable, ArrayList<String> seatOneArray, ArrayList<String> seatTwoArray, ArrayList<String> seatThreeArray, ArrayList<String> seatFourArray){
+    
+        
         
     }
 
