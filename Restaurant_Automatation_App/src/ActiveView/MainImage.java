@@ -36,6 +36,7 @@ public class MainImage extends javax.swing.JFrame {
 
         applicationTitleLabel = new javax.swing.JLabel();
         managerLoginButton = new javax.swing.JButton();
+        closeApp = new javax.swing.JButton();
         hostessLoginButton = new javax.swing.JButton();
         serverLoginButton = new javax.swing.JButton();
         kitchenLoginButton = new javax.swing.JButton();
@@ -44,6 +45,7 @@ public class MainImage extends javax.swing.JFrame {
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Restaurant Automation Application Main Screen");
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
@@ -52,9 +54,9 @@ public class MainImage extends javax.swing.JFrame {
         applicationTitleLabel.setBackground(new java.awt.Color(51, 51, 0));
         applicationTitleLabel.setFont(new java.awt.Font("Jokerman", 1, 48)); // NOI18N
         applicationTitleLabel.setForeground(new java.awt.Color(255, 255, 0));
-        applicationTitleLabel.setText("                                   CS521 Restaurant Automation App");
+        applicationTitleLabel.setText("CS521 Restaurant Automation App");
         getContentPane().add(applicationTitleLabel);
-        applicationTitleLabel.setBounds(0, 110, 2270, 150);
+        applicationTitleLabel.setBounds(510, 110, 920, 150);
 
         managerLoginButton.setBackground(new java.awt.Color(0, 0, 0));
         managerLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
@@ -68,6 +70,19 @@ public class MainImage extends javax.swing.JFrame {
         });
         getContentPane().add(managerLoginButton);
         managerLoginButton.setBounds(310, 330, 260, 170);
+
+        closeApp.setBackground(new java.awt.Color(0, 0, 0));
+        closeApp.setFont(new java.awt.Font("French Script MT", 1, 36)); // NOI18N
+        closeApp.setForeground(new java.awt.Color(255, 255, 0));
+        closeApp.setText("Close APP");
+        closeApp.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        closeApp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeAppActionPerformed(evt);
+            }
+        });
+        getContentPane().add(closeApp);
+        closeApp.setBounds(1450, 150, 210, 80);
 
         hostessLoginButton.setBackground(new java.awt.Color(0, 0, 0));
         hostessLoginButton.setFont(new java.awt.Font("French Script MT", 0, 48)); // NOI18N
@@ -158,7 +173,7 @@ public class MainImage extends javax.swing.JFrame {
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
-        Controller.showManagementModule();
+        Controller.showManagerModule();
         
 
     }//GEN-LAST:event_managerLoginButtonActionPerformed
@@ -183,6 +198,10 @@ public class MainImage extends javax.swing.JFrame {
         Controller.showKitchenModule();
     }//GEN-LAST:event_kitchenLoginButtonActionPerformed
 
+    private void closeAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeAppActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_closeAppActionPerformed
+
    
     /**
      * @param args the command line arguments
@@ -195,6 +214,7 @@ public class MainImage extends javax.swing.JFrame {
     private javax.swing.JLabel applicationTitleLabel;
     private javax.swing.JLabel backgroundImage;
     private javax.swing.JButton busserLoginButton;
+    private javax.swing.JButton closeApp;
     private javax.swing.JButton hostessLoginButton;
     private javax.swing.JButton kitchenLoginButton;
     private javax.swing.JButton managerLoginButton;

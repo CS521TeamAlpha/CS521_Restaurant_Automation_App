@@ -141,8 +141,8 @@ public class Controller {
 
     }
     
-    public void showManagementModule(){
-        ManagerModule manager = new ManagerModule();
+    public void showManagerModule(){
+        ManagerModule manager = new ManagerModule(this);
         manager.setVisible(true);
     }
     

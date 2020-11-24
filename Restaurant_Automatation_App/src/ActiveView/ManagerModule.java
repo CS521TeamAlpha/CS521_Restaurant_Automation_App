@@ -4,18 +4,19 @@
  * and open the template in the editor.
  */
 package ActiveView;
-import Controller.Controller;
+import Controller.*;
 
 /**
  *
  * @author Vaibhav T
  */
 public class ManagerModule extends javax.swing.JFrame {
-    private Controller controller;
+    private Controller Controller;
     /**
      * Creates new form Managersmodule
      */
-    public ManagerModule() {
+    public ManagerModule(Controller c) {
+        Controller = c;
         initComponents();
     }
 
@@ -28,15 +29,18 @@ public class ManagerModule extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        employeeModule = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        frontEndModule = new javax.swing.JButton();
         menuManaagementModule = new javax.swing.JButton();
         payrollModule = new javax.swing.JButton();
         reportsModule = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
+        employeeModule1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+
         setTitle("Manager Module");
         setResizable(false);
 
@@ -44,17 +48,14 @@ public class ManagerModule extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jPanel1.setForeground(new java.awt.Color(255, 255, 0));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-
-        employeeModule.setBackground(new java.awt.Color(0, 0, 0));
-        employeeModule.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        employeeModule.setForeground(new java.awt.Color(255, 255, 0));
-        employeeModule.setText("Employees");
-        employeeModule.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        employeeModule.addActionListener(new java.awt.event.ActionListener() {
+        frontEndModule.setBackground(new java.awt.Color(0, 0, 0));
+        frontEndModule.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        frontEndModule.setForeground(new java.awt.Color(255, 255, 0));
+        frontEndModule.setText("Front End");
+        frontEndModule.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        frontEndModule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeeModuleActionPerformed(evt);
+                frontEndModuleActionPerformed(evt);
             }
         });
 
@@ -102,43 +103,51 @@ public class ManagerModule extends javax.swing.JFrame {
             }
         });
 
+        employeeModule1.setBackground(new java.awt.Color(0, 0, 0));
+        employeeModule1.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        employeeModule1.setForeground(new java.awt.Color(255, 255, 0));
+        employeeModule1.setText("Employees");
+        employeeModule1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        employeeModule1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeeModule1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(menuManaagementModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(129, 129, 129))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(employeeModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(employeeModule1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuManaagementModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(reportsModule, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 428, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(frontEndModule, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(reportsModule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(employeeModule1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(reportsModule, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(employeeModule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(reportsModule, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuManaagementModule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 464, Short.MAX_VALUE))
+                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(frontEndModule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(88, 88, 88))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,9 +169,9 @@ public class ManagerModule extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_payrollModuleActionPerformed
 
-    private void employeeModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeModuleActionPerformed
-        controller.showAddEmployeeForm();
-    }//GEN-LAST:event_employeeModuleActionPerformed
+    private void frontEndModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontEndModuleActionPerformed
+      
+    }//GEN-LAST:event_frontEndModuleActionPerformed
 
     private void reportsModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportsModuleActionPerformed
         // TODO add your handling code here:
@@ -173,8 +182,12 @@ public class ManagerModule extends javax.swing.JFrame {
     }//GEN-LAST:event_menuManaagementModuleActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void employeeModule1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeModule1ActionPerformed
+       Controller.showAddEmployeeForm();
+    }//GEN-LAST:event_employeeModule1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +195,8 @@ public class ManagerModule extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton employeeModule;
+    private javax.swing.JButton employeeModule1;
+    private javax.swing.JButton frontEndModule;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logoutButton;
