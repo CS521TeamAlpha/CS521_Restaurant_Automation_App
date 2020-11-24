@@ -375,7 +375,7 @@ public class MenuList extends javax.swing.JFrame {
     private void addDessertsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDessertsButtonActionPerformed
         String s = ""; 
         s += String.valueOf(dessertsComboBox.getSelectedItem());
-        s += ": " + dessertsModifierField.getText();
+        s += ", " + dessertsModifierField.getText();
         dessertsModifierField.setText(""); 
        
         if(OrderScreen.getActiveSeat() == -1){
@@ -391,7 +391,7 @@ public class MenuList extends javax.swing.JFrame {
     private void addSidesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSidesButtonActionPerformed
         String s = ""; 
         s += String.valueOf(sidesComboBox.getSelectedItem());
-        s += ": " + sidesModifierField.getText();
+        s += ", " + sidesModifierField.getText();
         sidesModifierField.setText(""); 
        
         if(OrderScreen.getActiveSeat() == -1){
@@ -407,7 +407,7 @@ public class MenuList extends javax.swing.JFrame {
     private void addDrinksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDrinksButtonActionPerformed
         String s = ""; 
         s += String.valueOf(drinksComboBox.getSelectedItem());
-        s += ": " + drinksModifierField.getText();
+        s += ", " + drinksModifierField.getText();
         drinksModifierField.setText(""); 
 
         if(OrderScreen.getActiveSeat() == -1){
@@ -421,7 +421,7 @@ public class MenuList extends javax.swing.JFrame {
     }//GEN-LAST:event_addDrinksButtonActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        OrderScreen.setArrays(seatOne, seatTwo, seatThree, seatFour);
+        
         this.dispose();
     }//GEN-LAST:event_exitActionPerformed
 

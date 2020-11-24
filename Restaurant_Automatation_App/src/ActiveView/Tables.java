@@ -361,7 +361,6 @@ public class Tables extends javax.swing.JPanel {
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("One", "busser"); 
         }else if(moduleClicked.equals("server")){
-        
             controller.showTableManagmentScreen("One", "server"); 
         }
         else{
@@ -375,6 +374,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Two"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Two", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Two", "server"); 
         }else{
         controller.showTableManagmentScreen("Two");
         }
@@ -385,6 +387,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Three"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Three", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Three", "server"); 
         }else{
             controller.showTableManagmentScreen("Three");
         }
@@ -395,6 +400,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Four"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Four", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Four", "server"); 
         }else{
             controller.showTableManagmentScreen("Four");
         }
@@ -405,6 +413,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Five"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Five", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Five", "server"); 
         }else{
             controller.showTableManagmentScreen("Five");
         }
@@ -415,6 +426,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Six"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Six", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Six", "server"); 
         }else{
             controller.showTableManagmentScreen("Six");
         }
@@ -425,6 +439,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Seven"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Seven", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Seven", "server"); 
         }else{
         
             controller.showTableManagmentScreen("Seven");
@@ -436,6 +453,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Eight"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Eight", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Eight", "server"); 
         }else{
         
             controller.showTableManagmentScreen("Eight");
@@ -447,6 +467,9 @@ public class Tables extends javax.swing.JPanel {
             controller.showKitchenOrderScreen("Nine"); 
         }else if(moduleClicked.equals("busser")){
             controller.showTableManagmentScreen("Nine", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("Nine", "server"); 
         }else{
             controller.showTableManagmentScreen("Nine");
         }

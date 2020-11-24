@@ -505,16 +505,16 @@ public class Database {
 
                 if(active.equals("1")){
                     if(category.equals("Sides")){
-                        sides.add(name);
+                        sides.add(name + " $" + price);
                     }
                     if(category.equals("Drinks")){
-                        drinks.add(name);
+                        drinks.add(name+ " $" + price);
                     }
                     if(category.equals("Entrees")){
-                        entrees.add(name);
+                        entrees.add(name+ " $" + price);
                     }
                     if(category.equals("Desserts")){
-                        desserts.add(name);
+                        desserts.add(name+ " $" + price);
                     }
                 }
          

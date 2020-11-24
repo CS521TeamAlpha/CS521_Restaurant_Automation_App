@@ -596,8 +596,55 @@ public class Controller {
     }
     public void saveOrderToDatabase(String selectedTable, ArrayList<String> seatOneArray, ArrayList<String> seatTwoArray, ArrayList<String> seatThreeArray, ArrayList<String> seatFourArray){
     
+        //System.out.println(seatOneArray.toString());'
+        String order = ""; 
+        for(int i = 0; i < seatOneArray.size(); i++){
+            if(i == seatOneArray.size()-1){
+                order += seatOneArray.get(i) + "%";
+            }
+            else{
+                order += seatOneArray.get(i) + "~";
+            }
+        }
+            
+        for(int i = 0; i < seatTwoArray.size(); i++){
+            if(i == seatTwoArray.size()-1){
+                order += seatTwoArray.get(i) + "%";
+            }
+            else{
+                order += seatTwoArray.get(i) + "~";
+            }
+        }
+        for(int i = 0; i < seatThreeArray.size(); i++){
+            if(i == seatThreeArray.size()-1){
+                order += seatThreeArray.get(i) + "%";
+            }
+            else{
+                order += seatThreeArray.get(i) + "~";
+            }
+        }
+        for(int i = 0; i < seatFourArray.size(); i++){
+            if(i == seatFourArray.size()-1){
+                order += seatFourArray.get(i);
+            }
+            else{
+                order += seatFourArray.get(i) + "~";
+            }
+        }
         
         
+        System.out.println(order); 
+        
+        
+        
+        String query = "SELECT * FROM CustomerOrders ORDER BY orderId DESC LIMIT 1";
+        int lastId = database.getLastOrderID(query); 
+        int incrememt = lastId + 1; 
+        
+        query = "INSERT INTO `CustomerOrders`(`orderId`, `orderItems`) VALUES ('" + Integer.toString(incrememt) + "','"+ order +"')";
+        database.runInsertQuery(query);
+        query = "UPDATE `Booths` SET `ActiveOrder` = '"+ Integer.toString(incrememt) +"' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+        database.updateTableStatus(query);
     }
 
 }
