@@ -178,7 +178,7 @@ public class ManagerModule extends javax.swing.JFrame {
     }//GEN-LAST:event_reportsModuleActionPerformed
 
     private void menuManaagementModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManaagementModuleActionPerformed
-        // TODO add your handling code here:
+       Controller.showMenuManagement();
     }//GEN-LAST:event_menuManaagementModuleActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
