@@ -34,7 +34,7 @@ public class AddEmployee extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        SSN = new javax.swing.JLabel();
+        SSNlabel = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -44,7 +44,7 @@ public class AddEmployee extends javax.swing.JFrame {
         DOB = new javax.swing.JTextField();
         loginCode = new javax.swing.JTextField();
         lastName = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        SSN = new javax.swing.JTextField();
         taxStatus = new javax.swing.JTextField();
         positionID = new javax.swing.JTextField();
         address = new javax.swing.JTextField();
@@ -69,12 +69,12 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel4.setText("DoB");
         jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
 
-        SSN.setBackground(new java.awt.Color(0, 0, 0));
-        SSN.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        SSN.setForeground(new java.awt.Color(255, 255, 0));
-        SSN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SSN.setText("SSN");
-        SSN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        SSNlabel.setBackground(new java.awt.Color(0, 0, 0));
+        SSNlabel.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        SSNlabel.setForeground(new java.awt.Color(255, 255, 0));
+        SSNlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SSNlabel.setText("SSN");
+        SSNlabel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
@@ -147,12 +147,12 @@ public class AddEmployee extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField5.setForeground(new java.awt.Color(255, 255, 0));
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        SSN.setBackground(new java.awt.Color(0, 0, 0));
+        SSN.setForeground(new java.awt.Color(255, 255, 0));
+        SSN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        SSN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                SSNActionPerformed(evt);
             }
         });
 
@@ -219,10 +219,10 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                            .addComponent(SSN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lastName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SSN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(SSNlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -277,10 +277,10 @@ public class AddEmployee extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SSN, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(SSNlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SSN, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginCode, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(taxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(positionID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -330,9 +330,9 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lastNameActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void SSNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SSNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_SSNActionPerformed
 
     private void taxStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taxStatusActionPerformed
         // TODO add your handling code here:
@@ -371,7 +371,8 @@ public class AddEmployee extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DOB;
-    private javax.swing.JLabel SSN;
+    private javax.swing.JTextField SSN;
+    private javax.swing.JLabel SSNlabel;
     private javax.swing.JButton addEmployee;
     private javax.swing.JTextField address;
     private javax.swing.JButton exit;
@@ -384,7 +385,6 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField lastName;
     private javax.swing.JTextField loginCode;
     private javax.swing.JTextField positionID;
