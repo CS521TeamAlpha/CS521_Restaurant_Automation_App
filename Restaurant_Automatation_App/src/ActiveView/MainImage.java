@@ -158,7 +158,7 @@ public class MainImage extends javax.swing.JFrame {
     }//GEN-LAST:event_timeCardButtonActionPerformed
 
     private void managerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerLoginButtonActionPerformed
-
+        Controller.showManagementModule();
         
 
     }//GEN-LAST:event_managerLoginButtonActionPerformed

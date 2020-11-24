@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import ActiveView.AddEmployee;
 import ActiveView.Tables; 
 import ActiveView.LoginScreen;
 import ActiveView.TableManagement;
@@ -12,6 +13,7 @@ import ActiveView.OrderEntryScreen;
 import ActiveView.TimeClock;
 import ActiveView.KitchenOrderScreen;
 import ActiveView.MainImage;
+import ActiveView.ManagerModule;
 import Model.*; 
 import java.awt.Color;
 import java.text.SimpleDateFormat;
@@ -138,6 +140,17 @@ public class Controller {
         updateAllTableServer(); 
 
     }
+    
+    public void showManagementModule(){
+        ManagerModule manager = new ManagerModule();
+        manager.setVisible(true);
+    }
+    
+    public void showAddEmployeeForm(){
+        AddEmployee employee = new AddEmployee();
+        employee.setVisible(true);
+    }
+    
     public void showTableManagmentScreen(String tableSelected){
         
         String query = "SELECT Employee.firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId WHERE tableName = '"+tableSelected+"'";
