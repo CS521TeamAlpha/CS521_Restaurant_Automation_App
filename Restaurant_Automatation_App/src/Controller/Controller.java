@@ -619,7 +619,7 @@ public class Controller {
                 order += seatOneArray.get(i) + "~";
             }
         }
-        order += "%";
+        order += " % ";
         for(int i = 0; i < seatTwoArray.size(); i++){
             if(i == seatTwoArray.size()-1){
                 order += seatTwoArray.get(i);
@@ -628,7 +628,7 @@ public class Controller {
                 order += seatTwoArray.get(i) + "~";
             }
         }
-        order += "%";
+        order += " % ";
         for(int i = 0; i < seatThreeArray.size(); i++){
             if(i == seatThreeArray.size()-1){
                 order += seatThreeArray.get(i);
@@ -637,7 +637,7 @@ public class Controller {
                 order += seatThreeArray.get(i) + "~";
             }
         }
-        order += "%";
+        order += " % ";
         for(int i = 0; i < seatFourArray.size(); i++){
             if(i == seatFourArray.size()-1){
                 order += seatFourArray.get(i);

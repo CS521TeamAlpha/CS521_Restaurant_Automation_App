@@ -31,8 +31,10 @@ public class KitchenOrderScreen extends javax.swing.JFrame {
         selectedTable = table; 
     }
     public void setText(String s){
-        String[] seats = s.split("%");
         
+        System.out.println(s);
+        String[] seats = s.split("%");
+
         try {
             ArrayList<String> seatOne = new ArrayList<>(Arrays.asList(seats[0].split("~")));
             ArrayList<String> seatTwo = new ArrayList<>(Arrays.asList(seats[1].split("~")));
