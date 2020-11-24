@@ -600,29 +600,31 @@ public class Controller {
         String order = ""; 
         for(int i = 0; i < seatOneArray.size(); i++){
             if(i == seatOneArray.size()-1){
-                order += seatOneArray.get(i) + "%";
+                order += seatOneArray.get(i);
             }
             else{
                 order += seatOneArray.get(i) + "~";
             }
         }
-            
+        order += "%";
         for(int i = 0; i < seatTwoArray.size(); i++){
             if(i == seatTwoArray.size()-1){
-                order += seatTwoArray.get(i) + "%";
+                order += seatTwoArray.get(i);
             }
             else{
                 order += seatTwoArray.get(i) + "~";
             }
         }
+        order += "%";
         for(int i = 0; i < seatThreeArray.size(); i++){
             if(i == seatThreeArray.size()-1){
-                order += seatThreeArray.get(i) + "%";
+                order += seatThreeArray.get(i);
             }
             else{
                 order += seatThreeArray.get(i) + "~";
             }
         }
+        order += "%";
         for(int i = 0; i < seatFourArray.size(); i++){
             if(i == seatFourArray.size()-1){
                 order += seatFourArray.get(i);

@@ -676,7 +676,7 @@ public class Database {
             }//end finally try
         }//end try
         System.out.println("Goodbye!");    
-        return -1; 
+        return 0; 
     }
     public String getOrderItems(String query){
         Connection conn = null;

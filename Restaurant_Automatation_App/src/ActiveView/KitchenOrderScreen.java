@@ -6,6 +6,8 @@
 package ActiveView;
 
 import Controller.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -29,7 +31,64 @@ public class KitchenOrderScreen extends javax.swing.JFrame {
         selectedTable = table; 
     }
     public void setText(String s){
-        orderList.setText(s);
+        String[] seats = s.split("%");
+        
+        try {
+            ArrayList<String> seatOne = new ArrayList<>(Arrays.asList(seats[0].split("~")));
+            ArrayList<String> seatTwo = new ArrayList<>(Arrays.asList(seats[1].split("~")));
+            ArrayList<String> seatThree = new ArrayList<>(Arrays.asList(seats[2].split("~")));
+            ArrayList<String> seatFour = new ArrayList<>(Arrays.asList(seats[3].split("~")));
+            
+            System.out.println(seatOne.toString());
+            System.out.println(seatTwo.toString());
+            System.out.println(seatThree.toString());
+            System.out.println(seatFour.toString());
+            
+            
+            
+            String seatOneHeader = "Seat 1 \n ****************************************************************** \n";
+            String seatOneOrder = ""; 
+
+            for(int i = 0; i < seatOne.size(); i++){
+                seatOneOrder += seatOne.get(i) + "\n"; 
+            }
+
+
+            String seatTwoHeader = "\nSeat 2 \n ****************************************************************** \n";
+            String seatTwoOrder = ""; 
+
+            for(int i = 0; i < seatTwo.size(); i++){
+                seatTwoOrder += seatTwo.get(i) + "\n"; 
+            }
+
+
+            String seatThreeHeader = "\nSeat 3 \n ****************************************************************** \n";
+            String seatThreeOrder = ""; 
+
+            for(int i = 0; i < seatThree.size(); i++){
+                seatThreeOrder += seatThree.get(i) + "\n"; 
+            }
+
+
+            String seatFourHeader = "\nSeat 4 \n ****************************************************************** \n";
+            String seatFourOrder = ""; 
+
+            for(int i = 0; i < seatFour.size(); i++){
+                seatFourOrder += seatFour.get(i) + "\n"; 
+            }
+            String combinedReceipt = seatOneHeader + seatOneOrder + seatTwoHeader + seatTwoOrder + seatThreeHeader + seatThreeOrder + seatFourHeader + seatFourOrder; 
+
+            orderList.setText(combinedReceipt);
+        }
+        catch(Exception e) {
+            System.out.println("no active order, error was caught in kitchen order screen.");
+            orderList.setText(s);
+            
+        }
+
+
+        
+        
     }
     public String getText(){
         return orderList.getText(); 
@@ -121,6 +180,7 @@ public class KitchenOrderScreen extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
