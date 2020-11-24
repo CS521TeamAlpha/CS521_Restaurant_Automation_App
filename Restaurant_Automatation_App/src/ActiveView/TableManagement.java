@@ -5,7 +5,9 @@
  */
 package ActiveView;
 import Controller.Controller;
+import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Owner
@@ -18,6 +20,7 @@ public class TableManagement extends javax.swing.JFrame {
     
     private String assignedServer;
     private String tableStatus;
+    private String moduleClicked = ""; 
     
 
     /**
@@ -36,8 +39,6 @@ public class TableManagement extends javax.swing.JFrame {
         args = controller.getServerList(); 
         
         selectServer.setModel(new javax.swing.DefaultComboBoxModel<>(args));
-        
-        
         
         //selectServer.setSelectedIndex(1);
         
@@ -63,10 +64,37 @@ public class TableManagement extends javax.swing.JFrame {
         //System.out.println("Server: " + assignedServer + " Table status: " + tableStatus); 
         
         selectServer.setSelectedIndex(getServerIndex(assignedServer, args));
-      
+        TableManagement.setSelectedIndex(getStatusIndex(tableStatus, statusList));
 
         
     }
+    
+    public TableManagement(String tableSelected, Controller c, String assignedServer, String tableStatus, String s){
+        initComponents();
+        controller = c;
+        this.tableSelected = tableSelected;
+        this.assignedServer = assignedServer; 
+        this.tableStatus = tableStatus; 
+        
+        String[] args = { "Person A", "PersonB", "Person C" };
+        
+        args = controller.getServerList(); 
+        
+        selectServer.setModel(new javax.swing.DefaultComboBoxModel<>(args));
+        
+        String [] statusList = new String[] { "Ready", "Dirty", "New Arrival", "Order In", "Order Ready" };
+        
+        TableManagement.setModel(new javax.swing.DefaultComboBoxModel<>(statusList));
+        
+        
+        //System.out.println("Server: " + assignedServer + " Table status: " + tableStatus); 
+        
+        selectServer.setSelectedIndex(getServerIndex(assignedServer, args));
+        TableManagement.setSelectedIndex(getStatusIndex(tableStatus, statusList));
+        moduleClicked = s; 
+        
+    }
+    
     
     private int getServerIndex(String name, String[] serverList){
         int index = Arrays.asList(serverList).indexOf(name);
@@ -76,8 +104,11 @@ public class TableManagement extends javax.swing.JFrame {
         return index;
     }
     private int getStatusIndex(String status, String[] statusList){
-        
-        
+        for(int i = 0; i < statusList.length; i++){
+            if(status.toUpperCase().equals(statusList[i].toUpperCase())){
+                return i; 
+            } 
+        }
         return 0; 
     }
     
@@ -238,8 +269,18 @@ public class TableManagement extends javax.swing.JFrame {
     private void updateTableStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTableStatusActionPerformed
         // TODO add your handling code here:
         String status = TableManagement.getSelectedItem().toString();
-   
-        controller.updateTableStatus(tableSelected, status); 
+        if(moduleClicked.equals("busser")){
+            if(status.equals("Ready")){
+                controller.updateTableStatus(tableSelected, status); 
+            }
+            else{
+                //show message
+                JOptionPane.showMessageDialog(null, "Busser is not allowed to make that change. Please try again from another module", "InfoBox: " + "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else{
+            controller.updateTableStatus(tableSelected, status); 
+        }
+        
     }//GEN-LAST:event_updateTableStatusActionPerformed
 
     private void selectServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectServerActionPerformed
@@ -247,12 +288,25 @@ public class TableManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_selectServerActionPerformed
 
     private void updateServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateServerActionPerformed
-       String tableServer = selectServer.getSelectedItem().toString();
-        controller.updateServer(tableSelected, tableServer);
+        String tableServer = selectServer.getSelectedItem().toString();
+        
+        if(moduleClicked.equals("busser")){
+            JOptionPane.showMessageDialog(null, "Busser is not allowed to make that change. Please try again from another module", "InfoBox: " + "Error Message", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            controller.updateServer(tableSelected, tableServer);
+        }
     }//GEN-LAST:event_updateServerActionPerformed
 
     private void enterOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterOrderActionPerformed
-      controller.enterOrder(tableSelected);
+        
+        if(moduleClicked.equals("server")){
+            
+            controller.enterOrder(tableSelected);
+        
+        }
+        else{
+            JOptionPane.showMessageDialog(null, moduleClicked + ": Access Denied. Please try again from another module", "InfoBox: " + "Error Message", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_enterOrderActionPerformed
 
     /**

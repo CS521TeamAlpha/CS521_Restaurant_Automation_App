@@ -358,7 +358,13 @@ public class Tables extends javax.swing.JPanel {
     private void tableOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableOneActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("One"); 
-        }else{
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("One", "busser"); 
+        }else if(moduleClicked.equals("server")){
+        
+            controller.showTableManagmentScreen("One", "server"); 
+        }
+        else{
             controller.showTableManagmentScreen("One");
         }
         
@@ -367,6 +373,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTwoActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Two"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Two", "busser"); 
         }else{
         controller.showTableManagmentScreen("Two");
         }
@@ -375,6 +383,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableThreeActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Three"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Three", "busser"); 
         }else{
             controller.showTableManagmentScreen("Three");
         }
@@ -383,6 +393,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFourActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Four"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Four", "busser"); 
         }else{
             controller.showTableManagmentScreen("Four");
         }
@@ -391,6 +403,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableFiveActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Five"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Five", "busser"); 
         }else{
             controller.showTableManagmentScreen("Five");
         }
@@ -399,6 +413,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSixActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Six"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Six", "busser"); 
         }else{
             controller.showTableManagmentScreen("Six");
         }
@@ -407,6 +423,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableSevenActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Seven"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Seven", "busser"); 
         }else{
         
             controller.showTableManagmentScreen("Seven");
@@ -416,6 +434,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableEightActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Eight"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Eight", "busser"); 
         }else{
         
             controller.showTableManagmentScreen("Eight");
@@ -425,6 +445,8 @@ public class Tables extends javax.swing.JPanel {
     private void tableNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableNineActionPerformed
         if(moduleClicked.equals("kitchen")){
             controller.showKitchenOrderScreen("Nine"); 
+        }else if(moduleClicked.equals("busser")){
+            controller.showTableManagmentScreen("Nine", "busser"); 
         }else{
             controller.showTableManagmentScreen("Nine");
         }

@@ -28,8 +28,6 @@ public class MenuList extends javax.swing.JFrame {
     public MenuList() {
         initComponents();
         
-       
-        
         System.out.println("This should never be called... MenuList.java line 23ish");
     }
     public MenuList(Map<String, String[]> hm, OrderEntryScreen blah) {
@@ -361,7 +359,7 @@ public class MenuList extends javax.swing.JFrame {
     private void addEntreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEntreeButtonActionPerformed
         String s = ""; 
         s += String.valueOf(entreeComboBox.getSelectedItem());
-        s += ": " + entreeModifierField.getText(); 
+        s += ", " + entreeModifierField.getText(); 
         entreeModifierField.setText(""); 
         
         if(OrderScreen.getActiveSeat() == -1){
@@ -423,7 +421,8 @@ public class MenuList extends javax.swing.JFrame {
     }//GEN-LAST:event_addDrinksButtonActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-     this.dispose();
+        OrderScreen.setArrays(seatOne, seatTwo, seatThree, seatFour);
+        this.dispose();
     }//GEN-LAST:event_exitActionPerformed
 
     /**
