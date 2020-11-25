@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
+import ActiveView.AddEmployee.*;
 
 /**
  *
@@ -61,6 +61,18 @@ public class Controller {
         keypad.dispose();
         
     }
+    
+    public void addEmployeeToDatabase(String attributes){
+        
+        String query  = "INSERT INTO `Employee` (`firstName`, `lastName`, `dob`, `ssn`, `loginCode`, `address`, `positionId`) VALUES ("+attributes+");";
+        database.runInsertQuery(query);
+          
+      }
+    
+        
+  
+        
+    
     public void updateAllTableColor(){
         String query = "SELECT * FROM `Booths`";
         Map<String, String> statusMap = database.getBoothsTable(query);
@@ -148,9 +160,10 @@ public class Controller {
         manager.setVisible(true);
     }
     
-    public void showAddEmployeeForm(){
-        AddEmployee employee = new AddEmployee();
+    public void showAddEmployeeForm(Controller c){
+        AddEmployee employee = new AddEmployee(c);
         employee.setVisible(true);
+        System.out.println("is this being read?");
     }
     
     public void showMenuManagement(){
@@ -581,8 +594,7 @@ public class Controller {
         
         
         return database.getMenuItems(query);
-        
-        
+               
     }
     
     public void sendOrderToKitchen(String order, String table){
@@ -596,8 +608,7 @@ public class Controller {
         query = "UPDATE `Booths` SET `ActiveOrder` = '"+ Integer.toString(incrememt) +"' WHERE tableName = '" + table.toUpperCase() + "'";
         database.updateTableStatus(query);
         updateTableStatus(table, "ORDER IN");
-        
-        
+              
     }
     
     public String getKitchenOrder(String table){
@@ -654,16 +665,13 @@ public class Controller {
             }
         }
         
-        
         System.out.println(order); 
-        
-        
         
         String query = "SELECT * FROM CustomerOrders ORDER BY orderId DESC LIMIT 1";
         int lastId = database.getLastOrderID(query); 
         int incrememt = lastId + 1; 
         
-        query = "INSERT INTO `CustomerOrders`(`orderId`, `orderItems`) VALUES ('" + Integer.toString(incrememt) + "','"+ order +"')";
+        query = "INSERT INTO `CustomerOrders`(`orderId`, `orderItems`) VALUES    ('" + Integer.toString(incrememt) + "','"+ order +"')";
         database.runInsertQuery(query);
         query = "UPDATE `Booths` SET `ActiveOrder` = '"+ Integer.toString(incrememt) +"' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
         database.updateTableStatus(query);

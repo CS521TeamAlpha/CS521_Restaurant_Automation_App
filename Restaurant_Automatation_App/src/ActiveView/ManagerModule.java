@@ -11,12 +11,12 @@ import Controller.*;
  * @author Vaibhav T
  */
 public class ManagerModule extends javax.swing.JFrame {
-    private Controller Controller;
+    private Controller controller;
     /**
      * Creates new form Managersmodule
      */
     public ManagerModule(Controller c) {
-        Controller = c;
+        controller = c;
         initComponents();
     }
 
@@ -178,7 +178,7 @@ public class ManagerModule extends javax.swing.JFrame {
     }//GEN-LAST:event_reportsModuleActionPerformed
 
     private void menuManaagementModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManaagementModuleActionPerformed
-       Controller.showMenuManagement();
+       controller.showMenuManagement();
     }//GEN-LAST:event_menuManaagementModuleActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
@@ -186,7 +186,7 @@ public class ManagerModule extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void employeeModule1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeModule1ActionPerformed
-       Controller.showAddEmployeeForm();
+       controller.showAddEmployeeForm(controller);
     }//GEN-LAST:event_employeeModule1ActionPerformed
 
     /**

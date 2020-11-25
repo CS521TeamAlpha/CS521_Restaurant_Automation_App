@@ -62,7 +62,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SSN" alignment="0" pref="219" max="32767" attributes="0"/>
+                              <Component id="ssn" alignment="0" pref="219" max="32767" attributes="0"/>
                               <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
                               <Component id="lastName" alignment="0" max="32767" attributes="0"/>
                               <Component id="SSNlabel" alignment="0" max="32767" attributes="0"/>
@@ -76,7 +76,7 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="DOB" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="dob" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
                                       <Component id="jLabel4" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -130,7 +130,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="DOB" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="dob" min="-2" pref="27" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -146,7 +146,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="SSN" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="ssn" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="loginCode" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="taxStatus" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="positionID" min="-2" pref="27" max="-2" attributes="0"/>
@@ -366,7 +366,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="DOB">
+        <Component class="javax.swing.JTextField" name="dob">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -383,7 +383,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DOBActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dobActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="loginCode">
@@ -426,7 +426,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastNameActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="SSN">
+        <Component class="javax.swing.JTextField" name="ssn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -443,7 +443,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SSNActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ssnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="taxStatus">

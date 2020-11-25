@@ -6,6 +6,10 @@
 package ActiveView;
 import Controller.Controller;
 import java.util.ArrayList;
+import java.lang.StringBuilder.*;
+import java.util.Arrays;
+import java.util.List;
+import Model.Database;
 
 /**
  *
@@ -15,11 +19,21 @@ public class AddEmployee extends javax.swing.JFrame {
 
     private Controller controller;
     ArrayList<String> employeeInfo = new ArrayList<>();
+    String grabTheseAttributes;
+    private Database database;
+   
     /**
      * Creates new form AddEmployee
      */
     public AddEmployee() {
+        database = new Database("jdbc:mysql://mysql.stackcp.com:55219/RestaurantApp-37371618", "RestaurantApp-37371618", "oki80a0ih2"); 
         initComponents();
+    }
+    
+    public AddEmployee(Controller c){
+        initComponents();
+        controller = c;                
+        
     }
 
     /**
@@ -41,10 +55,10 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         firstName = new javax.swing.JTextField();
-        DOB = new javax.swing.JTextField();
+        dob = new javax.swing.JTextField();
         loginCode = new javax.swing.JTextField();
         lastName = new javax.swing.JTextField();
-        SSN = new javax.swing.JTextField();
+        ssn = new javax.swing.JTextField();
         taxStatus = new javax.swing.JTextField();
         positionID = new javax.swing.JTextField();
         address = new javax.swing.JTextField();
@@ -120,12 +134,12 @@ public class AddEmployee extends javax.swing.JFrame {
             }
         });
 
-        DOB.setBackground(new java.awt.Color(0, 0, 0));
-        DOB.setForeground(new java.awt.Color(255, 255, 0));
-        DOB.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        DOB.addActionListener(new java.awt.event.ActionListener() {
+        dob.setBackground(new java.awt.Color(0, 0, 0));
+        dob.setForeground(new java.awt.Color(255, 255, 0));
+        dob.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        dob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DOBActionPerformed(evt);
+                dobActionPerformed(evt);
             }
         });
 
@@ -147,12 +161,12 @@ public class AddEmployee extends javax.swing.JFrame {
             }
         });
 
-        SSN.setBackground(new java.awt.Color(0, 0, 0));
-        SSN.setForeground(new java.awt.Color(255, 255, 0));
-        SSN.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        SSN.addActionListener(new java.awt.event.ActionListener() {
+        ssn.setBackground(new java.awt.Color(0, 0, 0));
+        ssn.setForeground(new java.awt.Color(255, 255, 0));
+        ssn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        ssn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SSNActionPerformed(evt);
+                ssnActionPerformed(evt);
             }
         });
 
@@ -219,7 +233,7 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SSN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                            .addComponent(ssn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lastName, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SSNlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -231,7 +245,7 @@ public class AddEmployee extends javax.swing.JFrame {
                                     .addComponent(firstName))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DOB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
@@ -270,7 +284,7 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(13, 13, 13))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,7 +294,7 @@ public class AddEmployee extends javax.swing.JFrame {
                             .addComponent(SSNlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SSN, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ssn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginCode, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(taxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(positionID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -318,9 +332,9 @@ public class AddEmployee extends javax.swing.JFrame {
         
     }//GEN-LAST:event_firstNameActionPerformed
 
-    private void DOBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DOBActionPerformed
+    private void dobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DOBActionPerformed
+    }//GEN-LAST:event_dobActionPerformed
 
     private void loginCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginCodeActionPerformed
         // TODO add your handling code here:
@@ -330,9 +344,9 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lastNameActionPerformed
 
-    private void SSNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SSNActionPerformed
+    private void ssnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ssnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SSNActionPerformed
+    }//GEN-LAST:event_ssnActionPerformed
 
     private void taxStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taxStatusActionPerformed
         // TODO add your handling code here:
@@ -343,21 +357,36 @@ public class AddEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_positionIDActionPerformed
 
     private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_addressActionPerformed
 
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
+       
        employeeInfo.add(firstName.getText());
        employeeInfo.add(lastName.getText());
-       employeeInfo.add(DOB.getText());
-       employeeInfo.add(SSN.getText());
-       employeeInfo.add(taxStatus.getText());
+       employeeInfo.add(dob.getText());
+       employeeInfo.add(ssn.getText());
        employeeInfo.add(loginCode.getText());
-       employeeInfo.add(positionID.getText());
+       employeeInfo.add(taxStatus.getText());
        employeeInfo.add(address.getText());
-       for(int i = 0; i < employeeInfo.size(); i++){
-           System.out.println(employeeInfo.get(i));
+       employeeInfo.add(positionID.getText());
+       
+       StringBuilder sbString = new StringBuilder("");
+       
+       employeeInfo.forEach(employeeInformation -> {
+           sbString.append("'").append(employeeInformation).append("'").append(",").append(" ");
+        });
+       
+       String employeeAttributes = sbString.toString();
+       
+       if(employeeAttributes.length() > 0) {
+           employeeAttributes = employeeAttributes.substring(0, employeeAttributes.length() -2);
        }
+       
+       grabTheseAttributes = employeeAttributes;
+       System.out.print(grabTheseAttributes);
+      
+       controller.addEmployeeToDatabase(grabTheseAttributes);
+       
     }//GEN-LAST:event_addEmployeeActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -370,11 +399,10 @@ public class AddEmployee extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DOB;
-    private javax.swing.JTextField SSN;
     private javax.swing.JLabel SSNlabel;
     private javax.swing.JButton addEmployee;
     private javax.swing.JTextField address;
+    private javax.swing.JTextField dob;
     private javax.swing.JButton exit;
     private javax.swing.JTextField firstName;
     private javax.swing.JLabel jLabel10;
@@ -388,6 +416,7 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JTextField lastName;
     private javax.swing.JTextField loginCode;
     private javax.swing.JTextField positionID;
+    private javax.swing.JTextField ssn;
     private javax.swing.JTextField taxStatus;
     // End of variables declaration//GEN-END:variables
 }
