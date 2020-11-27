@@ -6,10 +6,7 @@
 package ActiveView;
 import Controller.Controller;
 import java.util.ArrayList;
-import java.lang.StringBuilder.*;
-import java.util.Arrays;
-import java.util.List;
-import Model.Database;
+
 
 /**
  *
@@ -20,13 +17,12 @@ public class AddEmployee extends javax.swing.JFrame {
     private Controller controller;
     ArrayList<String> employeeInfo = new ArrayList<>();
     String grabTheseAttributes;
-    private Database database;
+   
    
     /**
      * Creates new form AddEmployee
      */
     public AddEmployee() {
-        database = new Database("jdbc:mysql://mysql.stackcp.com:55219/RestaurantApp-37371618", "RestaurantApp-37371618", "oki80a0ih2"); 
         initComponents();
     }
     

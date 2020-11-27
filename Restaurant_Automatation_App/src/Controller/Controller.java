@@ -6,7 +6,7 @@
 package Controller;
 
 import ActiveView.AddEmployee;
-import ActiveView.AddItemToDatabase;
+import ActiveView.AddMenuItemToDatabase;
 import ActiveView.Tables; 
 import ActiveView.LoginScreen;
 import ActiveView.TableManagement;
@@ -69,8 +69,15 @@ public class Controller {
           
       }
     
-        
-  
+    public void addMenuItemToDatabase(String menuItemsList){
+        String query = "INSERT INTO `MenuItems` (`name`, `price`, `category`, `active`) VALUES ("+menuItemsList+");";
+        database.runInsertQuery(query);
+    }
+    
+    public void showAddItemToDatabaseScreen(){
+        AddMenuItemToDatabase addItem = new AddMenuItemToDatabase();
+        addItem.setVisible(true);
+    }
         
     
     public void updateAllTableColor(){
@@ -163,17 +170,17 @@ public class Controller {
     public void showAddEmployeeForm(Controller c){
         AddEmployee employee = new AddEmployee(c);
         employee.setVisible(true);
-        System.out.println("is this being read?");
+        
     }
     
-    public void showMenuManagement(){
+    public void showMenuManagement(Controller c){
        
-       MenuManagement menuManagement = new MenuManagement(this);
+       MenuManagement menuManagement = new MenuManagement(c);
        menuManagement.setVisible(true);
     }
     
-    public void showAddItemToDataBaseScreen(){
-        AddItemToDatabase addItem = new AddItemToDatabase();
+    public void showAddMenuItemToDataBaseScreen(Controller c){
+        AddMenuItemToDatabase addItem = new AddMenuItemToDatabase(c);
         addItem.setVisible(true);
     }
     

@@ -15,9 +15,14 @@ public class ManagerModule extends javax.swing.JFrame {
     /**
      * Creates new form Managersmodule
      */
-    public ManagerModule(Controller c) {
-        controller = c;
+    public ManagerModule() {
+       
         initComponents();
+    }
+    
+    public ManagerModule (Controller c){
+        initComponents();
+        controller = c;
     }
 
     /**
@@ -106,7 +111,7 @@ public class ManagerModule extends javax.swing.JFrame {
         employeeModule1.setBackground(new java.awt.Color(0, 0, 0));
         employeeModule1.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
         employeeModule1.setForeground(new java.awt.Color(255, 255, 0));
-        employeeModule1.setText("Employees");
+        employeeModule1.setText("Add Employees");
         employeeModule1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         employeeModule1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +183,7 @@ public class ManagerModule extends javax.swing.JFrame {
     }//GEN-LAST:event_reportsModuleActionPerformed
 
     private void menuManaagementModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManaagementModuleActionPerformed
-       controller.showMenuManagement();
+       controller.showMenuManagement(controller);
     }//GEN-LAST:event_menuManaagementModuleActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
