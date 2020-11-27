@@ -44,7 +44,7 @@ public class MainImage extends javax.swing.JFrame {
         timeCardButton = new javax.swing.JButton();
         backgroundImage = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Restaurant Automation Application Main Screen");
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));

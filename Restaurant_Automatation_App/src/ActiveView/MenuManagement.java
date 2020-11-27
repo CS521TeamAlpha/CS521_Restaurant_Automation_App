@@ -34,20 +34,21 @@ private Controller controller;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        addMenuItemToDatabase = new javax.swing.JButton();
+        removeMenuItemFromDatabase = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        addMenuItemToDatabase1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 0));
 
-        addMenuItemToDatabase.setBackground(new java.awt.Color(0, 0, 0));
-        addMenuItemToDatabase.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        addMenuItemToDatabase.setForeground(new java.awt.Color(255, 255, 0));
-        addMenuItemToDatabase.setText("Add Menu Item to Database");
-        addMenuItemToDatabase.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        addMenuItemToDatabase.addActionListener(new java.awt.event.ActionListener() {
+        removeMenuItemFromDatabase.setBackground(new java.awt.Color(0, 0, 0));
+        removeMenuItemFromDatabase.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        removeMenuItemFromDatabase.setForeground(new java.awt.Color(255, 255, 0));
+        removeMenuItemFromDatabase.setText("Remove Menu Items");
+        removeMenuItemFromDatabase.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        removeMenuItemFromDatabase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addMenuItemToDatabaseActionPerformed(evt);
+                removeMenuItemFromDatabaseActionPerformed(evt);
             }
         });
 
@@ -62,27 +63,46 @@ private Controller controller;
             }
         });
 
+        addMenuItemToDatabase1.setBackground(new java.awt.Color(0, 0, 0));
+        addMenuItemToDatabase1.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        addMenuItemToDatabase1.setForeground(new java.awt.Color(255, 255, 0));
+        addMenuItemToDatabase1.setText("Add Menu Item to Database");
+        addMenuItemToDatabase1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        addMenuItemToDatabase1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMenuItemToDatabase1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(addMenuItemToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(337, Short.MAX_VALUE)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(333, 333, 333))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(removeMenuItemFromDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(269, 269, 269))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(33, 33, 33)
+                    .addComponent(addMenuItemToDatabase1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(573, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(addMenuItemToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
+                .addComponent(removeMenuItemFromDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 335, Short.MAX_VALUE)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(41, 41, 41)
+                    .addComponent(addMenuItemToDatabase1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(422, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,13 +120,17 @@ private Controller controller;
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addMenuItemToDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMenuItemToDatabaseActionPerformed
-       controller.showAddMenuItemToDataBaseScreen(controller);
-    }//GEN-LAST:event_addMenuItemToDatabaseActionPerformed
+    private void removeMenuItemFromDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMenuItemFromDatabaseActionPerformed
+       controller.removeMenuItems();
+    }//GEN-LAST:event_removeMenuItemFromDatabaseActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         this.dispose();
     }//GEN-LAST:event_exitActionPerformed
+
+    private void addMenuItemToDatabase1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMenuItemToDatabase1ActionPerformed
+        controller.showAddMenuItemToDataBaseScreen(controller);
+    }//GEN-LAST:event_addMenuItemToDatabase1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,8 +138,9 @@ private Controller controller;
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addMenuItemToDatabase;
+    private javax.swing.JButton addMenuItemToDatabase1;
     private javax.swing.JButton exit;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton removeMenuItemFromDatabase;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,6 +23,7 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import ActiveView.AddEmployee.*;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -42,44 +43,15 @@ public class Controller {
     public Controller(){
         database = new Database("jdbc:mysql://mysql.stackcp.com:55219/RestaurantApp-37371618", "RestaurantApp-37371618", "oki80a0ih2"); 
         mainScreen = new MainImage(this);
-        
         initialize(); 
     }
 
     public void initialize(){
         mainScreen.setVisible(true);
-       
-    }
-    
-    public void showLoginScreen(String moduleSelected){
-        keypad = new LoginScreen(moduleSelected, this);
-        keypad.setVisible(true);
-        
-    }
-    public void hideLoginScreen(){
-        
-        keypad.dispose();
-        
-    }
-    
-    public void addEmployeeToDatabase(String attributes){
-        
-        String query  = "INSERT INTO `Employee` (`firstName`, `lastName`, `dob`, `ssn`, `loginCode`, `address`, `positionId`) VALUES ("+attributes+");";
-        database.runInsertQuery(query);
-          
-      }
-    
-    public void addMenuItemToDatabase(String menuItemsList){
-        String query = "INSERT INTO `MenuItems` (`name`, `price`, `category`, `active`) VALUES ("+menuItemsList+");";
-        database.runInsertQuery(query);
-    }
-    
-    public void showAddItemToDatabaseScreen(){
-        AddMenuItemToDatabase addItem = new AddMenuItemToDatabase();
-        addItem.setVisible(true);
-    }
+    }   
         
     
+        
     public void updateAllTableColor(){
         String query = "SELECT * FROM `Booths`";
         Map<String, String> statusMap = database.getBoothsTable(query);
@@ -119,15 +91,11 @@ public class Controller {
         
     }
     public void updateAllTableServer(){
-
-        
-        String query = "SELECT tableName, Booths.employeeId, firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId";
+       String query = "SELECT tableName, Booths.employeeId, firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId";
         Map<String, String> namesMap = database.getAssignedTableServerList(query);
         //System.out.println("Table One's status is: " + statusMap.get("ONE"));
         
         String[] tableNames = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
-        
-        
         
         for(int i = 0; i < 9; i++){
             
@@ -142,11 +110,37 @@ public class Controller {
                     tables.setTableServer(tableNames[i], serverName);
                 }
             }
-
         }
     }
-    public void showHostessModule(){
+    
+    public void showLoginScreen(String moduleSelected){
+        keypad = new LoginScreen(moduleSelected, this);
+        keypad.setVisible(true);
+    }
+    public void hideLoginScreen(){
+        keypad.dispose();
+    }
+    
+    public void addEmployeeToDatabase(String attributes){
+        String query  = "INSERT INTO `Employee` (`firstName`, `lastName`, `dob`, `ssn`, `loginCode`, `address`, `positionId`) VALUES ("+attributes+");";
+        database.runInsertQuery(query);
+    }
+    
+    public void addMenuItemToDatabase(String menuItemsList){
+        String query = "INSERT INTO `MenuItems` (`name`, `price`, `category`, `active`) VALUES ("+menuItemsList+");";
+        database.runInsertQuery(query);
+    }
+    
+    public void showAddItemToDatabaseScreen(){
+        AddMenuItemToDatabase addItem = new AddMenuItemToDatabase();
+        addItem.setVisible(true);
+    }
+    
+    public void removeMenuItems(){
         
+    }
+       
+    public void showHostessModule(){
         tables = new Tables(this);
         System.out.println("method performed");
         tables.setVisible(true);
@@ -156,7 +150,8 @@ public class Controller {
         frame.setSize(1470,970);
         frame.setResizable(false);
         frame.setVisible(true);
-        frame.setLocationRelativeTo(null);        
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);        
         updateAllTableColor();
         updateAllTableServer(); 
 
@@ -174,7 +169,6 @@ public class Controller {
     }
     
     public void showMenuManagement(Controller c){
-       
        MenuManagement menuManagement = new MenuManagement(c);
        menuManagement.setVisible(true);
     }
@@ -185,11 +179,9 @@ public class Controller {
     }
     
     public void showTableManagmentScreen(String tableSelected){
-        
         String query = "SELECT Employee.firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId WHERE tableName = '"+tableSelected+"'";
         String serverName = database.getEmployeeNameById(query);
         
-       
         if(serverName == null){
         
             TableManagement tm = new TableManagement(tableSelected, this);
@@ -200,44 +192,34 @@ public class Controller {
             tables.setTableServer(tableSelected, "No Server Assigned");
             
         }
+ 
         else{
             
             String tableQuery = "SELECT * FROM `Booths` WHERE tableName = '" + tableSelected + "'";
             String status = database.getTableColor(tableQuery);
-            
-       
-                    
             String[] tempArray;
-        
             String delimiter = " ";
-         
             tempArray = status.split(delimiter);
-
             String color = tempArray[tempArray.length-1];
-           
             String tableStatus = "null"; 
+  
             if(tempArray.length == 3){
                 tableStatus = tempArray[0] + " " + tempArray[1];
+            
             }else if(tempArray.length == 2){
                 tableStatus = tempArray[0];
             }
-          
-                    
+                            
             TableManagement tm = new TableManagement(tableSelected, this, serverName, tableStatus);
             tm.setVisible(true);
             
             tables.setTableServer(tableSelected, serverName);
         }
-        
-        
-           
     }
     
     public void showTableManagmentScreen(String tableSelected, String moduleClicked){ //if you want to add constraints based on module selected. 
-        
         String query = "SELECT Employee.firstName FROM `Booths` Left Join Employee on Booths.employeeId = Employee.employeeId WHERE tableName = '"+tableSelected+"'";
         String serverName = database.getEmployeeNameById(query);
-        
         
         String tableQuery = "SELECT * FROM `Booths` WHERE tableName = '" + tableSelected + "'";
         String status = database.getTableColor(tableQuery);
@@ -250,23 +232,20 @@ public class Controller {
         String color = tempArray[tempArray.length-1];
 
         String tableStatus = "null"; 
+        
         if(tempArray.length == 3){
             tableStatus = tempArray[0] + " " + tempArray[1];
         }else if(tempArray.length == 2){
             tableStatus = tempArray[0];
         }
-        
-       
+    
         if(serverName == null){
-
-            
             TableManagement tm = new TableManagement(tableSelected, this, "No Server Assigned", tableStatus, moduleClicked);
             tm.setVisible(true);
             
             System.out.println("tablestatus is null, this is not an error. ");
             
             tables.setTableServer(tableSelected, "No Server Assigned");
-            
         }
         else{
             
@@ -278,15 +257,12 @@ public class Controller {
             }else if(tempArray.length == 2){
                 tableStatus = tempArray[0];
             }
-          
                     
             TableManagement tm = new TableManagement(tableSelected, this, serverName, tableStatus, moduleClicked);
             tm.setVisible(true);
             
             tables.setTableServer(tableSelected, serverName);
         }
-        
-        
            
     }
     
@@ -302,7 +278,6 @@ public class Controller {
         database.updateTableServer(query);
         
     }
-    
     
     public void updateTableStatus(String selectedTable, String status){ //updates the database
         System.out.println("Setting table " + selectedTable + "'s status to " + status);
@@ -370,7 +345,6 @@ public class Controller {
     
     }
     
-   
     public void login(String moduleClicked, String code){
         if(moduleClicked.equalsIgnoreCase("TimeCard")){
             
@@ -426,9 +400,6 @@ public class Controller {
         query = "UPDATE Employee SET clockedIn = 'TRUE' WHERE employeeId = '" + resultRow.get(0) + "'";
         
         database.runInsertQuery(query);
-      
-        
-        
         
     }
     public void clockOut(GregorianCalendar now2){
@@ -513,8 +484,8 @@ public class Controller {
         frame.setResizable(false);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         updateAllTableColor();
-       
         updateAllTableServer(); 
         
         
@@ -531,6 +502,7 @@ public class Controller {
         frame.setResizable(false);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         updateAllTableColor();
         
      
@@ -558,8 +530,8 @@ public class Controller {
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         updateAllTableColor();  
-    
         updateAllTableServer(); 
     }
     public void showKitchenOrderScreen(String table){
@@ -598,8 +570,6 @@ public class Controller {
         menuItems.put("DESSERTS", list3);
         menuItems.put("SIDES", list4);
         */
-        
-        
         return database.getMenuItems(query);
                
     }
