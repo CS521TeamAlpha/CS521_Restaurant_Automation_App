@@ -12,6 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
+import javax.swing.JFrame;
 import javax.swing.Timer;
 
 /**
@@ -48,6 +49,7 @@ public class TimeClock extends javax.swing.JFrame {
         updateTimer.start();
         nameLabel.setText("Currently Logged in as: " + employeeName);
         
+        
     }
 
      /**
@@ -69,7 +71,7 @@ public class TimeClock extends javax.swing.JFrame {
         nameLabel = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(750, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(750, 600));

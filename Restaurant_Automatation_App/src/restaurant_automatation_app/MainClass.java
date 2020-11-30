@@ -17,7 +17,8 @@ public class MainClass {
     public static void main (String [] args){
        
         
-        Controller applicationController = new Controller(); 
+        Controller applicationController = new Controller();
+        
        
     }
 }

@@ -121,7 +121,7 @@ private Controller controller;
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeMenuItemFromDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMenuItemFromDatabaseActionPerformed
-       controller.removeMenuItems();
+       controller.showRemoveMenuItemsScreen(controller);
     }//GEN-LAST:event_removeMenuItemFromDatabaseActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

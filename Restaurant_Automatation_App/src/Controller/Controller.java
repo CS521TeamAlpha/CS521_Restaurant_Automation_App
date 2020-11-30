@@ -23,6 +23,7 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import ActiveView.AddEmployee.*;
+import ActiveView.RemoveMenuItemsFromDatabase;
 import javax.swing.WindowConstants;
 
 /**
@@ -131,13 +132,18 @@ public class Controller {
         database.runInsertQuery(query);
     }
     
+   
+    
     public void showAddItemToDatabaseScreen(){
         AddMenuItemToDatabase addItem = new AddMenuItemToDatabase();
         addItem.setVisible(true);
     }
     
-    public void removeMenuItems(){
-        
+   
+    
+    public void showRemoveMenuItemsScreen(Controller c){
+        RemoveMenuItemsFromDatabase menuItems = new RemoveMenuItemsFromDatabase(c);
+        menuItems.setVisible(true);
     }
        
     public void showHostessModule(){
@@ -571,8 +577,19 @@ public class Controller {
         menuItems.put("SIDES", list4);
         */
         return database.getMenuItems(query);
+        
                
     }
+    
+    public  Map<String, String[]> generateMenuList(){
+        
+        String query = "SELECT * FROM `MenuItems";
+       
+        return database.getMenuList(query);
+        
+               
+    }
+    
     
     public void sendOrderToKitchen(String order, String table){
         
