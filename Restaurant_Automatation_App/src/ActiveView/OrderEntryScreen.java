@@ -8,6 +8,8 @@ import Controller.Controller;
 import Model.Database;
 import java.util.*;
 import java.lang.StringBuilder;
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -200,10 +202,11 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     public void setArrays(String s){
         
-        System.out.println(s);
-        String[] seats = s.split("%");
+        //System.out.println(s);
+        
 
         try {
+            String[] seats = s.split("%");
             ArrayList<String> seatOne = new ArrayList<>(Arrays.asList(seats[0].split("~")));
             ArrayList<String> seatTwo = new ArrayList<>(Arrays.asList(seats[1].split("~")));
             ArrayList<String> seatThree = new ArrayList<>(Arrays.asList(seats[2].split("~")));
@@ -341,7 +344,64 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     private void paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentActionPerformed
         //controller.showPaymentScreen();
         // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null, "As of now, order payments are handled externally. Prices are: \nSeatOne: $" +  new DecimalFormat("#.##").format(getSeatPrices()[0]) + "\n" + "SeatTwo: $" + new DecimalFormat("#.##").format(getSeatPrices()[1]) + "\n" + "SeatThree: $" + new DecimalFormat("#.##").format(getSeatPrices()[2]) + "\n" + "SeatFour: $" + new DecimalFormat("#.##").format(getSeatPrices()[3]) + "\n", "InfoBox: " + "Error Message", JOptionPane.INFORMATION_MESSAGE);
+        //System.out.println(getSeatPrices()[0]); 
     }//GEN-LAST:event_paymentActionPerformed
+    
+    private Double[] getSeatPrices(){
+        
+        
+        double seatOnePrice = 0.0;
+        double seatTwoPrice = 0.0;
+        double seatThreePrice = 0.0;
+        double seatFourPrice = 0.0;
+        
+     
+        
+
+        for(int i = 0; i < seatOneArray.size(); i++){
+            if(seatOneArray.get(i).contains("$")){
+                String[] seatOne = seatOneArray.get(i).split("\\$");
+
+                String price = seatOne[1].split(",")[0];
+                //System.out.println(price);
+                //System.out.println(price.substring(0, price.length() - 2));
+                seatOnePrice += Float.parseFloat(price);
+            }
+        }
+        for(int i = 0; i < seatTwoArray.size(); i++){
+            if(seatTwoArray.get(i).contains("$")){
+                String[] seatTwo = seatTwoArray.get(i).split("\\$");
+
+                String price = seatTwo[1].split(",")[0];
+                seatTwoPrice += Float.parseFloat(price);
+            }
+        }
+        for(int i = 0; i < seatThreeArray.size(); i++){
+            if(seatThreeArray.get(i).contains("$")){
+                String[] seatThree = seatThreeArray.get(i).split("\\$");
+
+                String price = seatThree[1].split(",")[0];
+                seatThreePrice += Float.parseFloat(price);
+            }
+        }
+        for(int i = 0; i < seatFourArray.size(); i++){
+            if(seatFourArray.get(i).contains("$")){
+                String[] seatFour = seatFourArray.get(i).split("\\$");
+
+                String price = seatFour[1].split(",")[0];
+                seatFourPrice += Float.parseFloat(price);
+            }
+        }
+
+        Double[] prices = {seatOnePrice, seatTwoPrice, seatThreePrice, seatFourPrice};
+
+        return prices; 
+        
+        
+    }
+    
     public void setText(String s){
         Ticket.setText(s);
     }
