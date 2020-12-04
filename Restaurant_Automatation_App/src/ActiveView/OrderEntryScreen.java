@@ -342,7 +342,7 @@ public class OrderEntryScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentActionPerformed
-        //controller.showPaymentScreen();
+        controller.showPaymentScreen(selectedTable);
         // TODO add your handling code here:
         
         JOptionPane.showMessageDialog(null, "As of now, order payments are handled externally. Prices are: \nSeatOne: $" +  new DecimalFormat("#.##").format(getSeatPrices()[0]) + "\n" + "SeatTwo: $" + new DecimalFormat("#.##").format(getSeatPrices()[1]) + "\n" + "SeatThree: $" + new DecimalFormat("#.##").format(getSeatPrices()[2]) + "\n" + "SeatFour: $" + new DecimalFormat("#.##").format(getSeatPrices()[3]) + "\n", "InfoBox: " + "Error Message", JOptionPane.INFORMATION_MESSAGE);

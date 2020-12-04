@@ -122,8 +122,14 @@ public class Controller {
         keypad.dispose();
     }
     
+    public void showPaymentScreen(String selectedTable){
+        String query = "UPDATE `Booths` SET `status` = 'DIRTY RED' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
+    }
+    
     public void addEmployeeToDatabase(String attributes){
-        String query  = "INSERT INTO `Employee` (`firstName`, `lastName`, `dob`, `ssn`, `loginCode`, `address`, `positionId`) VALUES ("+attributes+");";
+        String query  = "INSERT INTO `Employee` (`firstName`, `lastName`, `dob`, `ssn`, `loginCode`, `taxStatus`, `address`, `positionId`) VALUES ("+attributes+");";
         database.runInsertQuery(query);
     }
     
@@ -431,6 +437,11 @@ public class Controller {
         String query = "INSERT INTO TimeCard (employeeId, clockOutTime) VALUES ('" + resultRow.get(0) + "', '" + dateFormatted2 + "')";
         
         database.runInsertQuery(query);
+        
+        query = "UPDATE Employee SET clockedIn = 'FALSE' WHERE employeeId = '" + resultRow.get(0) + "'";
+        
+        database.runInsertQuery(query);
+        
 }
     public void startBreak(GregorianCalendar now3){
         System.out.println("Starting Break... Current time is: " + now3.getTime());
@@ -450,6 +461,10 @@ public class Controller {
         // Displaying grogorian date ia SimpleDateFormat 
         System.out.print("SimpleDateFormat: "+ dateFormatted3); 
         String query = "INSERT INTO Breaks (timeCardId, beginBreakTime) VALUES ('" + resultRow.get(0) + "', '" + dateFormatted3 + "')";
+        
+        database.runInsertQuery(query);
+        
+        query = "UPDATE Employee SET clockedIn = 'FALSE' WHERE employeeId = '" + resultRow.get(0) + "'";
         
         database.runInsertQuery(query);
         
@@ -473,6 +488,10 @@ public class Controller {
         // Displaying grogorian date ia SimpleDateFormat 
         System.out.print("SimpleDateFormat: "+ dateFormatted4); 
         String query = "INSERT INTO Breaks (timeCardId, endBreakTime) VALUES ('" + resultRow.get(0) + "', '" + dateFormatted4 + "')";
+        
+        database.runInsertQuery(query);
+        
+        query = "UPDATE Employee SET clockedIn = 'TRUE' WHERE employeeId = '" + resultRow.get(0) + "'";
         
         database.runInsertQuery(query);
         
@@ -669,6 +688,10 @@ public class Controller {
         database.runInsertQuery(query);
         query = "UPDATE `Booths` SET `ActiveOrder` = '"+ Integer.toString(incrememt) +"' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
         database.updateTableStatus(query);
+        
+            query = "UPDATE `Booths` SET `status` = 'ORDER IN BLUE' WHERE tableName = '" + selectedTable.toUpperCase() + "'";
+            database.updateTableStatus(query);
+            updateTableColor(selectedTable);
     }
 
    

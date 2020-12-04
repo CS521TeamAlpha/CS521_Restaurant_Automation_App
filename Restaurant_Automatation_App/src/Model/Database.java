@@ -25,7 +25,7 @@ public class Database {
         this.USER = USER; 
         this.PASS = PASS; 
         
-        
+       
     }
     
     public ArrayList getCurrentColumn(){

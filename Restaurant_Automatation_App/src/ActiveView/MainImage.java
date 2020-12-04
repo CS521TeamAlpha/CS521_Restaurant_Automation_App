@@ -8,7 +8,8 @@ package ActiveView;
 import Controller.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*; 
+import javax.swing.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -45,9 +46,15 @@ public class MainImage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Restaurant Automation Application Main Screen");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurantIcon_1.png")).getImage());
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         applicationTitleLabel.setBackground(new java.awt.Color(51, 51, 0));
@@ -136,13 +143,13 @@ public class MainImage extends javax.swing.JFrame {
         timeCardButton.setBounds(1050, 590, 260, 170);
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
-        backgroundImage.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
         backgroundImage.setOpaque(true);
         backgroundImage.setPreferredSize(new java.awt.Dimension(2000, 1700));
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, -130, 2000, 1700);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     public void addButtonListener(java.awt.event.ActionListener listenForClick){
 
@@ -183,6 +190,11 @@ public class MainImage extends javax.swing.JFrame {
     private void kitchenLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitchenLoginButtonActionPerformed
         Controller.showKitchenModule();
     }//GEN-LAST:event_kitchenLoginButtonActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+     System.out.print("test"); 
+   
+    }//GEN-LAST:event_formWindowActivated
 
    
     /**
