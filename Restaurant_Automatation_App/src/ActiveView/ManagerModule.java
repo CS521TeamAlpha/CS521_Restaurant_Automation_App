@@ -175,7 +175,7 @@ public class ManagerModule extends javax.swing.JFrame {
     }//GEN-LAST:event_payrollModuleActionPerformed
 
     private void frontEndModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontEndModuleActionPerformed
-      
+      controller.showFrontendModules();
     }//GEN-LAST:event_frontEndModuleActionPerformed
 
     private void reportsModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportsModuleActionPerformed

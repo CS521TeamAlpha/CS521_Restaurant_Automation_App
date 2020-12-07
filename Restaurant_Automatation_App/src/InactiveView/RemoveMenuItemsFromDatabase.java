@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ActiveView;
+package InactiveView;
 import Controller.Controller;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -154,10 +158,6 @@ public class RemoveMenuItemsFromDatabase extends javax.swing.JFrame {
     }//GEN-LAST:event_removeSelectedMenuItemActionPerformed
 
     private void generateCurrentMenuItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateCurrentMenuItemsActionPerformed
-       
-       
-        
-             
       
     }//GEN-LAST:event_generateCurrentMenuItemsActionPerformed
 

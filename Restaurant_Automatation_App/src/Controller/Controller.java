@@ -23,7 +23,9 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import ActiveView.AddEmployee.*;
-import ActiveView.RemoveMenuItemsFromDatabase;
+import InactiveView.RemoveMenuItemsFromDatabase;
+import java.sql.Connection;
+import java.sql.SQLException;
 import javax.swing.WindowConstants;
 
 /**
@@ -49,7 +51,11 @@ public class Controller {
 
     public void initialize(){
         mainScreen.setVisible(true);
-    }   
+    }
+    
+    
+      
+  
         
     
         
@@ -534,6 +540,24 @@ public class Controller {
         updateAllTableServer(); 
     }
     
+    public void showFrontendModules(){
+        tables = new Tables(this, "server");
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Table Management");
+        frame.add(tables);
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setResizable(false);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        updateAllTableColor();
+        
+     
+        updateAllTableServer(); 
+    }
+    
     public void enterOrder(String selectedTable){
         OrderEntryScreen enterOrder = new OrderEntryScreen(this, selectedTable);
         enterOrder.setVisible(true);
@@ -693,6 +717,6 @@ public class Controller {
             database.updateTableStatus(query);
             updateTableColor(selectedTable);
     }
-
+    
    
 }

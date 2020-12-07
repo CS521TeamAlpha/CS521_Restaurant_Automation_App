@@ -192,7 +192,7 @@ public class MainImage extends javax.swing.JFrame {
     }//GEN-LAST:event_kitchenLoginButtonActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-     System.out.print("test"); 
+    
    
     }//GEN-LAST:event_formWindowActivated
 
