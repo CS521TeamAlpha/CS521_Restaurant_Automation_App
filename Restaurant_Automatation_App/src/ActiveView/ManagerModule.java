@@ -36,12 +36,13 @@ public class ManagerModule extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        frontEndModule = new javax.swing.JButton();
+        showKitchen = new javax.swing.JButton();
         menuManaagementModule = new javax.swing.JButton();
         payrollModule = new javax.swing.JButton();
         reportsModule = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
+        viewKitchenModule = new javax.swing.JButton();
         employeeModule1 = new javax.swing.JButton();
+        frontEndModule1 = new javax.swing.JButton();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/restaurant-1233046.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -53,14 +54,14 @@ public class ManagerModule extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 0, 0)));
         jPanel1.setForeground(new java.awt.Color(255, 255, 0));
 
-        frontEndModule.setBackground(new java.awt.Color(0, 0, 0));
-        frontEndModule.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        frontEndModule.setForeground(new java.awt.Color(255, 255, 0));
-        frontEndModule.setText("Front End");
-        frontEndModule.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        frontEndModule.addActionListener(new java.awt.event.ActionListener() {
+        showKitchen.setBackground(new java.awt.Color(0, 0, 0));
+        showKitchen.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        showKitchen.setForeground(new java.awt.Color(255, 255, 0));
+        showKitchen.setText("Kitchen");
+        showKitchen.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        showKitchen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frontEndModuleActionPerformed(evt);
+                showKitchenActionPerformed(evt);
             }
         });
 
@@ -97,14 +98,14 @@ public class ManagerModule extends javax.swing.JFrame {
             }
         });
 
-        logoutButton.setBackground(new java.awt.Color(0, 0, 0));
-        logoutButton.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
-        logoutButton.setForeground(new java.awt.Color(255, 255, 0));
-        logoutButton.setText("Logout");
-        logoutButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
-        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+        viewKitchenModule.setBackground(new java.awt.Color(0, 0, 0));
+        viewKitchenModule.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        viewKitchenModule.setForeground(new java.awt.Color(255, 255, 0));
+        viewKitchenModule.setText("Logout");
+        viewKitchenModule.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        viewKitchenModule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutButtonActionPerformed(evt);
+                viewKitchenModuleActionPerformed(evt);
             }
         });
 
@@ -119,24 +120,40 @@ public class ManagerModule extends javax.swing.JFrame {
             }
         });
 
+        frontEndModule1.setBackground(new java.awt.Color(0, 0, 0));
+        frontEndModule1.setFont(new java.awt.Font("French Script MT", 1, 24)); // NOI18N
+        frontEndModule1.setForeground(new java.awt.Color(255, 255, 0));
+        frontEndModule1.setText("Front End");
+        frontEndModule1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        frontEndModule1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frontEndModule1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(employeeModule1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuManaagementModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(frontEndModule, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(reportsModule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(showKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(employeeModule1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(menuManaagementModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewKitchenModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(reportsModule, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                            .addComponent(frontEndModule1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,12 +164,14 @@ public class ManagerModule extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(payrollModule, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(reportsModule, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuManaagementModule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(frontEndModule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(88, 88, 88))
+                    .addComponent(viewKitchenModule, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(frontEndModule1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(showKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,12 +190,12 @@ public class ManagerModule extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void payrollModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payrollModuleActionPerformed
-        // TODO add your handling code here:
+       controller.showKitchenModule();
     }//GEN-LAST:event_payrollModuleActionPerformed
 
-    private void frontEndModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontEndModuleActionPerformed
-      controller.showFrontendModules();
-    }//GEN-LAST:event_frontEndModuleActionPerformed
+    private void showKitchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showKitchenActionPerformed
+      controller.showKitchen();
+    }//GEN-LAST:event_showKitchenActionPerformed
 
     private void reportsModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportsModuleActionPerformed
         // TODO add your handling code here:
@@ -186,13 +205,17 @@ public class ManagerModule extends javax.swing.JFrame {
        controller.showMenuManagement(controller);
     }//GEN-LAST:event_menuManaagementModuleActionPerformed
 
-    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+    private void viewKitchenModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewKitchenModuleActionPerformed
         this.dispose();
-    }//GEN-LAST:event_logoutButtonActionPerformed
+    }//GEN-LAST:event_viewKitchenModuleActionPerformed
 
     private void employeeModule1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeModule1ActionPerformed
        controller.showAddEmployeeForm(controller);
     }//GEN-LAST:event_employeeModule1ActionPerformed
+
+    private void frontEndModule1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontEndModule1ActionPerformed
+        controller.showFrontendModules();
+    }//GEN-LAST:event_frontEndModule1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,12 +224,13 @@ public class ManagerModule extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton employeeModule1;
-    private javax.swing.JButton frontEndModule;
+    private javax.swing.JButton frontEndModule1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton logoutButton;
     private javax.swing.JButton menuManaagementModule;
     private javax.swing.JButton payrollModule;
     private javax.swing.JButton reportsModule;
+    private javax.swing.JButton showKitchen;
+    private javax.swing.JButton viewKitchenModule;
     // End of variables declaration//GEN-END:variables
 }

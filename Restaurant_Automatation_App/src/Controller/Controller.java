@@ -551,12 +551,29 @@ public class Controller {
         frame.setResizable(false);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         updateAllTableColor();
         
      
         updateAllTableServer(); 
     }
+
+public void showKitchen(){
+        tables = new Tables(this, "kitchen");
+        System.out.println("method performed");
+        tables.setVisible(true);
+        JFrame frame = new JFrame("Table Management");
+        frame.add(tables);
+        frame.pack();
+        frame.setSize(1470,970);
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        updateAllTableColor();  
+        updateAllTableServer(); 
+    }    
+    
     
     public void enterOrder(String selectedTable){
         OrderEntryScreen enterOrder = new OrderEntryScreen(this, selectedTable);
